@@ -4,8 +4,10 @@ Momentum Pullback Strategy | Daily Timeframe
 Runs once per day, outputs top 10 setups to results.json
 """
 
+import io
 import json
 import logging
+import urllib.request
 import warnings
 from datetime import datetime, date, timezone
 from typing import Optional
@@ -58,7 +60,10 @@ def get_sp500_tickers() -> list[str]:
     """Scrape S&P 500 tickers from Wikipedia."""
     url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
     try:
-        tables = pd.read_html(url)
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req) as resp:
+            html = resp.read().decode("utf-8")
+        tables = pd.read_html(io.StringIO(html))
         tickers = tables[0]["Symbol"].str.replace(".", "-", regex=False).tolist()
         log.info(f"Fetched {len(tickers)} S&P 500 tickers from Wikipedia.")
         return tickers
