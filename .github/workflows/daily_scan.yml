@@ -35,6 +35,10 @@ jobs:
       - name: Run scanner
         run: python scanner.py
 
+      - name: Send push notification
+        run: python notifier.py
+        continue-on-error: true
+
       - name: Commit and push results.json
         run: |
           git config user.name  "github-actions[bot]"

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SP500 Swing Scanner</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0d0d;
+      --surface:   #181818;
+      --border:    #2a2a2a;
+      --accent:    #00c896;
+      --red:       #ff4f4f;
+      --muted:     #666;
+      --text:      #e8e8e8;
+      --subtext:   #999;
+      --radius:    12px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      min-height: 100vh;
+      padding: 0 0 40px;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 16px 14px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    header h1 span { color: var(--accent); }
+
+    #meta {
+      color: var(--subtext);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    #cards {
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+
+    .card:active { border-color: var(--accent); }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      gap: 12px;
+    }
+
+    .ticker {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      min-width: 60px;
+    }
+
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .score-pill {
+      background: #00c89620;
+      color: var(--accent);
+      border: 1px solid #00c89640;
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .price-tag {
+      color: var(--subtext);
+      font-size: 13px;
+    }
+
+    .chevron {
+      color: var(--muted);
+      font-size: 13px;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .card.open .chevron { transform: rotate(180deg); }
+
+    .card-body {
+      display: none;
+      padding: 0 16px 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .card.open .card-body { display: block; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+      margin-top: 14px;
+    }
+
+    .stat label {
+      display: block;
+      font-size: 11px;
+      color: var(--subtext);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 2px;
+    }
+
+    .stat span {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .stat span.green { color: var(--accent); }
+    .stat span.red   { color: var(--red); }
+
+    .entry-zone {
+      grid-column: 1 / -1;
+    }
+
+    .reasoning {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--subtext);
+      line-height: 1.55;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+
+    .rank {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 22px;
+    }
+
+    #empty, #error, #loading {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--subtext);
+    }
+
+    #error { color: var(--red); }
+
+    .spinner {
+      width: 28px;
+      height: 28px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 14px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SP500 <span>Swing Scanner</span></h1>
+  <div id="meta">Loading…</div>
+</header>
+
+<div id="cards">
+  <div id="loading"><div class="spinner"></div>Fetching latest scan…</div>
+</div>
+
+<script>
+const DATA_URL = "https://cdn.jsdelivr.net/gh/fovcuspro/sp500-swing-scanner@main/results.json";
+
+function fmt(n, dp = 2) {
+  return Number(n).toFixed(dp);
+}
+
+function renderCard(setup, rank) {
+  const ind = setup.indicators || {};
+  const ez  = setup.entry_zone || {};
+
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <div class="card-header">
+      <span class="rank">#${rank}</span>
+      <span class="ticker">${setup.ticker}</span>
+      <div class="badge-row">
+        <span class="score-pill">${fmt(setup.score, 3)}</span>
+        <span class="price-tag">$${fmt(setup.price)}</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+      <div class="grid">
+        <div class="stat entry-zone">
+          <label>Entry zone</label>
+          <span>$${fmt(ez.low)} – $${fmt(ez.high)}</span>
+        </div>
+        <div class="stat">
+          <label>Stop loss</label>
+          <span class="red">$${fmt(setup.stop_loss)}</span>
+        </div>
+        <div class="stat">
+          <label>Target</label>
+          <span class="green">$${fmt(setup.target)}</span>
+        </div>
+        <div class="stat">
+          <label>Risk / Reward</label>
+          <span class="${setup.risk_reward >= 2 ? 'green' : ''}">${fmt(setup.risk_reward)}×</span>
+        </div>
+        <div class="stat">
+          <label>RSI (14)</label>
+          <span>${fmt(ind.rsi, 1)}</span>
+        </div>
+        <div class="stat">
+          <label>Pullback</label>
+          <span>${fmt(ind.pullback_pct, 1)}%</span>
+        </div>
+        <div class="stat">
+          <label>50 MA</label>
+          <span>$${fmt(ind.ma50)}</span>
+        </div>
+        <div class="stat">
+          <label>200 MA</label>
+          <span>$${fmt(ind.ma200)}</span>
+        </div>
+        <div class="stat">
+          <label>Volume ratio</label>
+          <span>${fmt(ind.volume_ratio)}×</span>
+        </div>
+        <div class="stat">
+          <label>Score breakdown</label>
+          <span>T${fmt(setup.score_breakdown.trend_strength, 1)} P${fmt(setup.score_breakdown.pullback_quality, 1)} V${fmt(setup.score_breakdown.volume_confirm, 1)}</span>
+        </div>
+      </div>
+      <div class="reasoning">${setup.reasoning}</div>
+    </div>
+  `;
+
+  card.addEventListener("click", () => card.classList.toggle("open"));
+  return card;
+}
+
+async function load() {
+  const container = document.getElementById("cards");
+  const meta      = document.getElementById("meta");
+
+  try {
+    const res  = await fetch(DATA_URL + "?_=" + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    const setups = data.top_setups || [];
+    const date   = data.scan_date  || "—";
+    const found  = data.candidates_found ?? 0;
+    const time   = data.scan_time_utc ? ` · ${data.scan_time_utc} UTC` : "";
+
+    meta.textContent = `${date}${time} · ${found} candidates · ${setups.length} setups`;
+
+    container.innerHTML = "";
+
+    if (setups.length === 0) {
+      container.innerHTML = '<div id="empty">No setups passed all filters today.</div>';
+      return;
+    }
+
+    setups.forEach((s, i) => container.appendChild(renderCard(s, i + 1)));
+
+  } catch (err) {
+    container.innerHTML = `<div id="error">Failed to load data.<br><small>${err.message}</small></div>`;
+    meta.textContent    = "Error loading scan results";
+  }
+}
+
+load();
+</script>
+</body>
+</html>
