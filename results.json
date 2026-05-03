@@ -1,0 +1,24 @@
+{
+  "scan_date": "2026-05-03",
+  "scan_time_utc": "16:38:52",
+  "universe": "S&P 500 (503 tickers)",
+  "candidates_found": 0,
+  "strategy": {
+    "name": "Momentum Pullback",
+    "timeframe": "Daily",
+    "hold_period": "2\u20134 weeks",
+    "filters": {
+      "trend": "Price > 50 MA > 200 MA",
+      "pullback": "3\u20138% below 20-day high",
+      "rsi": "RSI 40\u201360",
+      "volume": "Volume > 1.3\u00d7 20-day avg",
+      "candle": "Close > Open (bullish)"
+    },
+    "weights": {
+      "trend_strength": "40%",
+      "pullback_quality": "40%",
+      "volume_confirm": "20%"
+    }
+  },
+  "top_setups": []
+}
