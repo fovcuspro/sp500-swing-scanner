@@ -203,7 +203,7 @@
 </div>
 
 <script>
-const DATA_URL = "https://cdn.jsdelivr.net/gh/fovcuspro/sp500-swing-scanner@main/results.json";
+const RESULTS_URL = "https://raw.githubusercontent.com/fovcuspro/sp500-swing-scanner/main/results.json";
 
 function fmt(n, dp = 2) {
   return Number(n).toFixed(dp);
@@ -281,7 +281,7 @@ async function load() {
   const meta      = document.getElementById("meta");
 
   try {
-    const res  = await fetch(DATA_URL + "?_=" + Date.now());
+    const res  = await fetch(RESULTS_URL + "?_=" + Date.now());
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
