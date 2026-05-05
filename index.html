@@ -189,9 +189,46 @@
     }
 
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Nav Bar ── */
+    .nav-bar {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      padding: 0 16px;
+    }
+    .nav-tab {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 11px 0;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--subtext);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .nav-tab svg { width: 13px; height: 13px; flex-shrink: 0; }
   </style>
 </head>
 <body>
+
+<div class="nav-bar">
+  <a class="nav-tab active" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    Scanner
+  </a>
+  <a class="nav-tab" href="portfolio.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    Portfolio
+  </a>
+</div>
 
 <header>
   <h1>SP500 <span>Swing Scanner</span></h1>
