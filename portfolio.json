@@ -1,0 +1,7 @@
+[
+  { "ticker": "ONDS",  "shares": 10,   "entry_price": 9.56   },
+  { "ticker": "AMZN",  "shares": 2,    "entry_price": 206.75 },
+  { "ticker": "SOFI",  "shares": 10,   "entry_price": 15.00  },
+  { "ticker": "NOMD",  "shares": 15,   "entry_price": 10.08  },
+  { "ticker": "IAG.L", "shares": 3.37, "entry_price": 3.45   }
+]
