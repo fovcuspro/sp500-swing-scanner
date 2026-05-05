@@ -1,0 +1,40 @@
+name: Daily Portfolio Tracker
+
+on:
+  schedule:
+    - cron: '0 13 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install yfinance
+
+      - name: Run portfolio tracker
+        run: python portfolio.py
+
+      - name: Send push notification
+        run: python portfolio_notifier.py
+        continue-on-error: true
+
+      - name: Commit and push results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add portfolio_results.json
+          git diff --staged --quiet || git commit -m "Portfolio update $(date -u +%Y-%m-%d)"
+          git push
