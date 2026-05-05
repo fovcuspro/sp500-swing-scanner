@@ -38,14 +38,16 @@ def fetch_quote(ticker: str) -> dict | None:
             log.warning(f"No data for {ticker}")
             return None
         info = tk.fast_info
-        last_close  = float(hist["Close"].iloc[-1])
-        prev_close  = float(hist["Close"].iloc[-2]) if len(hist) >= 2 else last_close
+        # LSE tickers (e.g. IAG.L) are quoted in pence — convert to pounds
+        scale       = 0.01 if ticker.upper().endswith(".L") else 1.0
+        last_close  = float(hist["Close"].iloc[-1]) * scale
+        prev_close  = (float(hist["Close"].iloc[-2]) if len(hist) >= 2 else last_close) * scale
         day_change  = last_close - prev_close
         day_change_pct = (day_change / prev_close) * 100 if prev_close else 0.0
         volume      = int(hist["Volume"].iloc[-1])
         avg_volume  = int(hist["Volume"].mean())
-        week_high   = float(hist["High"].max())
-        week_low    = float(hist["Low"].min())
+        week_high   = float(hist["High"].max()) * scale
+        week_low    = float(hist["Low"].min()) * scale
         return {
             "last_close":      round(last_close, 2),
             "prev_close":      round(prev_close, 2),
@@ -65,8 +67,8 @@ def analyse_position(holding: dict, quote: dict) -> dict:
     ticker      = holding["ticker"].upper()
     shares      = float(holding["shares"])
     entry_price = float(holding["entry_price"])
-    stop_loss   = float(holding.get("stop_loss", 0))
-    target      = float(holding.get("target", 0))
+    stop_loss   = float(holding["stop_loss"]) if holding.get("stop_loss") else None
+    target      = float(holding["target"])    if holding.get("target")    else None
     notes       = holding.get("notes", "")
 
     current     = quote["last_close"]
