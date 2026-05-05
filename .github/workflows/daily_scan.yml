@@ -2,9 +2,8 @@ name: Daily S&P 500 Swing Scan
 
 on:
   schedule:
-    # 17:00 UTC = 18:00 UK BST (Apr–Oct). Runs 1 hour early in GMT (Nov–Mar)
-    # but avoids the double-run caused by maintaining two cron entries.
-    - cron: "0 17 * * 1-5"
+    # 13:00 UTC = 14:00 UK BST (Apr–Oct) / 13:00 UK GMT (Nov–Mar).
+    - cron: "0 13 * * 1-5"
   workflow_dispatch:           # allow manual trigger
 
 jobs:
