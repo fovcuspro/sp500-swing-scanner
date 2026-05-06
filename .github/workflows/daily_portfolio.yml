@@ -39,5 +39,6 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add portfolio_results.json
-          git diff --staged --quiet || git commit -m "Portfolio update $(date -u +%Y-%m-%d)"
+          git diff --staged --quiet || git commit -m "Portfolio update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main
           git push
