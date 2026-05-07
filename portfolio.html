@@ -1128,15 +1128,24 @@ load();
   <div class="sheet-handle"></div>
 
   <div id="tokenScreen">
-    <div class="sheet-title">GitHub Token</div>
+    <div class="sheet-title">One-time Setup</div>
+    <p class="token-hint" style="margin-bottom:16px;font-size:11px;">
+      To add/remove positions and run scans from this page, you need a GitHub token. This takes about 2 minutes and you only do it once.
+    </p>
+    <p class="token-hint" style="margin-bottom:14px;">
+      <strong style="color:var(--text)">Step 1</strong> — Tap the link below and sign in to GitHub:<br>
+      <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" style="font-size:11px;">github.com → Settings → Fine-grained tokens → Generate new</a>
+    </p>
+    <p class="token-hint" style="margin-bottom:14px;">
+      <strong style="color:var(--text)">Step 2</strong> — Set Repository access to <strong>fovcuspro/sp500-swing-scanner</strong>, then under Permissions set <strong>Contents</strong> and <strong>Actions</strong> both to <strong>Read and write</strong>.
+    </p>
+    <p class="token-hint" style="margin-bottom:16px;">
+      <strong style="color:var(--text)">Step 3</strong> — Generate the token, copy it (starts with <code style="color:var(--gold)">github_pat_</code>), and paste it below.
+    </p>
     <div class="form-group">
-      <label class="form-label">Personal Access Token</label>
+      <label class="form-label">Paste token here</label>
       <input class="form-input" id="tokenInput" type="password" placeholder="github_pat_…" autocomplete="off" spellcheck="false">
     </div>
-    <p class="token-hint">
-      Go to <a href="https://github.com/settings/personal-access-tokens" target="_blank">github.com → Settings → Personal access tokens</a>,
-      create a fine-grained token scoped to this repo with <strong>Contents: Read and write</strong>. Paste it above — it's saved only on this device.
-    </p>
     <div class="form-error" id="tokenError"></div>
     <button class="btn-primary" onclick="saveToken()">Save Token</button>
   </div>
