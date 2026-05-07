@@ -1,379 +1,892 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SP500 Swing Scanner</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Swing Scanner</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #0d0d0d;
-      --surface:   #181818;
-      --border:    #2a2a2a;
-      --accent:    #00c896;
-      --red:       #ff4f4f;
-      --muted:     #666;
-      --text:      #e8e8e8;
-      --subtext:   #999;
-      --radius:    12px;
+      --black:   #0a0a0a;
+      --surface: #111111;
+      --card:    #161616;
+      --border:  #242424;
+      --muted:   #3a3a3a;
+      --text:    #e8e4dc;
+      --sub:     #8a8478;
+      --gold:    #c9a84c;
+      --gold2:   #e8c97a;
+      --green:   #4caf7d;
+      --red:     #e05555;
+      --amber:   #e8a245;
     }
 
     body {
-      background: var(--bg);
+      background: var(--black);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 15px;
-      min-height: 100vh;
-      padding: 0 0 40px;
-    }
-
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 18px 16px 14px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    header h1 {
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    header h1 span { color: var(--accent); }
-
-    #meta {
-      color: var(--subtext);
-      font-size: 12px;
-      margin-top: 4px;
-    }
-
-    #cards {
-      padding: 14px 12px;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      -webkit-font-smoothing: antialiased;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      height: 100dvh;
       overflow: hidden;
-      cursor: pointer;
-      transition: border-color 0.15s;
     }
 
-    .card:active { border-color: var(--accent); }
-
-    .card-header {
+    /* ── Header ── */
+    .app-header {
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      padding-top: env(safe-area-inset-top);
+      z-index: 10;
+    }
+    .header-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 14px 16px;
-      gap: 12px;
     }
-
-    .ticker {
+    .header-title {
+      font-family: 'Instrument Serif', serif;
       font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      min-width: 60px;
+      font-style: italic;
+      color: var(--gold);
     }
+    .header-btns { display: flex; gap: 8px; }
 
-    .badge-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex: 1;
-    }
-
-    .score-pill {
-      background: #00c89620;
-      color: var(--accent);
-      border: 1px solid #00c89640;
-      border-radius: 20px;
-      padding: 3px 10px;
-      font-size: 13px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .price-tag {
-      color: var(--subtext);
-      font-size: 13px;
-    }
-
-    .chevron {
-      color: var(--muted);
-      font-size: 13px;
-      transition: transform 0.2s;
-      flex-shrink: 0;
-    }
-
-    .card.open .chevron { transform: rotate(180deg); }
-
-    .card-body {
-      display: none;
-      padding: 0 16px 16px;
-      border-top: 1px solid var(--border);
-    }
-
-    .card.open .card-body { display: block; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 16px;
-      margin-top: 14px;
-    }
-
-    .stat label {
-      display: block;
-      font-size: 11px;
-      color: var(--subtext);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 2px;
-    }
-
-    .stat span {
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .stat span.green { color: var(--accent); }
-    .stat span.red   { color: var(--red); }
-
-    .entry-zone {
-      grid-column: 1 / -1;
-    }
-
-    .reasoning {
-      margin-top: 14px;
-      font-size: 13px;
-      color: var(--subtext);
-      line-height: 1.55;
-      border-top: 1px solid var(--border);
-      padding-top: 12px;
-    }
-
-    .rank {
-      font-size: 11px;
-      color: var(--muted);
-      font-weight: 600;
-      min-width: 22px;
-    }
-
-    #empty, #error, #loading {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--subtext);
-    }
-
-    #error { color: var(--red); }
-
-    .spinner {
-      width: 28px;
-      height: 28px;
-      border: 3px solid var(--border);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin: 0 auto 14px;
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    .refresh-btn {
+    .icon-btn {
       background: none;
       border: 1px solid var(--border);
       border-radius: 8px;
-      color: var(--muted);
+      color: var(--sub);
       cursor: pointer;
-      padding: 6px 8px;
+      padding: 7px 9px;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: color 0.15s, border-color 0.15s;
       -webkit-tap-highlight-color: transparent;
-      flex-shrink: 0;
     }
-    .refresh-btn:active { color: var(--accent); border-color: var(--accent); }
-    .refresh-btn svg { width: 15px; height: 15px; }
-    .refresh-btn.spinning svg { animation: spin 0.8s linear infinite; }
+    .icon-btn:active  { color: var(--gold); border-color: var(--gold); }
+    .icon-btn:disabled { opacity: 0.4; }
+    .icon-btn svg { width: 15px; height: 15px; }
+    .icon-btn.spinning svg { animation: spin 0.8s linear infinite; }
 
-    /* ── Nav Bar ── */
-    .nav-bar {
-      background: var(--bg);
+    /* ── Summary strip (portfolio tab) ── */
+    .summary-strip {
+      background: var(--surface);
       border-bottom: 1px solid var(--border);
-      display: flex;
-      padding: 0 16px;
+      padding: 12px 16px;
+      display: none;
+      grid-template-columns: 1fr 1fr 1fr;
     }
-    .nav-tab {
+    .summary-strip.visible { display: grid; }
+    .sum-stat { display: flex; flex-direction: column; gap: 3px; }
+    .sum-stat + .sum-stat { padding-left: 14px; border-left: 1px solid var(--border); margin-left: 14px; }
+    .sum-label { font-size: 9px; color: var(--sub); text-transform: uppercase; letter-spacing: 0.1em; }
+    .sum-value { font-size: 16px; font-weight: 500; letter-spacing: -0.02em; }
+    .sum-value.gold { color: var(--gold2); }
+    .sum-sub   { font-size: 10px; color: var(--sub); }
+
+    /* ── Alert banner ── */
+    .alert-banner {
+      margin: 10px 12px 0;
+      background: rgba(224,85,85,0.08);
+      border: 1px solid rgba(224,85,85,0.3);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 11px;
+      color: var(--red);
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+    .alert-dot {
+      width: 6px; height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+
+    /* ── Scrollable content ── */
+    #main {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* ── Tab bar ── */
+    .tab-bar {
+      background: var(--black);
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-shrink: 0;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    .tab {
       flex: 1;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 7px;
-      padding: 11px 0;
-      font-size: 11px;
+      gap: 3px;
+      padding: 10px 0;
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--subtext);
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: color 0.15s, border-color 0.15s;
+      color: var(--sub);
+      background: none;
+      border: none;
+      border-top: 2px solid transparent;
+      cursor: pointer;
+      font-family: 'DM Mono', monospace;
       -webkit-tap-highlight-color: transparent;
+      transition: color 0.15s, border-color 0.15s;
     }
-    .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
-    .nav-tab svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .tab.active { color: var(--gold); border-top-color: var(--gold); }
+    .tab svg { width: 15px; height: 15px; }
+
+    /* ── Cards shared ── */
+    .cards { padding: 8px 12px; display: flex; flex-direction: column; gap: 8px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .card:active { border-color: var(--gold); }
+
+    .card-detail {
+      display: none;
+      border-top: 1px solid var(--border);
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.015);
+    }
+    .card.open .card-detail { display: block; }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 14px;
+    }
+    .full-width { grid-column: 1 / -1; }
+
+    .detail-label {
+      font-size: 9px;
+      color: var(--sub);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+    .detail-value { font-size: 13px; color: var(--text); }
+    .pos { color: var(--green); }
+    .neg { color: var(--red); }
+    .neu { color: var(--sub); }
+
+    /* ── Scanner cards ── */
+    .scanner-card .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 14px;
+    }
+    .rank { font-size: 11px; color: var(--muted); min-width: 20px; }
+    .ticker-name { font-size: 17px; font-weight: 500; letter-spacing: 0.04em; }
+    .badge-row { display: flex; align-items: center; gap: 8px; flex: 1; }
+    .score-pill {
+      background: rgba(201,168,76,0.15);
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .price-muted { color: var(--sub); font-size: 13px; }
+    .chevron { color: var(--muted); font-size: 12px; transition: transform 0.2s; flex-shrink: 0; }
+    .card.open .chevron { transform: rotate(180deg); }
+    .reasoning {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--sub);
+      line-height: 1.55;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+
+    /* ── Portfolio cards ── */
+    .portfolio-card.signal-STOP_HIT       { border-color: rgba(224,85,85,0.5); }
+    .portfolio-card.signal-TARGET_HIT     { border-color: rgba(76,175,125,0.5); }
+    .portfolio-card.signal-UNDER_PRESSURE { border-color: rgba(232,162,69,0.4); }
+    .portfolio-card.signal-RUNNING        { border-left: 3px solid var(--green); }
+
+    .card-main {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 14px;
+    }
+    .signal-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .signal-dot.STOP_HIT       { background: var(--red);   box-shadow: 0 0 6px var(--red); }
+    .signal-dot.TARGET_HIT     { background: var(--green); box-shadow: 0 0 6px var(--green); }
+    .signal-dot.UNDER_PRESSURE { background: var(--amber); }
+    .signal-dot.RUNNING        { background: var(--green); }
+    .signal-dot.ON_TRACK       { background: var(--muted); }
+
+    .card-meta { font-size: 10px; color: var(--sub); margin-top: 2px; }
+
+    .progress-section { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .progress-label {
+      display: flex; justify-content: space-between;
+      font-size: 9px; color: var(--sub); margin-bottom: 8px;
+    }
+    .progress-track { height: 4px; background: var(--muted); border-radius: 2px; margin-bottom: 6px; }
+    .progress-fill  { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--gold), var(--green)); transition: width 0.4s; }
+    .progress-labels { display: flex; justify-content: space-between; font-size: 9px; color: var(--sub); }
+
+    .signal-pill {
+      display: inline-block;
+      font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 3px 8px; border-radius: 4px; margin-top: 10px;
+    }
+    .pill-STOP_HIT       { background: rgba(224,85,85,0.15); color: var(--red);   border: 1px solid rgba(224,85,85,0.3); }
+    .pill-TARGET_HIT     { background: rgba(76,175,125,0.15); color: var(--green); border: 1px solid rgba(76,175,125,0.3); }
+    .pill-UNDER_PRESSURE { background: rgba(232,162,69,0.15); color: var(--amber); border: 1px solid rgba(232,162,69,0.3); }
+    .pill-RUNNING        { background: rgba(76,175,125,0.1);  color: var(--green); border: 1px solid rgba(76,175,125,0.2); }
+    .pill-ON_TRACK       { background: rgba(138,132,120,0.1); color: var(--sub);   border: 1px solid var(--border); }
+
+    .btn-remove {
+      display: block; width: 100%; margin-top: 12px; padding: 10px;
+      background: rgba(224,85,85,0.08); border: 1px solid rgba(224,85,85,0.2);
+      border-radius: 8px; color: var(--red); font-family: 'DM Mono', monospace;
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+      cursor: pointer; -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ── Meta line ── */
+    .scan-meta { font-size: 10px; color: var(--sub); padding: 10px 14px 4px; letter-spacing: 0.04em; }
+
+    /* ── FAB ── */
+    .fab {
+      position: fixed;
+      bottom: calc(68px + env(safe-area-inset-bottom));
+      right: 18px;
+      width: 52px; height: 52px;
+      background: var(--gold); color: var(--black);
+      border: none; border-radius: 50%;
+      font-size: 28px; font-weight: 300;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+      display: none;
+      align-items: center; justify-content: center;
+      z-index: 200;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.15s;
+    }
+    .fab:active { transform: scale(0.9); }
+
+    /* ── Sheet ── */
+    .overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 300; opacity: 0; pointer-events: none;
+      transition: opacity 0.25s;
+    }
+    .overlay.open { opacity: 1; pointer-events: all; }
+
+    .sheet {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-radius: 16px 16px 0 0;
+      padding: 0 20px calc(28px + env(safe-area-inset-bottom));
+      z-index: 400;
+      transform: translateY(100%);
+      transition: transform 0.3s cubic-bezier(0.32,0.72,0,1);
+      max-height: 85vh; overflow-y: auto;
+    }
+    .sheet.open { transform: translateY(0); }
+
+    .sheet-handle {
+      width: 36px; height: 4px; background: var(--muted);
+      border-radius: 2px; margin: 12px auto 20px;
+    }
+    .sheet-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 20px; font-style: italic; color: var(--gold); margin-bottom: 20px;
+    }
+
+    .form-group { margin-bottom: 14px; }
+    .form-label {
+      display: block; font-size: 9px; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--sub); margin-bottom: 6px;
+    }
+    .form-input {
+      width: 100%; background: var(--card); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-family: 'DM Mono', monospace;
+      font-size: 15px; padding: 11px 13px; outline: none;
+      transition: border-color 0.15s; -webkit-appearance: none;
+    }
+    .form-input:focus { border-color: var(--gold); }
+    .form-input::placeholder { color: var(--muted); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .btn-primary {
+      width: 100%; background: var(--gold); color: var(--black);
+      border: none; border-radius: 10px; padding: 14px;
+      font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+      margin-top: 6px; -webkit-tap-highlight-color: transparent; transition: opacity 0.15s;
+    }
+    .btn-primary:active   { opacity: 0.8; }
+    .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .form-error { font-size: 11px; color: var(--red); margin-top: 8px; min-height: 16px; }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed;
+      bottom: calc(80px + env(safe-area-inset-bottom));
+      left: 50%; transform: translateX(-50%) translateY(16px);
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--text); font-size: 12px; letter-spacing: 0.03em;
+      padding: 10px 18px; border-radius: 8px; white-space: nowrap;
+      opacity: 0; transition: opacity 0.2s, transform 0.2s;
+      z-index: 500; pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast-error { color: var(--red); border-color: rgba(224,85,85,0.3); }
+
+    /* ── States ── */
+    .loading {
+      text-align: center; padding: 80px 20px;
+      color: var(--sub); font-size: 11px;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .loading-bar {
+      width: 120px; height: 2px; background: var(--border);
+      margin: 16px auto 0; border-radius: 1px; overflow: hidden;
+    }
+    .loading-bar::after {
+      content: ''; display: block; height: 100%; width: 40%;
+      background: var(--gold); border-radius: 1px;
+      animation: slide 1s ease-in-out infinite;
+    }
+    .empty-state { text-align: center; padding: 60px 30px; color: var(--sub); }
+    .empty-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 20px; font-style: italic; color: var(--text); margin-bottom: 8px;
+    }
+    .empty-sub { font-size: 11px; line-height: 1.6; }
+    .error-state {
+      margin: 20px 14px; padding: 14px;
+      background: rgba(224,85,85,0.06); border: 1px solid rgba(224,85,85,0.2);
+      border-radius: 8px; color: var(--red); font-size: 12px; line-height: 1.6;
+    }
+
+    /* ── Animations ── */
+    @keyframes spin  { to { transform: rotate(360deg); } }
+    @keyframes slide { 0% { transform: translateX(-100%); } 100% { transform: translateX(350%); } }
+    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.4; transform:scale(.8); } }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    .card { opacity: 0; transform: translateY(8px); animation: fadeUp 0.3s ease forwards; }
+    .cards .card:nth-child(1) { animation-delay: 0.03s; }
+    .cards .card:nth-child(2) { animation-delay: 0.06s; }
+    .cards .card:nth-child(3) { animation-delay: 0.09s; }
+    .cards .card:nth-child(4) { animation-delay: 0.12s; }
+    .cards .card:nth-child(5) { animation-delay: 0.15s; }
+    .cards .card:nth-child(6) { animation-delay: 0.18s; }
+    .cards .card:nth-child(7) { animation-delay: 0.21s; }
+    .cards .card:nth-child(8) { animation-delay: 0.24s; }
+    .cards .card:nth-child(n+9) { animation-delay: 0.27s; }
   </style>
 </head>
 <body>
 
-<div class="nav-bar">
-  <a class="nav-tab active" href="index.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-    Scanner
-  </a>
-  <a class="nav-tab" href="portfolio.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-    Portfolio
-  </a>
-</div>
-
-<header>
-  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
-    <h1>SP500 <span>Swing Scanner</span></h1>
-    <button class="refresh-btn" id="refreshBtn" onclick="doRefresh()" title="Refresh">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-    </button>
+<header class="app-header">
+  <div class="header-row">
+    <div class="header-title" id="headerTitle">Swing Scanner</div>
+    <div class="header-btns">
+      <button class="icon-btn" id="runBtn" onclick="runScan()" title="Run scan now">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>
+      </button>
+      <button class="icon-btn" id="refreshBtn" onclick="doRefresh()" title="Refresh data">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M23 4v6h-6"/><path d="M1 20v-6h6"/>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+        </svg>
+      </button>
+    </div>
   </div>
-  <div id="meta">Loading…</div>
+  <div class="summary-strip" id="summaryStrip">
+    <div class="sum-stat">
+      <div class="sum-label">Total P&L</div>
+      <div class="sum-value" id="sumPnl">—</div>
+      <div class="sum-sub"  id="sumPnlPct">—</div>
+    </div>
+    <div class="sum-stat">
+      <div class="sum-label">Day P&L</div>
+      <div class="sum-value" id="sumDay">—</div>
+      <div class="sum-sub"  id="sumCount">—</div>
+    </div>
+    <div class="sum-stat">
+      <div class="sum-label">Market Val</div>
+      <div class="sum-value gold" id="sumVal">—</div>
+      <div class="sum-sub"       id="sumCost">—</div>
+    </div>
+  </div>
+  <div class="alert-banner" id="alertBanner">
+    <div class="alert-dot"></div>
+    <span id="alertText"></span>
+  </div>
 </header>
 
-<div id="cards">
-  <div id="loading"><div class="spinner"></div>Fetching latest scan…</div>
+<main id="main">
+  <div class="loading">
+    <div class="loading-bar"></div>
+    <p style="margin-top:14px">Loading…</p>
+  </div>
+</main>
+
+<nav class="tab-bar">
+  <button class="tab active" data-tab="scanner" onclick="setTab('scanner')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+    </svg>
+    Scanner
+  </button>
+  <button class="tab" data-tab="portfolio" onclick="setTab('portfolio')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="2" y="3" width="20" height="14" rx="2"/>
+      <line x1="8" y1="21" x2="16" y2="21"/>
+      <line x1="12" y1="17" x2="12" y2="21"/>
+    </svg>
+    Portfolio
+  </button>
+</nav>
+
+<button class="fab" id="fab" onclick="openSheet()">+</button>
+
+<div class="overlay" id="overlay" onclick="closeSheet()"></div>
+<div class="sheet" id="sheet">
+  <div class="sheet-handle"></div>
+  <div class="sheet-title">Add Position</div>
+  <div class="form-group">
+    <label class="form-label">Ticker</label>
+    <input class="form-input" id="fTicker" type="text" placeholder="e.g. AAPL or VOD.L"
+           autocapitalize="characters" spellcheck="false">
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label class="form-label">Shares</label>
+      <input class="form-input" id="fShares" type="number" placeholder="10" min="0" step="any" inputmode="decimal">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Entry Price</label>
+      <input class="form-input" id="fEntry" type="number" placeholder="0.00" min="0" step="any" inputmode="decimal">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label class="form-label">Stop Loss <span style="opacity:.5">(opt)</span></label>
+      <input class="form-input" id="fStop" type="number" placeholder="0.00" min="0" step="any" inputmode="decimal">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Target <span style="opacity:.5">(opt)</span></label>
+      <input class="form-input" id="fTarget" type="number" placeholder="0.00" min="0" step="any" inputmode="decimal">
+    </div>
+  </div>
+  <div class="form-error" id="addError"></div>
+  <button class="btn-primary" id="addBtn" onclick="submitPosition()">Add Position</button>
 </div>
 
+<div class="toast" id="toast"></div>
+
 <script>
-const RESULTS_URL = "https://fovcuspro.github.io/sp500-swing-scanner/results.json";
+'use strict';
 
-function fmt(n, dp = 2) {
-  return Number(n).toFixed(dp);
+// ── Data sources (public, no auth needed) ──────────────────────────────────
+const SCANNER_URL   = 'https://fovcuspro.github.io/sp500-swing-scanner/results.json';
+const PORTFOLIO_URL = 'https://fovcuspro.github.io/sp500-swing-scanner/portfolio_results.json';
+
+// ── State ──────────────────────────────────────────────────────────────────
+let activeTab    = 'scanner';
+let scannerData  = null;
+let portfolioData = null;
+
+// ── Netlify function API (handles all writes, token lives on server) ────────
+async function api(action, params = {}) {
+  const r = await fetch('/api/github', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action, ...params })
+  });
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(data.error || `Error ${r.status}`);
+  return data;
 }
 
-function renderCard(setup, rank) {
-  const ind = setup.indicators || {};
-  const ez  = setup.entry_zone || {};
+// ── Tab management ─────────────────────────────────────────────────────────
+function setTab(t) {
+  activeTab = t;
+  document.querySelectorAll('.tab').forEach(el =>
+    el.classList.toggle('active', el.dataset.tab === t)
+  );
+  const fab = document.getElementById('fab');
+  fab.style.display = t === 'portfolio' ? 'flex' : 'none';
 
-  const card = document.createElement("div");
-  card.className = "card";
-  card.innerHTML = `
-    <div class="card-header">
-      <span class="rank">#${rank}</span>
-      <span class="ticker">${setup.ticker}</span>
-      <div class="badge-row">
-        <span class="score-pill">${fmt(setup.score, 3)}</span>
-        <span class="price-tag">$${fmt(setup.price)}</span>
-      </div>
-      <span class="chevron">▼</span>
-    </div>
-    <div class="card-body">
-      <div class="grid">
-        <div class="stat entry-zone">
-          <label>Entry zone</label>
-          <span>$${fmt(ez.low)} – $${fmt(ez.high)}</span>
-        </div>
-        <div class="stat">
-          <label>Stop loss</label>
-          <span class="red">$${fmt(setup.stop_loss)}</span>
-        </div>
-        <div class="stat">
-          <label>Target</label>
-          <span class="green">$${fmt(setup.target)}</span>
-        </div>
-        <div class="stat">
-          <label>Risk / Reward</label>
-          <span class="${setup.risk_reward >= 2 ? 'green' : ''}">${fmt(setup.risk_reward)}×</span>
-        </div>
-        <div class="stat">
-          <label>RSI (14)</label>
-          <span>${fmt(ind.rsi, 1)}</span>
-        </div>
-        <div class="stat">
-          <label>Pullback</label>
-          <span>${fmt(ind.pullback_pct, 1)}%</span>
-        </div>
-        <div class="stat">
-          <label>50 MA</label>
-          <span>$${fmt(ind.ma50)}</span>
-        </div>
-        <div class="stat">
-          <label>200 MA</label>
-          <span>$${fmt(ind.ma200)}</span>
-        </div>
-        <div class="stat">
-          <label>Volume ratio</label>
-          <span>${fmt(ind.volume_ratio)}×</span>
-        </div>
-        <div class="stat">
-          <label>Score breakdown</label>
-          <span>T${fmt(setup.score_breakdown.trend_strength, 1)} P${fmt(setup.score_breakdown.pullback_quality, 1)} V${fmt(setup.score_breakdown.volume_confirm, 1)}</span>
-        </div>
-      </div>
-      <div class="reasoning">${setup.reasoning}</div>
-    </div>
-  `;
-
-  card.addEventListener("click", () => card.classList.toggle("open"));
-  return card;
-}
-
-async function load() {
-  const container = document.getElementById("cards");
-  const meta      = document.getElementById("meta");
-
-  try {
-    const res  = await fetch(RESULTS_URL + "?_=" + Date.now());
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-
-    const setups = data.top_setups || [];
-    const date   = data.scan_date  || "—";
-    const found  = data.candidates_found ?? 0;
-    const time   = data.scan_time_utc ? ` · ${data.scan_time_utc} UTC` : "";
-
-    meta.textContent = `${date}${time} · ${found} candidates · ${setups.length} setups`;
-
-    container.innerHTML = "";
-
-    if (setups.length === 0) {
-      container.innerHTML = '<div id="empty">No setups passed all filters today.</div>';
-      return;
-    }
-
-    setups.forEach((s, i) => container.appendChild(renderCard(s, i + 1)));
-
-  } catch (err) {
-    container.innerHTML = `<div id="error">Failed to load data.<br><small>${err.message}</small></div>`;
-    meta.textContent    = "Error loading scan results";
+  const strip   = document.getElementById('summaryStrip');
+  const alert   = document.getElementById('alertBanner');
+  if (t === 'scanner') {
+    strip.classList.remove('visible');
+    alert.style.display = 'none';
+    document.getElementById('headerTitle').innerHTML = 'SP500 <span style="color:var(--gold2)">Scanner</span>';
+    if (scannerData) renderScanner(); else fetchScanner();
+  } else {
+    document.getElementById('headerTitle').textContent = 'Portfolio';
+    if (portfolioData) renderPortfolio(); else fetchPortfolio();
   }
 }
 
-function doRefresh() {
-  const btn = document.getElementById("refreshBtn");
-  btn.classList.add("spinning");
-  load().finally(() => btn.classList.remove("spinning"));
+// ── Data fetching ──────────────────────────────────────────────────────────
+async function fetchScanner() {
+  document.getElementById('main').innerHTML =
+    '<div class="loading"><div class="loading-bar"></div><p style="margin-top:14px">Loading scanner…</p></div>';
+  try {
+    const r = await fetch(SCANNER_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    scannerData = await r.json();
+    renderScanner();
+  } catch(e) {
+    showError('Could not load scan results.<br>' + e.message);
+  }
 }
 
-load();
+async function fetchPortfolio() {
+  document.getElementById('main').innerHTML =
+    '<div class="loading"><div class="loading-bar"></div><p style="margin-top:14px">Loading portfolio…</p></div>';
+  try {
+    const r = await fetch(PORTFOLIO_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    portfolioData = await r.json();
+    renderPortfolio();
+  } catch(e) {
+    showError('Could not load portfolio data.<br>' + e.message);
+  }
+}
+
+async function doRefresh() {
+  const btn = document.getElementById('refreshBtn');
+  btn.classList.add('spinning');
+  try {
+    if (activeTab === 'scanner') { scannerData = null;   await fetchScanner(); }
+    else                          { portfolioData = null; await fetchPortfolio(); }
+  } finally {
+    btn.classList.remove('spinning');
+  }
+}
+
+// ── Scanner rendering ──────────────────────────────────────────────────────
+function renderScanner() {
+  const main   = document.getElementById('main');
+  const setups = scannerData?.top_setups || [];
+  const date   = scannerData?.scan_date  || '—';
+  const found  = scannerData?.candidates_found ?? 0;
+  const time   = scannerData?.scan_time_utc ? ` · ${scannerData.scan_time_utc} UTC` : '';
+
+  if (!setups.length) {
+    main.innerHTML = `
+      <div class="scan-meta">${date}${time} · ${found} candidates</div>
+      <div class="empty-state">
+        <div class="empty-title">No setups today</div>
+        <div class="empty-sub">No stocks passed all filters. Try again tomorrow or tap ▶ to run a fresh scan.</div>
+      </div>`;
+    return;
+  }
+
+  main.innerHTML = `
+    <div class="scan-meta">${date}${time} · ${found} candidates · ${setups.length} setups</div>
+    <div class="cards">${setups.map((s, i) => scannerCard(s, i + 1)).join('')}</div>`;
+
+  main.querySelectorAll('.scanner-card').forEach(c =>
+    c.addEventListener('click', () => c.classList.toggle('open'))
+  );
+}
+
+function scannerCard(s, rank) {
+  const f   = (n, dp = 2) => Number(n).toFixed(dp);
+  const ind = s.indicators     || {};
+  const ez  = s.entry_zone     || {};
+  const sb  = s.score_breakdown || {};
+  return `
+  <div class="card scanner-card">
+    <div class="card-header">
+      <span class="rank">#${rank}</span>
+      <span class="ticker-name">${s.ticker}</span>
+      <div class="badge-row">
+        <span class="score-pill">${f(s.score, 3)}</span>
+        <span class="price-muted">$${f(s.price)}</span>
+      </div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="card-detail">
+      <div class="detail-grid">
+        <div class="full-width">
+          <div class="detail-label">Entry zone</div>
+          <div class="detail-value">$${f(ez.low)} – $${f(ez.high)}</div>
+        </div>
+        <div><div class="detail-label">Stop loss</div><div class="detail-value neg">$${f(s.stop_loss)}</div></div>
+        <div><div class="detail-label">Target</div><div class="detail-value pos">$${f(s.target)}</div></div>
+        <div><div class="detail-label">Risk / Reward</div><div class="detail-value ${s.risk_reward >= 2 ? 'pos' : ''}">${f(s.risk_reward)}×</div></div>
+        <div><div class="detail-label">RSI (14)</div><div class="detail-value">${f(ind.rsi, 1)}</div></div>
+        <div><div class="detail-label">Pullback</div><div class="detail-value">${f(ind.pullback_pct, 1)}%</div></div>
+        <div><div class="detail-label">50 MA</div><div class="detail-value">$${f(ind.ma50)}</div></div>
+        <div><div class="detail-label">200 MA</div><div class="detail-value">$${f(ind.ma200)}</div></div>
+        <div><div class="detail-label">Volume ratio</div><div class="detail-value">${f(ind.volume_ratio)}×</div></div>
+        <div><div class="detail-label">Score</div><div class="detail-value">T${f(sb.trend_strength,1)} P${f(sb.pullback_quality,1)} V${f(sb.volume_confirm,1)}</div></div>
+      </div>
+      <div class="reasoning">${s.reasoning || ''}</div>
+    </div>
+  </div>`;
+}
+
+// ── Portfolio rendering ────────────────────────────────────────────────────
+function renderPortfolio() {
+  const positions = portfolioData?.positions || [];
+  const summary   = portfolioData?.summary   || {};
+  const date      = portfolioData?.scan_date || '—';
+
+  // Summary strip
+  if (Object.keys(summary).length) {
+    updateSummary(summary);
+    document.getElementById('summaryStrip').classList.add('visible');
+    const alerts = summary.alert_tickers || [];
+    const banner = document.getElementById('alertBanner');
+    if (alerts.length) {
+      banner.style.display = 'flex';
+      document.getElementById('alertText').textContent = `Action required: ${alerts.join(', ')}`;
+    } else {
+      banner.style.display = 'none';
+    }
+  }
+
+  const main = document.getElementById('main');
+  if (!positions.length) {
+    main.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-title">No positions</div>
+        <div class="empty-sub">Tap + to add your first position, then tap ▶ to fetch prices.</div>
+      </div>`;
+    return;
+  }
+
+  const order = ['STOP_HIT','TARGET_HIT','UNDER_PRESSURE','RUNNING','ON_TRACK'];
+  const sorted = [...positions].sort((a, b) => {
+    const d = order.indexOf(a.signal) - order.indexOf(b.signal);
+    return d !== 0 ? d : Math.abs(b.unrealised_pnl) - Math.abs(a.unrealised_pnl);
+  });
+
+  main.innerHTML = `
+    <div class="scan-meta">As of ${date}</div>
+    <div class="cards">${sorted.map(portfolioCard).join('')}</div>`;
+
+  main.querySelectorAll('.portfolio-card').forEach(c =>
+    c.addEventListener('click', () => c.classList.toggle('open'))
+  );
+}
+
+function updateSummary(s) {
+  const pnl    = s.total_unrealised_pnl || 0;
+  const pnlPct = s.total_unrealised_pct || 0;
+  const dayPnl = s.day_pnl || 0;
+  const c = v => v > 0 ? 'pos' : v < 0 ? 'neg' : '';
+  const cur = v => {
+    const abs = Math.abs(v), sign = v >= 0 ? '+' : '-';
+    return abs >= 1000 ? `${sign}$${(abs/1000).toFixed(1)}k` : `${sign}$${abs.toFixed(0)}`;
+  };
+  const el = (id, cls, text) => {
+    const e = document.getElementById(id);
+    e.textContent = text; if (cls !== null) e.className = cls;
+  };
+  el('sumPnl',    `sum-value ${c(pnl)}`,    cur(pnl));
+  el('sumPnlPct', null,                     `${pnlPct >= 0 ? '+' : ''}${pnlPct.toFixed(2)}%`);
+  el('sumDay',    `sum-value ${c(dayPnl)}`, cur(dayPnl));
+  el('sumCount',  null,                     `${s.positions_count || 0} positions`);
+  el('sumVal',    'sum-value gold',          `$${(s.total_market_value || 0).toLocaleString('en-US', {maximumFractionDigits:0})}`);
+  el('sumCost',   null,                     `cost $${(s.total_cost_basis || 0).toLocaleString('en-US', {maximumFractionDigits:0})}`);
+}
+
+function portfolioCard(pos) {
+  const pnl    = pos.unrealised_pnl || 0;
+  const pnlPct = pos.unrealised_pct || 0;
+  const dayChg = pos.day_change_pct || 0;
+  const c   = v => v > 0 ? 'pos' : v < 0 ? 'neg' : 'neu';
+  const p   = v => `$${parseFloat(v).toFixed(2)}`;
+  const pct = v => `${v >= 0 ? '+' : ''}${parseFloat(v).toFixed(2)}%`;
+  const cur = v => {
+    const abs = Math.abs(v), sign = v >= 0 ? '+' : '-';
+    return abs >= 1000 ? `${sign}$${(abs/1000).toFixed(1)}k` : `${sign}$${abs.toFixed(0)}`;
+  };
+  const vol = v => v >= 1e6 ? `${(v/1e6).toFixed(1)}M` : v >= 1e3 ? `${(v/1e3).toFixed(0)}K` : String(v);
+
+  let progressHTML = '';
+  if (pos.stop_loss && pos.target) {
+    const total  = pos.target - pos.stop_loss;
+    const filled = total > 0
+      ? Math.min(100, Math.max(0, ((pos.current_price - pos.stop_loss) / total) * 100))
+      : 0;
+    progressHTML = `
+      <div class="progress-section">
+        <div class="progress-label">
+          <span>Stop ${p(pos.stop_loss)}</span>
+          <span>Entry ${p(pos.entry_price)}</span>
+          <span>Target ${p(pos.target)}</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" style="width:${Math.max(2,filled)}%"></div></div>
+        <div class="progress-labels">
+          <span>${pct(pos.pct_to_stop || 0)} from stop</span>
+          <span>${pct(pos.pct_to_target || 0)} to target</span>
+        </div>
+      </div>`;
+  }
+
+  return `
+  <div class="card portfolio-card signal-${pos.signal}">
+    <div class="card-main">
+      <div class="signal-dot ${pos.signal}"></div>
+      <div>
+        <div class="ticker-name">${pos.ticker}</div>
+        <div class="card-meta">${pos.shares} shares · entry ${p(pos.entry_price)}</div>
+      </div>
+      <div style="text-align:right;margin-left:auto;flex-shrink:0">
+        <div class="${c(pnl)}" style="font-size:15px;font-weight:500">${p(pos.current_price)}</div>
+        <div class="${c(dayChg)}" style="font-size:11px;margin-top:2px">${pct(dayChg)} today</div>
+      </div>
+    </div>
+    <div class="card-detail">
+      <div class="detail-grid">
+        <div><div class="detail-label">Unrealised P&L</div><div class="detail-value ${c(pnl)}">${cur(pnl)} (${pct(pnlPct)})</div></div>
+        <div><div class="detail-label">Market Value</div><div class="detail-value">$${(pos.market_value||0).toFixed(2)}</div></div>
+        <div><div class="detail-label">Day Change</div><div class="detail-value ${c(dayChg)}">${pct(dayChg)}</div></div>
+        <div><div class="detail-label">Volume / Avg</div><div class="detail-value">${vol(pos.volume)} / ${vol(pos.avg_volume)}</div></div>
+        <div><div class="detail-label">Stop Loss</div><div class="detail-value neg">${pos.stop_loss ? p(pos.stop_loss) : '—'}</div></div>
+        <div><div class="detail-label">Target</div><div class="detail-value pos">${pos.target ? p(pos.target) : '—'}</div></div>
+        <div><div class="detail-label">Cost Basis</div><div class="detail-value">$${(pos.cost_basis||0).toFixed(2)}</div></div>
+        <div><div class="detail-label">Risk / Reward</div><div class="detail-value">${pos.risk_reward ? pos.risk_reward + ':1' : '—'}</div></div>
+      </div>
+      ${progressHTML}
+      <div class="signal-pill pill-${pos.signal}">${pos.signal.replace(/_/g,' ')}</div>
+      <button class="btn-remove" onclick="event.stopPropagation(); removePosition('${pos.ticker}')">Remove position</button>
+    </div>
+  </div>`;
+}
+
+// ── Run scan ───────────────────────────────────────────────────────────────
+async function runScan() {
+  const btn = document.getElementById('runBtn');
+  btn.disabled = true;
+  try {
+    await api('run');
+    showToast('Scan started — refresh in ~2 min');
+  } catch(e) {
+    showToast(e.message, true);
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// ── Add position sheet ─────────────────────────────────────────────────────
+function openSheet() {
+  document.getElementById('addError').textContent = '';
+  document.getElementById('overlay').classList.add('open');
+  document.getElementById('sheet').classList.add('open');
+  setTimeout(() => document.getElementById('fTicker').focus(), 320);
+}
+function closeSheet() {
+  document.getElementById('overlay').classList.remove('open');
+  document.getElementById('sheet').classList.remove('open');
+}
+
+async function submitPosition() {
+  const ticker = document.getElementById('fTicker').value.trim().toUpperCase();
+  const shares = parseFloat(document.getElementById('fShares').value);
+  const entry  = parseFloat(document.getElementById('fEntry').value);
+  const stop   = parseFloat(document.getElementById('fStop').value)   || null;
+  const target = parseFloat(document.getElementById('fTarget').value) || null;
+  const errEl  = document.getElementById('addError');
+  const btn    = document.getElementById('addBtn');
+
+  errEl.textContent = '';
+  if (!ticker)                { errEl.textContent = 'Ticker is required.'; return; }
+  if (!shares || shares <= 0) { errEl.textContent = 'Shares must be > 0.'; return; }
+  if (!entry  || entry  <= 0) { errEl.textContent = 'Entry price must be > 0.'; return; }
+
+  btn.disabled = true; btn.textContent = 'Saving…';
+  try {
+    const { positions, sha } = await api('get_portfolio');
+    if (positions.some(p => p.ticker.toUpperCase() === ticker)) {
+      errEl.textContent = `${ticker} is already in your portfolio.`; return;
+    }
+    const pos = { ticker, shares, entry_price: entry };
+    if (stop)   pos.stop_loss = stop;
+    if (target) pos.target    = target;
+    positions.push(pos);
+    await api('save_portfolio', { positions, sha, message: `portfolio: add ${ticker}` });
+    ['fTicker','fShares','fEntry','fStop','fTarget'].forEach(id =>
+      document.getElementById(id).value = '');
+    closeSheet();
+    showToast(`${ticker} added — tap ▶ to fetch prices`);
+  } catch(e) {
+    errEl.textContent = e.message;
+  } finally {
+    btn.disabled = false; btn.textContent = 'Add Position';
+  }
+}
+
+async function removePosition(ticker) {
+  if (!confirm(`Remove ${ticker} from your portfolio?`)) return;
+  try {
+    const { positions, sha } = await api('get_portfolio');
+    const updated = positions.filter(p => p.ticker.toUpperCase() !== ticker.toUpperCase());
+    await api('save_portfolio', { positions: updated, sha, message: `portfolio: remove ${ticker}` });
+    showToast(`${ticker} removed`);
+    portfolioData = null;
+    await fetchPortfolio();
+  } catch(e) {
+    showToast(e.message, true);
+  }
+}
+
+// ── Utilities ──────────────────────────────────────────────────────────────
+let _toastTimer;
+function showToast(msg, isError = false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className   = 'toast show' + (isError ? ' toast-error' : '');
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => t.classList.remove('show'), 4000);
+}
+function showError(msg) {
+  document.getElementById('main').innerHTML =
+    `<div class="error-state"><strong>Could not load data</strong><br><br>${msg}</div>`;
+}
+
+// ── Boot ───────────────────────────────────────────────────────────────────
+setTab('scanner');
 </script>
 </body>
 </html>
