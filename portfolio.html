@@ -228,6 +228,28 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  /* ── Toast ── */
+  .toast {
+    position: fixed;
+    bottom: calc(90px + env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%) translateY(16px);
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    padding: 10px 18px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 500;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .toast-error { color: var(--red); border-color: rgba(224,85,85,0.3); }
+
   .btn-remove {
     display: block;
     width: 100%;
@@ -691,6 +713,9 @@
     </div>
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="scan-time" id="scanTime">—</div>
+      <button class="refresh-btn" id="runBtn" onclick="runWorkflows()" title="Run scan now">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>
+      </button>
       <button class="refresh-btn" id="refreshBtn" onclick="doRefresh()" title="Refresh">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
       </button>
@@ -1043,6 +1068,47 @@ async function removePosition(ticker) {
   }
 }
 
+async function triggerWorkflow(workflow) {
+  const res = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${workflow}/dispatches`, {
+    method: 'POST',
+    headers: {
+      Authorization: `token ${getToken()}`,
+      Accept: 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ ref: 'main' })
+  });
+  if (res.status !== 204) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || `HTTP ${res.status}`);
+  }
+}
+
+async function runWorkflows() {
+  if (!getToken()) { openSheet(); return; }
+  const btn = document.getElementById('runBtn');
+  btn.disabled = true;
+  try {
+    await Promise.all([
+      triggerWorkflow('daily_scan.yml'),
+      triggerWorkflow('daily_portfolio.yml')
+    ]);
+    showToast('Scan started — refresh in ~2 min');
+  } catch(e) {
+    showToast(e.message, true);
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function showToast(msg, isError = false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (isError ? ' toast-error' : '');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 3500);
+}
+
 function doRefresh() {
   const btn = document.getElementById('refreshBtn');
   btn.classList.add('spinning');
@@ -1051,6 +1117,8 @@ function doRefresh() {
 
 load();
 </script>
+
+<div class="toast" id="toast"></div>
 
 <button class="fab" onclick="openSheet()">+</button>
 
