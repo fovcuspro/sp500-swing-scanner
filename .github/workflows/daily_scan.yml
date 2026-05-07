@@ -45,7 +45,10 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          cp results.json /tmp/results_new.json
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/results_new.json results.json
           git add results.json
           git diff --staged --quiet || git commit -m "chore: scan results $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git pull --rebase origin main
           git push
