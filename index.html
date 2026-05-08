@@ -941,10 +941,80 @@ async function fetchPortfolio() {
     const r = await fetch(PORTFOLIO_URL + '?t=' + Date.now());
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     portfolioData = await r.json();
+
+    // Fetch raw portfolio.json to surface positions not yet processed by workflow
+    try {
+      const { positions: raw } = await api('get_portfolio');
+      const shown = new Set((portfolioData.positions || []).map(p => p.ticker.toUpperCase()));
+      for (const h of raw) {
+        if (!shown.has(h.ticker.toUpperCase())) {
+          injectPendingPosition({
+            ticker:      h.ticker.toUpperCase(),
+            shares:      h.shares,
+            entry_price: h.entry_price,
+            stop_loss:   h.stop_loss  || null,
+            target:      h.target     || null,
+          });
+        }
+      }
+    } catch(_) { /* silent — raw fetch failing doesn't break the portfolio view */ }
+
     renderPortfolio();
   } catch(e) {
     showError('Could not load portfolio data.<br>' + e.message);
   }
+}
+
+// Inject a position into portfolioData as a pending placeholder (no live price yet).
+// Returns true if the position was newly added, false if it was already displayed.
+function injectPendingPosition({ ticker, shares, entry_price, stop_loss, target }) {
+  if (!portfolioData) portfolioData = { scan_date: '', summary: {}, positions: [] };
+
+  const alreadyShown = portfolioData.positions.some(
+    p => p.ticker.toUpperCase() === ticker.toUpperCase()
+  );
+  if (alreadyShown) return false;
+
+  const mktVal = shares * entry_price;
+  portfolioData.positions.push({
+    ticker,
+    company_name:   ticker,
+    shares,
+    entry_price,
+    current_price:  entry_price,
+    stop_loss:      stop_loss || null,
+    target:         target    || null,
+    cost_basis:     mktVal,
+    market_value:   mktVal,
+    unrealised_pnl: 0,
+    unrealised_pct: 0,
+    day_change:     0,
+    day_change_pct: 0,
+    volume:         0,
+    avg_volume:     0,
+    pct_to_stop:    null,
+    pct_to_target:  null,
+    risk_reward:    null,
+    signal:         'ON_TRACK',
+    _pending:       true,
+  });
+
+  // Recalculate summary totals
+  const allPos     = portfolioData.positions;
+  const totalCost  = allPos.reduce((s, p) => s + (p.cost_basis  || 0), 0);
+  const totalVal   = allPos.reduce((s, p) => s + (p.market_value || 0), 0);
+  const totalPnl   = totalVal - totalCost;
+  portfolioData.summary = {
+    ...portfolioData.summary,
+    total_cost_basis:      totalCost,
+    total_market_value:    totalVal,
+    total_unrealised_pnl:  totalPnl,
+    total_unrealised_pct:  totalCost ? (totalPnl / totalCost * 100) : 0,
+    positions_count:       allPos.length,
+    day_pnl:               portfolioData.summary?.day_pnl || 0,
+    alert_tickers:         portfolioData.summary?.alert_tickers || [],
+  };
+  return true;
 }
 
 async function doRefresh() {
@@ -1176,17 +1246,22 @@ function portfolioItem(pos, totalValue) {
       </div>`;
   }
 
+  const pendingBadge = pos._pending
+    ? `<div style="font-size:9px;color:var(--amber);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px">Pending prices</div>`
+    : '';
+
   return `
   <div class="port-item signal-${pos.signal}">
     <div class="port-item-main">
-      <div class="port-avatar" style="background:${color}">${initials}</div>
+      <div class="port-avatar" style="background:${color};${pos._pending ? 'opacity:0.6' : ''}">${initials}</div>
       <div class="port-item-info">
         <div class="port-item-name">${name}</div>
         <div class="port-item-sub">${pos.ticker} · ${alloc}%</div>
+        ${pendingBadge}
       </div>
       <div class="port-item-values">
-        <div class="port-item-value">${p(pos.current_price)}</div>
-        <div class="port-item-pnl ${cc(dayChg)}">${pct(dayChg)} today</div>
+        <div class="port-item-value">${pos._pending ? '—' : p(pos.current_price)}</div>
+        <div class="port-item-pnl ${pos._pending ? 'neu' : cc(dayChg)}">${pos._pending ? 'tap ▶ to load' : pct(dayChg) + ' today'}</div>
       </div>
     </div>
     <div class="port-item-detail">
@@ -1439,7 +1514,19 @@ async function submitPosition() {
   try {
     const { positions, sha } = await api('get_portfolio');
     if (positions.some(p => p.ticker.toUpperCase() === ticker)) {
-      errEl.textContent = `${ticker} is already in your portfolio.`; return;
+      // Already in portfolio.json — show it in the list if it's missing from the display
+      const shown = injectPendingPosition({ ticker, shares, entry_price: entry,
+        stop_loss: stop || null, target: target || null });
+      if (shown) {
+        ['fTicker','fShares','fEntry','fStop','fTarget'].forEach(id =>
+          document.getElementById(id).value = '');
+        closeSheet();
+        if (activeTab === 'portfolio') renderPortfolio();
+        showToast(`${ticker} was already saved — showing now`);
+      } else {
+        errEl.textContent = `${ticker} is already in your portfolio.`;
+      }
+      return;
     }
     const pos = { ticker, shares, entry_price: entry };
     if (stop)   pos.stop_loss = stop;
@@ -1448,7 +1535,12 @@ async function submitPosition() {
     await api('save_portfolio', { positions, sha, message: `portfolio: add ${ticker}` });
     ['fTicker','fShares','fEntry','fStop','fTarget'].forEach(id =>
       document.getElementById(id).value = '');
+
+    injectPendingPosition({ ticker, shares, entry_price: entry,
+      stop_loss: stop || null, target: target || null });
+
     closeSheet();
+    if (activeTab === 'portfolio') renderPortfolio();
     showToast(`${ticker} added — tap ▶ to fetch prices`);
   } catch(e) {
     errEl.textContent = e.message;
