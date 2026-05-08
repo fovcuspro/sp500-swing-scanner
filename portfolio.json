@@ -1,10 +1,5 @@
 [
   {
-    "ticker": "ONDS",
-    "shares": 10,
-    "entry_price": 9.56
-  },
-  {
     "ticker": "AMZN",
     "shares": 2,
     "entry_price": 206.75
