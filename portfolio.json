@@ -13,5 +13,10 @@
     "ticker": "IAG.L",
     "shares": 3.37,
     "entry_price": 3.45
+  },
+  {
+    "ticker": "ONDS",
+    "shares": 20,
+    "entry_price": 9.24
   }
 ]
