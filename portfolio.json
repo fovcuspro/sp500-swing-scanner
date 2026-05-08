@@ -28,5 +28,10 @@
     "ticker": "TRGP",
     "shares": 1,
     "entry_price": 251.48
+  },
+  {
+    "ticker": "ETN",
+    "shares": 1,
+    "entry_price": 408.87
   }
 ]
