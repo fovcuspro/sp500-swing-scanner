@@ -1048,8 +1048,8 @@ function portfolioItem(pos, totalValue) {
         <div class="port-item-sub">${pos.ticker} · ${alloc}%</div>
       </div>
       <div class="port-item-values">
-        <div class="port-item-value">$${mktVal.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</div>
-        <div class="port-item-pnl ${cc(pnl)}">${cur(pnl)} (${pct(pnlPct)})</div>
+        <div class="port-item-value">${p(pos.current_price)}</div>
+        <div class="port-item-pnl ${cc(dayChg)}">${pct(dayChg)} today</div>
       </div>
     </div>
     <div class="port-item-detail">
