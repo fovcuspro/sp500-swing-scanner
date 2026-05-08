@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-05-08",
-  "scan_time_utc": "11:18:26",
+  "scan_time_utc": "12:23:41",
   "universe": "S&P 500 (503 tickers)",
   "candidates_found": 2,
   "strategy": {
@@ -23,6 +23,7 @@
   "top_setups": [
     {
       "ticker": "ALL",
+      "company_name": "Allstate",
       "score": 4.748,
       "score_breakdown": {
         "trend_strength": 1.39,
@@ -50,6 +51,7 @@
     },
     {
       "ticker": "TRGP",
+      "company_name": "Targa Resources",
       "score": 4.498,
       "score_breakdown": {
         "trend_strength": 6.1,
