@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-08T00:00:00Z",
-  "total_trades": 0,
-  "open_trades": 0,
+  "generated_at": "2026-05-08T13:28:22Z",
+  "total_trades": 2,
+  "open_trades": 2,
   "closed_trades": 0,
   "win_rate": 0.0,
   "avg_return_pct": 0.0,
@@ -10,8 +10,71 @@
   "expectancy": 0.0,
   "best_trade": null,
   "worst_trade": null,
-  "by_score_range": {},
-  "by_rsi_range": {},
-  "by_pullback_range": {},
+  "by_score_range": {
+    "5\u20136": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    },
+    "6\u20137": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    },
+    "7\u20138": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    },
+    "8\u20139": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    },
+    "9\u201310": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    }
+  },
+  "by_rsi_range": {
+    "40\u201345": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    },
+    "45\u201350": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    },
+    "50\u201355": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    },
+    "55\u201360": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    }
+  },
+  "by_pullback_range": {
+    "3\u20135%": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    },
+    "5\u20136%": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    },
+    "6\u20138%": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    }
+  },
   "recent_trades": []
 }
