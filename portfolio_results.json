@@ -1,13 +1,15 @@
 {
-  "scan_date": "2026-05-08 12:22 UTC",
+  "scan_date": "2026-05-08 13:27 UTC",
   "summary": {
-    "total_cost_basis": 575.13,
-    "total_market_value": 715.55,
-    "total_unrealised_pnl": 140.42,
-    "total_unrealised_pct": 24.42,
-    "day_pnl": -10.84,
-    "positions_count": 3,
-    "alert_tickers": []
+    "total_cost_basis": 759.93,
+    "total_market_value": 893.28,
+    "total_unrealised_pnl": 133.35,
+    "total_unrealised_pct": 17.55,
+    "day_pnl": -19.91,
+    "positions_count": 4,
+    "alert_tickers": [
+      "ONDS"
+    ]
   },
   "positions": [
     {
@@ -59,22 +61,44 @@
       "company_name": "INTERNATIONAL CONSOLIDATED AIRL",
       "shares": 3.37,
       "entry_price": 3.45,
-      "current_price": 3.92,
+      "current_price": 3.9,
       "stop_loss": null,
       "target": null,
       "notes": "",
       "cost_basis": 11.63,
-      "market_value": 13.21,
-      "unrealised_pnl": 1.58,
-      "unrealised_pct": 13.62,
-      "day_change": -0.06,
-      "day_change_pct": -1.48,
-      "volume": 10445155,
-      "avg_volume": 20415432,
+      "market_value": 13.14,
+      "unrealised_pnl": 1.52,
+      "unrealised_pct": 13.04,
+      "day_change": -0.08,
+      "day_change_pct": -2.01,
+      "volume": 10973619,
+      "avg_volume": 20521125,
       "pct_to_stop": null,
       "pct_to_target": null,
       "risk_reward": null,
       "signal": "RUNNING"
+    },
+    {
+      "ticker": "ONDS",
+      "company_name": "Ondas Inc",
+      "shares": 20.0,
+      "entry_price": 9.24,
+      "current_price": 8.89,
+      "stop_loss": null,
+      "target": null,
+      "notes": "",
+      "cost_basis": 184.8,
+      "market_value": 177.8,
+      "unrealised_pnl": -7.0,
+      "unrealised_pct": -3.79,
+      "day_change": -0.45,
+      "day_change_pct": -4.82,
+      "volume": 44927700,
+      "avg_volume": 49927020,
+      "pct_to_stop": null,
+      "pct_to_target": null,
+      "risk_reward": null,
+      "signal": "UNDER_PRESSURE"
     }
   ]
 }
