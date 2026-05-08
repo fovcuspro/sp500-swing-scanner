@@ -56,17 +56,20 @@ LOOKBACK_DAYS = 300    # calendar days of history to fetch
 # DATA FETCHING
 # ─────────────────────────────────────────────────────────────────────────────
 
-def get_sp500_tickers() -> list[str]:
-    """Scrape S&P 500 tickers from Wikipedia."""
+def get_sp500_tickers() -> tuple[list[str], dict[str, str]]:
+    """Scrape S&P 500 tickers and company names from Wikipedia."""
     url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urllib.request.urlopen(req) as resp:
             html = resp.read().decode("utf-8")
         tables = pd.read_html(io.StringIO(html))
-        tickers = tables[0]["Symbol"].str.replace(".", "-", regex=False).tolist()
+        df = tables[0]
+        raw_symbols = df["Symbol"].tolist()
+        tickers = [s.replace(".", "-") for s in raw_symbols]
+        names = {s.replace(".", "-"): n for s, n in zip(raw_symbols, df["Security"].tolist())}
         log.info(f"Fetched {len(tickers)} S&P 500 tickers from Wikipedia.")
-        return tickers
+        return tickers, names
     except Exception as e:
         log.error(f"Failed to fetch S&P 500 tickers: {e}")
         raise
@@ -245,7 +248,7 @@ def total_score(row: pd.Series) -> float:
 # OUTPUT FORMATTING
 # ─────────────────────────────────────────────────────────────────────────────
 
-def build_result(ticker: str, df: pd.DataFrame) -> dict:
+def build_result(ticker: str, df: pd.DataFrame, company_name: str = "") -> dict:
     row   = df.iloc[-1]
     price = round(float(row["Close"]), 2)
     high  = round(float(row["high20"]), 2)
@@ -283,6 +286,7 @@ def build_result(ticker: str, df: pd.DataFrame) -> dict:
 
     return {
         "ticker":            ticker,
+        "company_name":      company_name or ticker,
         "score":             score,
         "score_breakdown": {
             "trend_strength":    t_score,
@@ -317,7 +321,7 @@ def run():
     log.info(f"Scan date: {date.today().isoformat()}")
     log.info("═" * 60)
 
-    tickers  = get_sp500_tickers()
+    tickers, names = get_sp500_tickers()
     ohlcv    = fetch_ohlcv(tickers)
 
     candidates = []
@@ -333,7 +337,7 @@ def run():
             if not passes_filters(last):
                 continue
 
-            result = build_result(ticker, enriched)
+            result = build_result(ticker, enriched, company_name=names.get(ticker, ""))
             candidates.append(result)
 
         except Exception as e:

@@ -37,6 +37,11 @@ def fetch_quote(ticker: str) -> dict | None:
         if hist.empty:
             log.warning(f"No data for {ticker}")
             return None
+        try:
+            full_info    = tk.info
+            company_name = full_info.get("shortName") or full_info.get("longName") or ticker
+        except Exception:
+            company_name = ticker
         info = tk.fast_info
         # LSE tickers (e.g. IAG.L) are quoted in pence — convert to pounds
         scale       = 0.01 if ticker.upper().endswith(".L") else 1.0
@@ -49,6 +54,7 @@ def fetch_quote(ticker: str) -> dict | None:
         week_high   = float(hist["High"].max()) * scale
         week_low    = float(hist["Low"].min()) * scale
         return {
+            "company_name":    company_name,
             "last_close":      round(last_close, 2),
             "prev_close":      round(prev_close, 2),
             "day_change":      round(day_change, 2),
@@ -101,6 +107,7 @@ def analyse_position(holding: dict, quote: dict) -> dict:
 
     return {
         "ticker":          ticker,
+        "company_name":    quote.get("company_name", ticker),
         "shares":          shares,
         "entry_price":     round(entry_price, 2),
         "current_price":   current,

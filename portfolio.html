@@ -1062,7 +1062,12 @@ async function removePosition(ticker) {
     const { positions, sha } = await fetchPortfolio();
     const updated = positions.filter(p => p.ticker.toUpperCase() !== ticker.toUpperCase());
     await pushPortfolio(updated, sha, `portfolio: remove ${ticker}`);
-    load();
+    for (const card of document.querySelectorAll('.card')) {
+      if (card.querySelector('.card-ticker')?.textContent.trim() === ticker) {
+        card.remove(); break;
+      }
+    }
+    showToast(`${ticker} removed`);
   } catch(e) {
     alert(`Error: ${e.message}`);
   }

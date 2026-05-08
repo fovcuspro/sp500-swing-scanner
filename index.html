@@ -40,7 +40,7 @@
       overflow: hidden;
     }
 
-    /* ── Header ── */
+    /* ── App header ── */
     .app-header {
       background: rgba(10,10,10,0.96);
       backdrop-filter: blur(20px);
@@ -81,22 +81,6 @@
     .icon-btn:disabled { opacity: 0.4; }
     .icon-btn svg { width: 15px; height: 15px; }
     .icon-btn.spinning svg { animation: spin 0.8s linear infinite; }
-
-    /* ── Summary strip (portfolio tab) ── */
-    .summary-strip {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 12px 16px;
-      display: none;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-    .summary-strip.visible { display: grid; }
-    .sum-stat { display: flex; flex-direction: column; gap: 3px; }
-    .sum-stat + .sum-stat { padding-left: 14px; border-left: 1px solid var(--border); margin-left: 14px; }
-    .sum-label { font-size: 9px; color: var(--sub); text-transform: uppercase; letter-spacing: 0.1em; }
-    .sum-value { font-size: 16px; font-weight: 500; letter-spacing: -0.02em; }
-    .sum-value.gold { color: var(--gold2); }
-    .sum-sub   { font-size: 10px; color: var(--sub); }
 
     /* ── Alert banner ── */
     .alert-banner {
@@ -156,34 +140,176 @@
     .tab.active { color: var(--gold); border-top-color: var(--gold); }
     .tab svg { width: 15px; height: 15px; }
 
-    /* ── Cards shared ── */
-    .cards { padding: 8px 12px; display: flex; flex-direction: column; gap: 8px; }
+    /* ── Portfolio Hero ── */
+    .port-hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 20px 20px;
+    }
+    .port-hero-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--sub);
+      margin-bottom: 6px;
+    }
+    .port-hero-value {
+      font-family: 'Instrument Serif', serif;
+      font-size: 42px;
+      font-style: italic;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .port-hero-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+    .port-hero-sub-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--sub);
+    }
+    .port-hero-pnl {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .port-hero-pnl.pos { color: var(--green); }
+    .port-hero-pnl.neg { color: var(--red); }
+    .port-hero-cost {
+      font-size: 13px;
+      color: var(--sub);
+    }
 
-    .card {
+    /* ── Investments list header ── */
+    .port-list-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 16px 8px;
+    }
+    .port-list-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .port-list-title span {
+      color: var(--sub);
+      font-size: 13px;
+      font-weight: 400;
+    }
+    .sort-btn {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--sub);
+      font-size: 14px;
+      padding: 4px 8px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .sort-btn:active { color: var(--gold); border-color: var(--gold); }
+
+    /* ── Portfolio list ── */
+    .port-list {
+      padding: 0 12px 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* ── Portfolio item ── */
+    .port-item {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 12px;
+      margin-bottom: 8px;
       overflow: hidden;
       cursor: pointer;
-      transition: border-color 0.15s;
+      transition: border-color 0.2s;
     }
-    .card:active { border-color: var(--gold); }
+    .port-item:active { border-color: var(--gold); }
+    .port-item.signal-STOP_HIT    { border-color: rgba(224,85,85,0.5); }
+    .port-item.signal-TARGET_HIT  { border-color: rgba(76,175,125,0.5); }
+    .port-item.signal-UNDER_PRESSURE { border-color: rgba(232,162,69,0.4); }
+    .port-item.signal-RUNNING     { border-left: 3px solid var(--green); }
 
-    .card-detail {
+    .port-item-main {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+    }
+
+    /* Avatar circle */
+    .port-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      flex-shrink: 0;
+    }
+
+    .port-item-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .port-item-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .port-item-sub {
+      font-size: 11px;
+      color: var(--sub);
+      margin-top: 2px;
+    }
+
+    .port-item-values {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .port-item-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .port-item-pnl {
+      font-size: 11px;
+      margin-top: 2px;
+    }
+    .port-item-pnl.pos { color: var(--green); }
+    .port-item-pnl.neg { color: var(--red); }
+    .port-item-pnl.neu { color: var(--sub); }
+
+    /* Expanded detail */
+    .port-item-detail {
       display: none;
       border-top: 1px solid var(--border);
-      padding: 12px 14px;
+      padding: 14px 16px;
       background: rgba(255,255,255,0.015);
     }
-    .card.open .card-detail { display: block; }
+    .port-item.open .port-item-detail { display: block; }
 
     .detail-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px 14px;
+      gap: 10px 16px;
     }
-    .full-width { grid-column: 1 / -1; }
-
     .detail-label {
       font-size: 9px;
       color: var(--sub);
@@ -196,58 +322,6 @@
     .neg { color: var(--red); }
     .neu { color: var(--sub); }
 
-    /* ── Scanner cards ── */
-    .scanner-card .card-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 13px 14px;
-    }
-    .rank { font-size: 11px; color: var(--muted); min-width: 20px; }
-    .ticker-name { font-size: 17px; font-weight: 500; letter-spacing: 0.04em; }
-    .badge-row { display: flex; align-items: center; gap: 8px; flex: 1; }
-    .score-pill {
-      background: rgba(201,168,76,0.15);
-      color: var(--gold);
-      border: 1px solid rgba(201,168,76,0.3);
-      border-radius: 20px;
-      padding: 3px 10px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-    .price-muted { color: var(--sub); font-size: 13px; }
-    .chevron { color: var(--muted); font-size: 12px; transition: transform 0.2s; flex-shrink: 0; }
-    .card.open .chevron { transform: rotate(180deg); }
-    .reasoning {
-      margin-top: 12px;
-      font-size: 12px;
-      color: var(--sub);
-      line-height: 1.55;
-      border-top: 1px solid var(--border);
-      padding-top: 10px;
-    }
-
-    /* ── Portfolio cards ── */
-    .portfolio-card.signal-STOP_HIT       { border-color: rgba(224,85,85,0.5); }
-    .portfolio-card.signal-TARGET_HIT     { border-color: rgba(76,175,125,0.5); }
-    .portfolio-card.signal-UNDER_PRESSURE { border-color: rgba(232,162,69,0.4); }
-    .portfolio-card.signal-RUNNING        { border-left: 3px solid var(--green); }
-
-    .card-main {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 13px 14px;
-    }
-    .signal-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .signal-dot.STOP_HIT       { background: var(--red);   box-shadow: 0 0 6px var(--red); }
-    .signal-dot.TARGET_HIT     { background: var(--green); box-shadow: 0 0 6px var(--green); }
-    .signal-dot.UNDER_PRESSURE { background: var(--amber); }
-    .signal-dot.RUNNING        { background: var(--green); }
-    .signal-dot.ON_TRACK       { background: var(--muted); }
-
-    .card-meta { font-size: 10px; color: var(--sub); margin-top: 2px; }
-
     .progress-section { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
     .progress-label {
       display: flex; justify-content: space-between;
@@ -255,6 +329,7 @@
     }
     .progress-track { height: 4px; background: var(--muted); border-radius: 2px; margin-bottom: 6px; }
     .progress-fill  { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--gold), var(--green)); transition: width 0.4s; }
+    .progress-fill.neg-fill { background: linear-gradient(90deg, var(--red), var(--amber)); }
     .progress-labels { display: flex; justify-content: space-between; font-size: 9px; color: var(--sub); }
 
     .signal-pill {
@@ -268,16 +343,125 @@
     .pill-RUNNING        { background: rgba(76,175,125,0.1);  color: var(--green); border: 1px solid rgba(76,175,125,0.2); }
     .pill-ON_TRACK       { background: rgba(138,132,120,0.1); color: var(--sub);   border: 1px solid var(--border); }
 
+    .detail-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .btn-edit {
+      padding: 10px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 8px;
+      color: var(--gold);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
     .btn-remove {
-      display: block; width: 100%; margin-top: 12px; padding: 10px;
-      background: rgba(224,85,85,0.08); border: 1px solid rgba(224,85,85,0.2);
-      border-radius: 8px; color: var(--red); font-family: 'DM Mono', monospace;
-      font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
-      cursor: pointer; -webkit-tap-highlight-color: transparent;
+      padding: 10px;
+      background: rgba(224,85,85,0.08);
+      border: 1px solid rgba(224,85,85,0.2);
+      border-radius: 8px;
+      color: var(--red);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    /* ── Meta line ── */
-    .scan-meta { font-size: 10px; color: var(--sub); padding: 10px 14px 4px; letter-spacing: 0.04em; }
+    /* ── Scanner cards ── */
+    .cards { padding: 8px 12px 24px; display: flex; flex-direction: column; gap: 8px; }
+
+    .scanner-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .scanner-card:active { border-color: var(--gold); }
+
+    .scanner-card .card-detail {
+      display: none;
+      border-top: 1px solid var(--border);
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.015);
+    }
+    .scanner-card.open .card-detail { display: block; }
+
+    .scanner-card .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 14px;
+    }
+    .rank { font-size: 11px; color: var(--muted); min-width: 20px; }
+
+    .scanner-ticker-block { flex: 1; min-width: 0; }
+    .scanner-ticker {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+    .scanner-name {
+      font-size: 10px;
+      color: var(--sub);
+      margin-top: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .scanner-right { text-align: right; flex-shrink: 0; }
+    .score-display {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gold);
+    }
+    .score-display span {
+      font-size: 11px;
+      color: var(--sub);
+      font-weight: 400;
+    }
+    .scanner-price {
+      font-size: 11px;
+      color: var(--sub);
+      margin-top: 2px;
+    }
+    .chevron { color: var(--muted); font-size: 12px; transition: transform 0.2s; flex-shrink: 0; margin-left: 6px; }
+    .scanner-card.open .chevron { transform: rotate(180deg); }
+
+    .score-breakdown {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .score-pill {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(201,168,76,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.25);
+    }
+    .reasoning {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--sub);
+      line-height: 1.6;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
 
     /* ── FAB ── */
     .fab {
@@ -396,6 +580,7 @@
       background: rgba(224,85,85,0.06); border: 1px solid rgba(224,85,85,0.2);
       border-radius: 8px; color: var(--red); font-size: 12px; line-height: 1.6;
     }
+    .scan-meta { font-size: 10px; color: var(--sub); padding: 10px 14px 4px; letter-spacing: 0.04em; }
 
     /* ── Animations ── */
     @keyframes spin  { to { transform: rotate(360deg); } }
@@ -403,16 +588,23 @@
     @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.4; transform:scale(.8); } }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
-    .card { opacity: 0; transform: translateY(8px); animation: fadeUp 0.3s ease forwards; }
-    .cards .card:nth-child(1) { animation-delay: 0.03s; }
-    .cards .card:nth-child(2) { animation-delay: 0.06s; }
-    .cards .card:nth-child(3) { animation-delay: 0.09s; }
-    .cards .card:nth-child(4) { animation-delay: 0.12s; }
-    .cards .card:nth-child(5) { animation-delay: 0.15s; }
-    .cards .card:nth-child(6) { animation-delay: 0.18s; }
-    .cards .card:nth-child(7) { animation-delay: 0.21s; }
-    .cards .card:nth-child(8) { animation-delay: 0.24s; }
-    .cards .card:nth-child(n+9) { animation-delay: 0.27s; }
+    .port-item { opacity: 0; transform: translateY(8px); animation: fadeUp 0.3s ease forwards; }
+    .port-list .port-item:nth-child(1) { animation-delay: 0.03s; }
+    .port-list .port-item:nth-child(2) { animation-delay: 0.07s; }
+    .port-list .port-item:nth-child(3) { animation-delay: 0.11s; }
+    .port-list .port-item:nth-child(4) { animation-delay: 0.15s; }
+    .port-list .port-item:nth-child(5) { animation-delay: 0.19s; }
+    .port-list .port-item:nth-child(6) { animation-delay: 0.23s; }
+    .port-list .port-item:nth-child(n+7) { animation-delay: 0.27s; }
+
+    .scanner-card { opacity: 0; transform: translateY(8px); animation: fadeUp 0.3s ease forwards; }
+    .cards .scanner-card:nth-child(1) { animation-delay: 0.03s; }
+    .cards .scanner-card:nth-child(2) { animation-delay: 0.06s; }
+    .cards .scanner-card:nth-child(3) { animation-delay: 0.09s; }
+    .cards .scanner-card:nth-child(4) { animation-delay: 0.12s; }
+    .cards .scanner-card:nth-child(5) { animation-delay: 0.15s; }
+    .cards .scanner-card:nth-child(6) { animation-delay: 0.18s; }
+    .cards .scanner-card:nth-child(n+7) { animation-delay: 0.21s; }
   </style>
 </head>
 <body>
@@ -430,23 +622,6 @@
           <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
         </svg>
       </button>
-    </div>
-  </div>
-  <div class="summary-strip" id="summaryStrip">
-    <div class="sum-stat">
-      <div class="sum-label">Total P&L</div>
-      <div class="sum-value" id="sumPnl">—</div>
-      <div class="sum-sub"  id="sumPnlPct">—</div>
-    </div>
-    <div class="sum-stat">
-      <div class="sum-label">Day P&L</div>
-      <div class="sum-value" id="sumDay">—</div>
-      <div class="sum-sub"  id="sumCount">—</div>
-    </div>
-    <div class="sum-stat">
-      <div class="sum-label">Market Val</div>
-      <div class="sum-value gold" id="sumVal">—</div>
-      <div class="sum-sub"       id="sumCost">—</div>
     </div>
   </div>
   <div class="alert-banner" id="alertBanner">
@@ -479,39 +654,70 @@
   </button>
 </nav>
 
-<button class="fab" id="fab" onclick="openSheet()">+</button>
+<button class="fab" id="fab" onclick="openAddSheet()">+</button>
 
 <div class="overlay" id="overlay" onclick="closeSheet()"></div>
 <div class="sheet" id="sheet">
   <div class="sheet-handle"></div>
-  <div class="sheet-title">Add Position</div>
-  <div class="form-group">
-    <label class="form-label">Ticker</label>
-    <input class="form-input" id="fTicker" type="text" placeholder="e.g. AAPL or VOD.L"
-           autocapitalize="characters" spellcheck="false">
+
+  <!-- Add position screen -->
+  <div id="addScreen">
+    <div class="sheet-title">Add Position</div>
+    <div class="form-group">
+      <label class="form-label">Ticker</label>
+      <input class="form-input" id="fTicker" type="text" placeholder="e.g. AAPL or VOD.L"
+             autocapitalize="characters" spellcheck="false">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Shares</label>
+        <input class="form-input" id="fShares" type="number" placeholder="10" min="0" step="any" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Avg Entry Price</label>
+        <input class="form-input" id="fEntry" type="number" placeholder="0.00" min="0" step="any" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Stop Loss <span style="opacity:.5">(opt)</span></label>
+        <input class="form-input" id="fStop" type="number" placeholder="0.00" min="0" step="any" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Target <span style="opacity:.5">(opt)</span></label>
+        <input class="form-input" id="fTarget" type="number" placeholder="0.00" min="0" step="any" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-error" id="addError"></div>
+    <button class="btn-primary" id="addBtn" onclick="submitPosition()">Add Position</button>
   </div>
-  <div class="form-row">
-    <div class="form-group">
-      <label class="form-label">Shares</label>
-      <input class="form-input" id="fShares" type="number" placeholder="10" min="0" step="any" inputmode="decimal">
+
+  <!-- Edit position screen -->
+  <div id="editScreen" style="display:none">
+    <div class="sheet-title" id="editTitle">Edit Position</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Shares</label>
+        <input class="form-input" id="eShares" type="number" min="0" step="any" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Avg Entry Price</label>
+        <input class="form-input" id="eEntry" type="number" min="0" step="any" inputmode="decimal">
+      </div>
     </div>
-    <div class="form-group">
-      <label class="form-label">Entry Price</label>
-      <input class="form-input" id="fEntry" type="number" placeholder="0.00" min="0" step="any" inputmode="decimal">
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Stop Loss <span style="opacity:.5">(opt)</span></label>
+        <input class="form-input" id="eStop" type="number" placeholder="0.00" min="0" step="any" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Target <span style="opacity:.5">(opt)</span></label>
+        <input class="form-input" id="eTarget" type="number" placeholder="0.00" min="0" step="any" inputmode="decimal">
+      </div>
     </div>
+    <div class="form-error" id="editError"></div>
+    <button class="btn-primary" id="editBtn" onclick="saveEdit()">Save Changes</button>
   </div>
-  <div class="form-row">
-    <div class="form-group">
-      <label class="form-label">Stop Loss <span style="opacity:.5">(opt)</span></label>
-      <input class="form-input" id="fStop" type="number" placeholder="0.00" min="0" step="any" inputmode="decimal">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Target <span style="opacity:.5">(opt)</span></label>
-      <input class="form-input" id="fTarget" type="number" placeholder="0.00" min="0" step="any" inputmode="decimal">
-    </div>
-  </div>
-  <div class="form-error" id="addError"></div>
-  <button class="btn-primary" id="addBtn" onclick="submitPosition()">Add Position</button>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -519,16 +725,16 @@
 <script>
 'use strict';
 
-// ── Data sources (public, no auth needed) ──────────────────────────────────
 const SCANNER_URL   = 'https://fovcuspro.github.io/sp500-swing-scanner/results.json';
 const PORTFOLIO_URL = 'https://fovcuspro.github.io/sp500-swing-scanner/portfolio_results.json';
 
-// ── State ──────────────────────────────────────────────────────────────────
-let activeTab    = 'scanner';
-let scannerData  = null;
+let activeTab     = 'scanner';
+let scannerData   = null;
 let portfolioData = null;
+let editTicker    = null;
+let sortMode      = 'signal'; // 'signal' | 'value' | 'pnl'
 
-// ── Netlify function API (handles all writes, token lives on server) ────────
+// ── Netlify API ────────────────────────────────────────────────────────────────
 async function api(action, params = {}) {
   const r = await fetch('/api/github', {
     method: 'POST',
@@ -540,7 +746,24 @@ async function api(action, params = {}) {
   return data;
 }
 
-// ── Tab management ─────────────────────────────────────────────────────────
+// ── Avatar ─────────────────────────────────────────────────────────────────────
+function avatarColor(ticker) {
+  const palette = ['#c9a84c','#4caf7d','#5b8def','#e8a245','#a07aff','#e05555','#48c4c4','#f06292'];
+  let h = 0;
+  for (const c of ticker) h = (h * 31 + c.charCodeAt(0)) & 0xffff;
+  return palette[h % palette.length];
+}
+
+function avatarInitials(ticker, name) {
+  if (name && name !== ticker) {
+    const words = name.replace(/[^a-zA-Z ]/g, '').split(' ').filter(w => w.length > 1);
+    if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
+    if (words.length === 1) return words[0].substring(0, 2).toUpperCase();
+  }
+  return ticker.replace(/[^A-Z]/g, '').substring(0, 2);
+}
+
+// ── Tab management ─────────────────────────────────────────────────────────────
 function setTab(t) {
   activeTab = t;
   document.querySelectorAll('.tab').forEach(el =>
@@ -549,12 +772,11 @@ function setTab(t) {
   const fab = document.getElementById('fab');
   fab.style.display = t === 'portfolio' ? 'flex' : 'none';
 
-  const strip   = document.getElementById('summaryStrip');
-  const alert   = document.getElementById('alertBanner');
+  const banner = document.getElementById('alertBanner');
   if (t === 'scanner') {
-    strip.classList.remove('visible');
-    alert.style.display = 'none';
-    document.getElementById('headerTitle').innerHTML = 'SP500 <span style="color:var(--gold2)">Scanner</span>';
+    banner.style.display = 'none';
+    document.getElementById('headerTitle').innerHTML =
+      'SP500 <span style="color:var(--gold2)">Scanner</span>';
     if (scannerData) renderScanner(); else fetchScanner();
   } else {
     document.getElementById('headerTitle').textContent = 'Portfolio';
@@ -562,7 +784,7 @@ function setTab(t) {
   }
 }
 
-// ── Data fetching ──────────────────────────────────────────────────────────
+// ── Data fetching ──────────────────────────────────────────────────────────────
 async function fetchScanner() {
   document.getElementById('main').innerHTML =
     '<div class="loading"><div class="loading-bar"></div><p style="margin-top:14px">Loading scanner…</p></div>';
@@ -600,7 +822,7 @@ async function doRefresh() {
   }
 }
 
-// ── Scanner rendering ──────────────────────────────────────────────────────
+// ── Scanner rendering ──────────────────────────────────────────────────────────
 function renderScanner() {
   const main   = document.getElementById('main');
   const setups = scannerData?.top_setups || [];
@@ -632,116 +854,166 @@ function scannerCard(s, rank) {
   const ind = s.indicators     || {};
   const ez  = s.entry_zone     || {};
   const sb  = s.score_breakdown || {};
+  const name = s.company_name && s.company_name !== s.ticker ? s.company_name : '';
+
+  const tScore = Number(sb.trend_strength   || 0).toFixed(1);
+  const pScore = Number(sb.pullback_quality || 0).toFixed(1);
+  const vScore = Number(sb.volume_confirm   || 0).toFixed(1);
+  const total  = Number(s.score || 0).toFixed(1);
+
   return `
   <div class="card scanner-card">
     <div class="card-header">
       <span class="rank">#${rank}</span>
-      <span class="ticker-name">${s.ticker}</span>
-      <div class="badge-row">
-        <span class="score-pill">${f(s.score, 3)}</span>
-        <span class="price-muted">$${f(s.price)}</span>
+      <div class="scanner-ticker-block">
+        <div class="scanner-ticker">${s.ticker}</div>
+        ${name ? `<div class="scanner-name">${name}</div>` : ''}
+      </div>
+      <div class="scanner-right">
+        <div class="score-display">${total}<span> / 10</span></div>
+        <div class="scanner-price">$${f(s.price)}</div>
       </div>
       <span class="chevron">▼</span>
     </div>
     <div class="card-detail">
-      <div class="detail-grid">
-        <div class="full-width">
-          <div class="detail-label">Entry zone</div>
-          <div class="detail-value">$${f(ez.low)} – $${f(ez.high)}</div>
-        </div>
+      <div class="score-breakdown">
+        <span class="score-pill">Trend ${tScore}/10</span>
+        <span class="score-pill">Pullback ${pScore}/10</span>
+        <span class="score-pill">Volume ${vScore}/10</span>
+      </div>
+      <div class="detail-grid" style="margin-top:12px">
+        <div><div class="detail-label">Entry zone</div><div class="detail-value">$${f(ez.low)} – $${f(ez.high)}</div></div>
+        <div><div class="detail-label">Risk / Reward</div><div class="detail-value ${s.risk_reward >= 2 ? 'pos' : ''}">${f(s.risk_reward)}×</div></div>
         <div><div class="detail-label">Stop loss</div><div class="detail-value neg">$${f(s.stop_loss)}</div></div>
         <div><div class="detail-label">Target</div><div class="detail-value pos">$${f(s.target)}</div></div>
-        <div><div class="detail-label">Risk / Reward</div><div class="detail-value ${s.risk_reward >= 2 ? 'pos' : ''}">${f(s.risk_reward)}×</div></div>
         <div><div class="detail-label">RSI (14)</div><div class="detail-value">${f(ind.rsi, 1)}</div></div>
         <div><div class="detail-label">Pullback</div><div class="detail-value">${f(ind.pullback_pct, 1)}%</div></div>
         <div><div class="detail-label">50 MA</div><div class="detail-value">$${f(ind.ma50)}</div></div>
         <div><div class="detail-label">200 MA</div><div class="detail-value">$${f(ind.ma200)}</div></div>
         <div><div class="detail-label">Volume ratio</div><div class="detail-value">${f(ind.volume_ratio)}×</div></div>
-        <div><div class="detail-label">Score</div><div class="detail-value">T${f(sb.trend_strength,1)} P${f(sb.pullback_quality,1)} V${f(sb.volume_confirm,1)}</div></div>
       </div>
       <div class="reasoning">${s.reasoning || ''}</div>
     </div>
   </div>`;
 }
 
-// ── Portfolio rendering ────────────────────────────────────────────────────
+// ── Portfolio rendering ────────────────────────────────────────────────────────
 function renderPortfolio() {
   const positions = portfolioData?.positions || [];
   const summary   = portfolioData?.summary   || {};
-  const date      = portfolioData?.scan_date || '—';
+  const date      = portfolioData?.scan_date || '';
 
-  // Summary strip
-  if (Object.keys(summary).length) {
-    updateSummary(summary);
-    document.getElementById('summaryStrip').classList.add('visible');
-    const alerts = summary.alert_tickers || [];
-    const banner = document.getElementById('alertBanner');
-    if (alerts.length) {
-      banner.style.display = 'flex';
-      document.getElementById('alertText').textContent = `Action required: ${alerts.join(', ')}`;
-    } else {
-      banner.style.display = 'none';
-    }
+  // Alerts
+  const banner = document.getElementById('alertBanner');
+  const alerts = summary.alert_tickers || [];
+  if (alerts.length) {
+    banner.style.display = 'flex';
+    document.getElementById('alertText').textContent = `Action required: ${alerts.join(', ')}`;
+  } else {
+    banner.style.display = 'none';
   }
 
   const main = document.getElementById('main');
+
   if (!positions.length) {
     main.innerHTML = `
-      <div class="empty-state">
+      <div class="empty-state" style="margin-top:40px">
         <div class="empty-title">No positions</div>
         <div class="empty-sub">Tap + to add your first position, then tap ▶ to fetch prices.</div>
       </div>`;
     return;
   }
 
-  const order = ['STOP_HIT','TARGET_HIT','UNDER_PRESSURE','RUNNING','ON_TRACK'];
-  const sorted = [...positions].sort((a, b) => {
-    const d = order.indexOf(a.signal) - order.indexOf(b.signal);
-    return d !== 0 ? d : Math.abs(b.unrealised_pnl) - Math.abs(a.unrealised_pnl);
-  });
+  const totalValue = summary.total_market_value || 0;
+  const totalCost  = summary.total_cost_basis   || 0;
+  const totalPnl   = summary.total_unrealised_pnl || 0;
+  const totalPnlPct = summary.total_unrealised_pct || 0;
+  const dayPnl     = summary.day_pnl || 0;
+  const count      = positions.length;
+
+  const cc = v => v > 0 ? 'pos' : v < 0 ? 'neg' : '';
+  const cur = (v, showSign = true) => {
+    const abs = Math.abs(v), sign = showSign ? (v >= 0 ? '+' : '-') : '';
+    return `${sign}$${abs.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+  };
+  const pct = v => `${v >= 0 ? '+' : ''}${Number(v).toFixed(2)}%`;
+
+  const sorted = sortPositions(positions);
 
   main.innerHTML = `
-    <div class="scan-meta">As of ${date}</div>
-    <div class="cards">${sorted.map(portfolioCard).join('')}</div>`;
+    <div class="port-hero">
+      <div class="port-hero-label">Portfolio Value</div>
+      <div class="port-hero-value">${cur(totalValue, false)}</div>
+      <div class="port-hero-row">
+        <div class="port-hero-sub-label">Unrealised</div>
+        <div class="port-hero-pnl ${cc(totalPnl)}">${cur(totalPnl)} (${pct(totalPnlPct)})</div>
+      </div>
+      <div class="port-hero-row" style="margin-top:4px">
+        <div class="port-hero-sub-label">Day P&L</div>
+        <div class="port-hero-pnl ${cc(dayPnl)}">${cur(dayPnl)}</div>
+      </div>
+      <div class="port-hero-row" style="margin-top:4px">
+        <div class="port-hero-sub-label">Cost basis</div>
+        <div class="port-hero-cost">${cur(totalCost, false)}</div>
+      </div>
+    </div>
+    <div class="port-list-header">
+      <div class="port-list-title">Investments <span>· ${count}</span></div>
+      <button class="sort-btn" onclick="cycleSort()" title="Sort">↕</button>
+    </div>
+    ${date ? `<div class="scan-meta" style="padding-top:0;padding-bottom:8px">As of ${date}</div>` : ''}
+    <div class="port-list">
+      ${sorted.map(p => portfolioItem(p, totalValue)).join('')}
+    </div>`;
 
-  main.querySelectorAll('.portfolio-card').forEach(c =>
-    c.addEventListener('click', () => c.classList.toggle('open'))
+  main.querySelectorAll('.port-item').forEach(el =>
+    el.addEventListener('click', () => el.classList.toggle('open'))
   );
 }
 
-function updateSummary(s) {
-  const pnl    = s.total_unrealised_pnl || 0;
-  const pnlPct = s.total_unrealised_pct || 0;
-  const dayPnl = s.day_pnl || 0;
-  const c = v => v > 0 ? 'pos' : v < 0 ? 'neg' : '';
-  const cur = v => {
-    const abs = Math.abs(v), sign = v >= 0 ? '+' : '-';
-    return abs >= 1000 ? `${sign}$${(abs/1000).toFixed(1)}k` : `${sign}$${abs.toFixed(0)}`;
-  };
-  const el = (id, cls, text) => {
-    const e = document.getElementById(id);
-    e.textContent = text; if (cls !== null) e.className = cls;
-  };
-  el('sumPnl',    `sum-value ${c(pnl)}`,    cur(pnl));
-  el('sumPnlPct', null,                     `${pnlPct >= 0 ? '+' : ''}${pnlPct.toFixed(2)}%`);
-  el('sumDay',    `sum-value ${c(dayPnl)}`, cur(dayPnl));
-  el('sumCount',  null,                     `${s.positions_count || 0} positions`);
-  el('sumVal',    'sum-value gold',          `$${(s.total_market_value || 0).toLocaleString('en-US', {maximumFractionDigits:0})}`);
-  el('sumCost',   null,                     `cost $${(s.total_cost_basis || 0).toLocaleString('en-US', {maximumFractionDigits:0})}`);
+function sortPositions(positions) {
+  const order = ['STOP_HIT','TARGET_HIT','UNDER_PRESSURE','RUNNING','ON_TRACK'];
+  const arr = [...positions];
+  if (sortMode === 'value') {
+    arr.sort((a, b) => (b.market_value || 0) - (a.market_value || 0));
+  } else if (sortMode === 'pnl') {
+    arr.sort((a, b) => (b.unrealised_pnl || 0) - (a.unrealised_pnl || 0));
+  } else {
+    arr.sort((a, b) => {
+      const d = order.indexOf(a.signal) - order.indexOf(b.signal);
+      return d !== 0 ? d : Math.abs(b.unrealised_pnl) - Math.abs(a.unrealised_pnl);
+    });
+  }
+  return arr;
 }
 
-function portfolioCard(pos) {
-  const pnl    = pos.unrealised_pnl || 0;
-  const pnlPct = pos.unrealised_pct || 0;
-  const dayChg = pos.day_change_pct || 0;
-  const c   = v => v > 0 ? 'pos' : v < 0 ? 'neg' : 'neu';
+function cycleSort() {
+  const modes = ['signal', 'value', 'pnl'];
+  sortMode = modes[(modes.indexOf(sortMode) + 1) % modes.length];
+  const labels = { signal: 'Sorted by status', value: 'Sorted by value', pnl: 'Sorted by P&L' };
+  showToast(labels[sortMode]);
+  if (portfolioData) renderPortfolio();
+}
+
+function portfolioItem(pos, totalValue) {
+  const pnl     = pos.unrealised_pnl || 0;
+  const pnlPct  = pos.unrealised_pct || 0;
+  const dayChg  = pos.day_change_pct || 0;
+  const mktVal  = pos.market_value   || 0;
+  const alloc   = totalValue > 0 ? ((mktVal / totalValue) * 100).toFixed(1) : '0.0';
+  const name    = pos.company_name || pos.ticker;
+  const initials = avatarInitials(pos.ticker, pos.company_name);
+  const color    = avatarColor(pos.ticker);
+
+  const cc  = v => v > 0 ? 'pos' : v < 0 ? 'neg' : 'neu';
   const p   = v => `$${parseFloat(v).toFixed(2)}`;
   const pct = v => `${v >= 0 ? '+' : ''}${parseFloat(v).toFixed(2)}%`;
   const cur = v => {
     const abs = Math.abs(v), sign = v >= 0 ? '+' : '-';
-    return abs >= 1000 ? `${sign}$${(abs/1000).toFixed(1)}k` : `${sign}$${abs.toFixed(0)}`;
+    return abs >= 1000
+      ? `${sign}$${(abs/1000).toFixed(2)}k`
+      : `${sign}$${abs.toFixed(2)}`;
   };
-  const vol = v => v >= 1e6 ? `${(v/1e6).toFixed(1)}M` : v >= 1e3 ? `${(v/1e3).toFixed(0)}K` : String(v);
 
   let progressHTML = '';
   if (pos.stop_loss && pos.target) {
@@ -749,6 +1021,7 @@ function portfolioCard(pos) {
     const filled = total > 0
       ? Math.min(100, Math.max(0, ((pos.current_price - pos.stop_loss) / total) * 100))
       : 0;
+    const isNeg  = filled < 25;
     progressHTML = `
       <div class="progress-section">
         <div class="progress-label">
@@ -756,7 +1029,9 @@ function portfolioCard(pos) {
           <span>Entry ${p(pos.entry_price)}</span>
           <span>Target ${p(pos.target)}</span>
         </div>
-        <div class="progress-track"><div class="progress-fill" style="width:${Math.max(2,filled)}%"></div></div>
+        <div class="progress-track">
+          <div class="progress-fill ${isNeg ? 'neg-fill' : ''}" style="width:${Math.max(2,filled)}%"></div>
+        </div>
         <div class="progress-labels">
           <span>${pct(pos.pct_to_stop || 0)} from stop</span>
           <span>${pct(pos.pct_to_target || 0)} to target</span>
@@ -765,24 +1040,24 @@ function portfolioCard(pos) {
   }
 
   return `
-  <div class="card portfolio-card signal-${pos.signal}">
-    <div class="card-main">
-      <div class="signal-dot ${pos.signal}"></div>
-      <div>
-        <div class="ticker-name">${pos.ticker}</div>
-        <div class="card-meta">${pos.shares} shares · entry ${p(pos.entry_price)}</div>
+  <div class="port-item signal-${pos.signal}">
+    <div class="port-item-main">
+      <div class="port-avatar" style="background:${color}">${initials}</div>
+      <div class="port-item-info">
+        <div class="port-item-name">${name}</div>
+        <div class="port-item-sub">${pos.ticker} · ${alloc}%</div>
       </div>
-      <div style="text-align:right;margin-left:auto;flex-shrink:0">
-        <div class="${c(pnl)}" style="font-size:15px;font-weight:500">${p(pos.current_price)}</div>
-        <div class="${c(dayChg)}" style="font-size:11px;margin-top:2px">${pct(dayChg)} today</div>
+      <div class="port-item-values">
+        <div class="port-item-value">$${mktVal.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</div>
+        <div class="port-item-pnl ${cc(pnl)}">${cur(pnl)} (${pct(pnlPct)})</div>
       </div>
     </div>
-    <div class="card-detail">
+    <div class="port-item-detail">
       <div class="detail-grid">
-        <div><div class="detail-label">Unrealised P&L</div><div class="detail-value ${c(pnl)}">${cur(pnl)} (${pct(pnlPct)})</div></div>
-        <div><div class="detail-label">Market Value</div><div class="detail-value">$${(pos.market_value||0).toFixed(2)}</div></div>
-        <div><div class="detail-label">Day Change</div><div class="detail-value ${c(dayChg)}">${pct(dayChg)}</div></div>
-        <div><div class="detail-label">Volume / Avg</div><div class="detail-value">${vol(pos.volume)} / ${vol(pos.avg_volume)}</div></div>
+        <div><div class="detail-label">Shares</div><div class="detail-value">${pos.shares}</div></div>
+        <div><div class="detail-label">Entry Price</div><div class="detail-value">${p(pos.entry_price)}</div></div>
+        <div><div class="detail-label">Current Price</div><div class="detail-value">${p(pos.current_price)}</div></div>
+        <div><div class="detail-label">Day Change</div><div class="detail-value ${cc(dayChg)}">${pct(dayChg)}</div></div>
         <div><div class="detail-label">Stop Loss</div><div class="detail-value neg">${pos.stop_loss ? p(pos.stop_loss) : '—'}</div></div>
         <div><div class="detail-label">Target</div><div class="detail-value pos">${pos.target ? p(pos.target) : '—'}</div></div>
         <div><div class="detail-label">Cost Basis</div><div class="detail-value">$${(pos.cost_basis||0).toFixed(2)}</div></div>
@@ -790,12 +1065,15 @@ function portfolioCard(pos) {
       </div>
       ${progressHTML}
       <div class="signal-pill pill-${pos.signal}">${pos.signal.replace(/_/g,' ')}</div>
-      <button class="btn-remove" onclick="event.stopPropagation(); removePosition('${pos.ticker}')">Remove position</button>
+      <div class="detail-actions">
+        <button class="btn-edit" onclick="event.stopPropagation(); openEditSheet('${pos.ticker}')">Edit</button>
+        <button class="btn-remove" onclick="event.stopPropagation(); removePosition('${pos.ticker}')">Remove</button>
+      </div>
     </div>
   </div>`;
 }
 
-// ── Run scan ───────────────────────────────────────────────────────────────
+// ── Run scan ───────────────────────────────────────────────────────────────────
 async function runScan() {
   const btn = document.getElementById('runBtn');
   btn.disabled = true;
@@ -809,13 +1087,33 @@ async function runScan() {
   }
 }
 
-// ── Add position sheet ─────────────────────────────────────────────────────
-function openSheet() {
+// ── Add position sheet ─────────────────────────────────────────────────────────
+function openAddSheet() {
+  document.getElementById('addScreen').style.display = 'block';
+  document.getElementById('editScreen').style.display = 'none';
   document.getElementById('addError').textContent = '';
   document.getElementById('overlay').classList.add('open');
   document.getElementById('sheet').classList.add('open');
   setTimeout(() => document.getElementById('fTicker').focus(), 320);
 }
+
+function openEditSheet(ticker) {
+  const pos = (portfolioData?.positions || []).find(p => p.ticker === ticker);
+  if (!pos) return;
+  editTicker = ticker;
+  document.getElementById('editTitle').textContent = `Edit ${ticker}`;
+  document.getElementById('eShares').value = pos.shares;
+  document.getElementById('eEntry').value  = pos.entry_price;
+  document.getElementById('eStop').value   = pos.stop_loss  || '';
+  document.getElementById('eTarget').value = pos.target     || '';
+  document.getElementById('editError').textContent = '';
+  document.getElementById('addScreen').style.display  = 'none';
+  document.getElementById('editScreen').style.display = 'block';
+  document.getElementById('overlay').classList.add('open');
+  document.getElementById('sheet').classList.add('open');
+  setTimeout(() => document.getElementById('eShares').focus(), 320);
+}
+
 function closeSheet() {
   document.getElementById('overlay').classList.remove('open');
   document.getElementById('sheet').classList.remove('open');
@@ -857,21 +1155,55 @@ async function submitPosition() {
   }
 }
 
+async function saveEdit() {
+  const shares = parseFloat(document.getElementById('eShares').value);
+  const entry  = parseFloat(document.getElementById('eEntry').value);
+  const stop   = parseFloat(document.getElementById('eStop').value)   || null;
+  const target = parseFloat(document.getElementById('eTarget').value) || null;
+  const errEl  = document.getElementById('editError');
+  const btn    = document.getElementById('editBtn');
+
+  errEl.textContent = '';
+  if (!shares || shares <= 0) { errEl.textContent = 'Shares must be > 0.'; return; }
+  if (!entry  || entry  <= 0) { errEl.textContent = 'Entry price must be > 0.'; return; }
+
+  btn.disabled = true; btn.textContent = 'Saving…';
+  try {
+    const { positions, sha } = await api('get_portfolio');
+    const updated = positions.map(p => {
+      if (p.ticker.toUpperCase() !== editTicker.toUpperCase()) return p;
+      const next = { ...p, shares, entry_price: entry };
+      if (stop)   next.stop_loss = stop; else delete next.stop_loss;
+      if (target) next.target    = target; else delete next.target;
+      return next;
+    });
+    await api('save_portfolio', { positions: updated, sha, message: `portfolio: update ${editTicker}` });
+    closeSheet();
+    showToast(`${editTicker} updated — tap ▶ to refresh prices`);
+  } catch(e) {
+    errEl.textContent = e.message;
+  } finally {
+    btn.disabled = false; btn.textContent = 'Save Changes';
+  }
+}
+
 async function removePosition(ticker) {
   if (!confirm(`Remove ${ticker} from your portfolio?`)) return;
   try {
     const { positions, sha } = await api('get_portfolio');
     const updated = positions.filter(p => p.ticker.toUpperCase() !== ticker.toUpperCase());
     await api('save_portfolio', { positions: updated, sha, message: `portfolio: remove ${ticker}` });
+    for (const el of document.querySelectorAll('.port-item')) {
+      const sub = el.querySelector('.port-item-sub');
+      if (sub && sub.textContent.startsWith(ticker + ' ·')) { el.remove(); break; }
+    }
     showToast(`${ticker} removed`);
-    portfolioData = null;
-    await fetchPortfolio();
   } catch(e) {
     showToast(e.message, true);
   }
 }
 
-// ── Utilities ──────────────────────────────────────────────────────────────
+// ── Utilities ──────────────────────────────────────────────────────────────────
 let _toastTimer;
 function showToast(msg, isError = false) {
   const t = document.getElementById('toast');
@@ -885,7 +1217,6 @@ function showError(msg) {
     `<div class="error-state"><strong>Could not load data</strong><br><br>${msg}</div>`;
 }
 
-// ── Boot ───────────────────────────────────────────────────────────────────
 setTab('scanner');
 </script>
 </body>
