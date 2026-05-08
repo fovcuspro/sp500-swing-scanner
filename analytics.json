@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-05-08T00:00:00Z",
+  "total_trades": 0,
+  "open_trades": 0,
+  "closed_trades": 0,
+  "win_rate": 0.0,
+  "avg_return_pct": 0.0,
+  "avg_win_pct": 0.0,
+  "avg_loss_pct": 0.0,
+  "expectancy": 0.0,
+  "best_trade": null,
+  "worst_trade": null,
+  "by_score_range": {},
+  "by_rsi_range": {},
+  "by_pullback_range": {},
+  "recent_trades": []
+}

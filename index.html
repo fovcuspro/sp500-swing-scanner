@@ -605,6 +605,128 @@
     .cards .scanner-card:nth-child(5) { animation-delay: 0.15s; }
     .cards .scanner-card:nth-child(6) { animation-delay: 0.18s; }
     .cards .scanner-card:nth-child(n+7) { animation-delay: 0.21s; }
+
+    /* ── Performance tab ───────────────────────────────────────── */
+    .perf-hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 20px 20px;
+    }
+    .perf-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .stat-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .stat-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--sub);
+      margin-bottom: 6px;
+    }
+    .stat-value {
+      font-family: 'Instrument Serif', serif;
+      font-size: 28px;
+      font-style: italic;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .stat-value.pos { color: var(--green); }
+    .stat-value.neg { color: var(--red); }
+    .stat-sub {
+      font-size: 10px;
+      color: var(--sub);
+      margin-top: 5px;
+    }
+
+    .breakdown-section {
+      padding: 16px 16px 4px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+    .breakdown-section:last-child { border-bottom: none; }
+    .breakdown-title {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--sub);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    .breakdown-header, .breakdown-row {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1.2fr 1.5fr;
+      gap: 4px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: center;
+    }
+    .breakdown-header {
+      font-size: 9px;
+      color: var(--sub);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .breakdown-row { font-size: 13px; }
+    .breakdown-row:last-child { border-bottom: none; }
+    .breakdown-col { color: var(--text); }
+    .breakdown-col.right { text-align: right; color: var(--sub); }
+    .breakdown-row .breakdown-col.right { color: var(--text); }
+    .breakdown-row .breakdown-col.pos   { color: var(--green); text-align: right; }
+    .breakdown-row .breakdown-col.neg   { color: var(--red);   text-align: right; }
+    .breakdown-row .breakdown-col.neu   { color: var(--sub);   text-align: right; }
+
+    .highlight-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+    }
+    .highlight-item:last-child { border-bottom: none; }
+    .hl-label { font-size: 11px; color: var(--sub); flex-shrink: 0; }
+    .hl-val   { font-size: 12px; color: var(--text); text-align: right; }
+    .hl-val.pos { color: var(--green); }
+    .hl-val.neg { color: var(--red); }
+
+    .trade-history-list { display: flex; flex-direction: column; }
+    .trade-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 8px;
+    }
+    .trade-item:last-child { border-bottom: none; }
+    .trade-ticker { font-size: 14px; font-weight: 500; color: var(--text); }
+    .trade-name   { font-size: 10px; color: var(--sub); margin-top: 1px;
+                    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px; }
+    .trade-meta   { font-size: 10px; color: var(--sub); margin-top: 2px; }
+    .trade-item-right { text-align: right; flex-shrink: 0; }
+    .trade-return { font-size: 13px; font-weight: 500; }
+    .trade-return.pos { color: var(--green); }
+    .trade-return.neg { color: var(--red); }
+    .trade-return.neu { color: var(--sub); }
+    .trade-status {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sub);
+      margin-top: 3px;
+    }
+    .trade-status.status-target_hit { color: var(--green); }
+    .trade-status.status-stop_hit   { color: var(--red); }
+    .trade-status.status-expired    { color: var(--sub); }
   </style>
 </head>
 <body>
@@ -651,6 +773,14 @@
       <line x1="12" y1="17" x2="12" y2="21"/>
     </svg>
     Portfolio
+  </button>
+  <button class="tab" data-tab="performance" onclick="setTab('performance')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="20" x2="18" y2="10"/>
+      <line x1="12" y1="20" x2="12" y2="4"/>
+      <line x1="6"  y1="20" x2="6"  y2="14"/>
+    </svg>
+    Performance
   </button>
 </nav>
 
@@ -725,12 +855,14 @@
 <script>
 'use strict';
 
-const SCANNER_URL   = 'https://fovcuspro.github.io/sp500-swing-scanner/results.json';
-const PORTFOLIO_URL = 'https://fovcuspro.github.io/sp500-swing-scanner/portfolio_results.json';
+const SCANNER_URL     = 'https://fovcuspro.github.io/sp500-swing-scanner/results.json';
+const PORTFOLIO_URL   = 'https://fovcuspro.github.io/sp500-swing-scanner/portfolio_results.json';
+const ANALYTICS_URL   = 'https://fovcuspro.github.io/sp500-swing-scanner/analytics.json';
 
 let activeTab     = 'scanner';
 let scannerData   = null;
 let portfolioData = null;
+let analyticsData = null;
 let editTicker    = null;
 let sortMode      = 'signal'; // 'signal' | 'value' | 'pnl'
 
@@ -778,9 +910,13 @@ function setTab(t) {
     document.getElementById('headerTitle').innerHTML =
       'SP500 <span style="color:var(--gold2)">Scanner</span>';
     if (scannerData) renderScanner(); else fetchScanner();
-  } else {
+  } else if (t === 'portfolio') {
     document.getElementById('headerTitle').textContent = 'Portfolio';
     if (portfolioData) renderPortfolio(); else fetchPortfolio();
+  } else {
+    banner.style.display = 'none';
+    document.getElementById('headerTitle').textContent = 'Performance';
+    if (analyticsData) renderPerformance(); else fetchAnalytics();
   }
 }
 
@@ -815,8 +951,9 @@ async function doRefresh() {
   const btn = document.getElementById('refreshBtn');
   btn.classList.add('spinning');
   try {
-    if (activeTab === 'scanner') { scannerData = null;   await fetchScanner(); }
-    else                          { portfolioData = null; await fetchPortfolio(); }
+    if      (activeTab === 'scanner')     { scannerData   = null; await fetchScanner(); }
+    else if (activeTab === 'portfolio')   { portfolioData = null; await fetchPortfolio(); }
+    else                                  { analyticsData = null; await fetchAnalytics(); }
   } finally {
     btn.classList.remove('spinning');
   }
@@ -1071,6 +1208,171 @@ function portfolioItem(pos, totalValue) {
       </div>
     </div>
   </div>`;
+}
+
+// ── Analytics ──────────────────────────────────────────────────────────────────
+async function fetchAnalytics() {
+  document.getElementById('main').innerHTML =
+    '<div class="loading"><div class="loading-bar"></div><p style="margin-top:14px">Loading analytics…</p></div>';
+  try {
+    const r = await fetch(ANALYTICS_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    analyticsData = await r.json();
+    renderPerformance();
+  } catch(e) {
+    showError('Could not load analytics.<br>' + e.message);
+  }
+}
+
+function renderPerformance() {
+  const d    = analyticsData || {};
+  const main = document.getElementById('main');
+
+  if (!d.total_trades) {
+    main.innerHTML = `
+      <div class="perf-hero">
+        <div class="port-hero-label">Strategy Performance</div>
+        <div style="margin-top:16px;font-size:13px;color:var(--sub);line-height:1.7">
+          No trade history yet.<br>
+          The scanner automatically logs every signal it generates.<br>
+          After the first weekday scan, results will appear here.
+        </div>
+      </div>`;
+    return;
+  }
+
+  const cc  = v => v > 0 ? 'pos' : v < 0 ? 'neg' : 'neu';
+  const pct = (v, dp = 1) => `${v >= 0 ? '+' : ''}${Number(v).toFixed(dp)}%`;
+  const wr  = (d.win_rate * 100).toFixed(1);
+
+  // Score range breakdown rows
+  const scoreRows = Object.entries(d.by_score_range || {})
+    .filter(([, v]) => v.count > 0)
+    .sort(([a], [b]) => b.localeCompare(a))
+    .map(([range, s]) => {
+      const ret = s.avg_return;
+      return `
+      <div class="breakdown-row">
+        <div class="breakdown-col">${range}</div>
+        <div class="breakdown-col right">${s.count}</div>
+        <div class="breakdown-col right">${(s.win_rate * 100).toFixed(0)}%</div>
+        <div class="breakdown-col ${cc(ret)}">${pct(ret)}</div>
+      </div>`;
+    }).join('');
+
+  // RSI range breakdown rows
+  const rsiRows = Object.entries(d.by_rsi_range || {})
+    .filter(([, v]) => v.count > 0)
+    .map(([range, s]) => {
+      const ret = s.avg_return;
+      return `
+      <div class="breakdown-row">
+        <div class="breakdown-col">${range}</div>
+        <div class="breakdown-col right">${s.count}</div>
+        <div class="breakdown-col right">${(s.win_rate * 100).toFixed(0)}%</div>
+        <div class="breakdown-col ${cc(ret)}">${pct(ret)}</div>
+      </div>`;
+    }).join('');
+
+  // Recent closed trades
+  const recentHTML = (d.recent_trades || []).map(t => {
+    const ret    = t.return_pct;
+    const retStr = ret !== null && ret !== undefined
+      ? pct(ret)
+      : '—';
+    const name = t.company_name && t.company_name !== t.ticker ? t.company_name : '';
+    return `
+    <div class="trade-item">
+      <div>
+        <div class="trade-ticker">${t.ticker}</div>
+        ${name ? `<div class="trade-name">${name}</div>` : ''}
+        <div class="trade-meta">${t.date} · Score ${Number(t.score || 0).toFixed(1)}</div>
+      </div>
+      <div class="trade-item-right">
+        <div class="trade-return ${cc(ret || 0)}">${retStr}</div>
+        <div class="trade-status status-${t.status}">${t.status.replace(/_/g, ' ')}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  main.innerHTML = `
+    <div class="perf-hero">
+      <div class="port-hero-label">Strategy Performance</div>
+      <div class="perf-stats">
+        <div class="stat-box">
+          <div class="stat-label">Win Rate</div>
+          <div class="stat-value ${parseFloat(wr) >= 50 ? 'pos' : 'neg'}">${wr}%</div>
+          <div class="stat-sub">${d.closed_trades} closed trades</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Avg Return</div>
+          <div class="stat-value ${cc(d.avg_return_pct)}">${pct(d.avg_return_pct)}</div>
+          <div class="stat-sub">per closed trade</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Expectancy</div>
+          <div class="stat-value ${cc(d.expectancy)}">${pct(d.expectancy)}</div>
+          <div class="stat-sub">edge per trade</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Pipeline</div>
+          <div class="stat-value">${d.total_trades}</div>
+          <div class="stat-sub">${d.open_trades} still open</div>
+        </div>
+      </div>
+      ${d.avg_win_pct || d.avg_loss_pct ? `
+      <div style="display:flex;gap:16px;margin-top:14px;font-size:11px;color:var(--sub)">
+        <span>Avg win <span style="color:var(--green)">${pct(d.avg_win_pct)}</span></span>
+        <span>Avg loss <span style="color:var(--red)">${pct(d.avg_loss_pct)}</span></span>
+      </div>` : ''}
+      <div style="font-size:9px;color:var(--muted);margin-top:10px;text-transform:uppercase;letter-spacing:0.08em">
+        Updated ${(d.generated_at || '').split('T')[0] || '—'}
+      </div>
+    </div>
+
+    ${scoreRows ? `
+    <div class="breakdown-section">
+      <div class="breakdown-title">By Score Range</div>
+      <div class="breakdown-header">
+        <div>Score</div>
+        <div style="text-align:right">Trades</div>
+        <div style="text-align:right">Win %</div>
+        <div style="text-align:right">Avg Ret</div>
+      </div>
+      ${scoreRows}
+    </div>` : ''}
+
+    ${rsiRows ? `
+    <div class="breakdown-section">
+      <div class="breakdown-title">By RSI Range</div>
+      <div class="breakdown-header">
+        <div>RSI</div>
+        <div style="text-align:right">Trades</div>
+        <div style="text-align:right">Win %</div>
+        <div style="text-align:right">Avg Ret</div>
+      </div>
+      ${rsiRows}
+    </div>` : ''}
+
+    ${d.best_trade || d.worst_trade ? `
+    <div class="breakdown-section">
+      <div class="breakdown-title">Highlights</div>
+      ${d.best_trade ? `<div class="highlight-item">
+        <div class="hl-label">Best trade</div>
+        <div class="hl-val pos">${d.best_trade.ticker} ${pct(d.best_trade.return_pct)} · ${d.best_trade.date}</div>
+      </div>` : ''}
+      ${d.worst_trade ? `<div class="highlight-item">
+        <div class="hl-label">Worst trade</div>
+        <div class="hl-val neg">${d.worst_trade.ticker} ${pct(d.worst_trade.return_pct)} · ${d.worst_trade.date}</div>
+      </div>` : ''}
+    </div>` : ''}
+
+    ${recentHTML ? `
+    <div class="breakdown-section">
+      <div class="breakdown-title">Recent Closed Trades</div>
+      <div class="trade-history-list">${recentHTML}</div>
+    </div>` : ''}
+    <div style="height:60px"></div>`;
 }
 
 // ── Run scan ───────────────────────────────────────────────────────────────────
