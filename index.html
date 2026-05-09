@@ -774,6 +774,11 @@
   <div class="header-row">
     <div class="header-title" id="headerTitle">Swing Scanner</div>
     <div class="header-btns">
+      <button class="icon-btn" id="tokenBtn" onclick="promptToken()" title="Set GitHub token">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="8" cy="15" r="4"/><path d="M12 15h8"/><path d="M16 11v8"/>
+        </svg>
+      </button>
       <button class="icon-btn" id="runBtn" onclick="runScan()" title="Run scan now">
         <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5,3 19,12 5,21"/></svg>
       </button>
@@ -916,16 +921,73 @@ let historyData   = null;
 let editTicker    = null;
 let sortMode      = 'signal'; // 'signal' | 'value' | 'pnl'
 
-// ── Netlify API ────────────────────────────────────────────────────────────────
+// ── GitHub API (direct, token stored in localStorage) ─────────────────────────
+const REPO = 'fovcuspro/sp500-swing-scanner';
+const TOKEN_KEY = 'gh_pat';
+
+function getToken() { return localStorage.getItem(TOKEN_KEY) || ''; }
+
+function ghHeaders() {
+  return {
+    Authorization: `token ${getToken()}`,
+    Accept: 'application/vnd.github.v3+json',
+    'Content-Type': 'application/json',
+  };
+}
+
 async function api(action, params = {}) {
-  const r = await fetch('/api/github', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ action, ...params })
-  });
-  const data = await r.json().catch(() => ({}));
-  if (!r.ok) throw new Error(data.error || `Error ${r.status}`);
-  return data;
+  const token = getToken();
+  if (!token) {
+    promptToken();
+    throw new Error('GitHub token required — enter it in the prompt');
+  }
+  const gh = ghHeaders();
+
+  if (action === 'run') {
+    const body = JSON.stringify({ ref: 'main' });
+    const [r1, r2] = await Promise.all([
+      fetch(`https://api.github.com/repos/${REPO}/actions/workflows/daily_scan.yml/dispatches`,      { method: 'POST', headers: gh, body }),
+      fetch(`https://api.github.com/repos/${REPO}/actions/workflows/daily_portfolio.yml/dispatches`, { method: 'POST', headers: gh, body }),
+    ]);
+    if (r1.status !== 204 || r2.status !== 204) {
+      const err = await (r1.status !== 204 ? r1 : r2).json().catch(() => ({}));
+      throw new Error(err.message || 'Failed to trigger workflows');
+    }
+    return { ok: true };
+  }
+
+  if (action === 'get_portfolio') {
+    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/portfolio.json`, { headers: gh });
+    if (!r.ok) { const e = await r.json().catch(() => ({})); throw new Error(e.message || `GitHub ${r.status}`); }
+    const data = await r.json();
+    const positions = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
+    return { positions, sha: data.sha };
+  }
+
+  if (action === 'save_portfolio') {
+    const { positions, sha, message } = params;
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(positions, null, 2) + '\n')));
+    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/portfolio.json`, {
+      method: 'PUT', headers: gh,
+      body: JSON.stringify({ message: message || 'portfolio: update', content, sha }),
+    });
+    if (!r.ok) { const e = await r.json().catch(() => ({})); throw new Error(e.message || `GitHub ${r.status}`); }
+    return { ok: true };
+  }
+
+  throw new Error(`Unknown action: ${action}`);
+}
+
+function promptToken() {
+  const existing = getToken();
+  const t = window.prompt(
+    'Enter your GitHub Personal Access Token\n(needs: Actions write + Contents write for this repo)',
+    existing
+  );
+  if (t && t.trim()) {
+    localStorage.setItem(TOKEN_KEY, t.trim());
+    showToast('Token saved');
+  }
 }
 
 // ── Avatar ─────────────────────────────────────────────────────────────────────
