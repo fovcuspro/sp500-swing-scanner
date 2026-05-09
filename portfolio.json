@@ -20,11 +20,6 @@
     "entry_price": 9.24
   },
   {
-    "ticker": "ALL",
-    "shares": 2,
-    "entry_price": 212.76
-  },
-  {
     "ticker": "TRGP",
     "shares": 1,
     "entry_price": 251.48
