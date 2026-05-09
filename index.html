@@ -1552,8 +1552,9 @@ function renderHistory() {
       <div class="log-dot ${dotCls(t.status)}"></div>
       <div class="log-body">
         <div class="log-row1">
-          <div>
+          <div style="display:flex;align-items:baseline;gap:7px">
             <span class="log-ticker">${t.ticker}</span>
+            ${t.score != null ? `<span style="font-size:10px;color:var(--gold);font-weight:500">${parseFloat(t.score).toFixed(1)}<span style="color:var(--sub)">/10</span></span>` : ''}
           </div>
           <div class="log-date">${fmtDate(t.date_generated)}</div>
         </div>
