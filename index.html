@@ -727,6 +727,45 @@
     .trade-status.status-target_hit { color: var(--green); }
     .trade-status.status-stop_hit   { color: var(--red); }
     .trade-status.status-expired    { color: var(--sub); }
+
+    /* ── Signal Log tab ── */
+    .log-list { display: flex; flex-direction: column; padding: 8px 12px 100px; gap: 0; }
+    .log-item {
+      border-bottom: 1px solid var(--border);
+      padding: 12px 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .log-item:last-child { border-bottom: none; }
+    .log-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      flex-shrink: 0; margin-top: 5px;
+    }
+    .log-dot.open    { background: var(--gold); }
+    .log-dot.target  { background: var(--green); }
+    .log-dot.stop    { background: var(--red); }
+    .log-dot.expired { background: var(--muted); }
+    .log-body { flex: 1; min-width: 0; }
+    .log-row1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .log-ticker { font-size: 14px; font-weight: 500; color: var(--text); }
+    .log-company { font-size: 10px; color: var(--sub); margin-top: 2px;
+                   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .log-date { font-size: 10px; color: var(--sub); flex-shrink: 0; }
+    .log-prices {
+      display: flex; gap: 16px; margin-top: 7px; flex-wrap: wrap;
+    }
+    .lp { display: flex; flex-direction: column; gap: 2px; }
+    .lp-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sub); }
+    .lp-val   { font-size: 12px; color: var(--text); }
+    .lp-buy  .lp-val { color: var(--gold); }
+    .lp-stop .lp-val { color: var(--red); }
+    .lp-tgt  .lp-val { color: var(--green); }
   </style>
 </head>
 <body>
@@ -781,6 +820,15 @@
       <line x1="6"  y1="20" x2="6"  y2="14"/>
     </svg>
     Performance
+  </button>
+  <button class="tab" data-tab="log" onclick="setTab('log')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/>
+      <line x1="16" y1="17" x2="8" y2="17"/>
+    </svg>
+    Log
   </button>
 </nav>
 
@@ -858,11 +906,13 @@
 const SCANNER_URL     = 'https://fovcuspro.github.io/sp500-swing-scanner/results.json';
 const PORTFOLIO_URL   = 'https://fovcuspro.github.io/sp500-swing-scanner/portfolio_results.json';
 const ANALYTICS_URL   = 'https://fovcuspro.github.io/sp500-swing-scanner/analytics.json';
+const HISTORY_URL     = 'https://fovcuspro.github.io/sp500-swing-scanner/trade_history.json';
 
 let activeTab     = 'scanner';
 let scannerData   = null;
 let portfolioData = null;
 let analyticsData = null;
+let historyData   = null;
 let editTicker    = null;
 let sortMode      = 'signal'; // 'signal' | 'value' | 'pnl'
 
@@ -913,10 +963,14 @@ function setTab(t) {
   } else if (t === 'portfolio') {
     document.getElementById('headerTitle').textContent = 'Portfolio';
     if (portfolioData) renderPortfolio(); else fetchPortfolio();
-  } else {
+  } else if (t === 'performance') {
     banner.style.display = 'none';
     document.getElementById('headerTitle').textContent = 'Performance';
     if (analyticsData) renderPerformance(); else fetchAnalytics();
+  } else {
+    banner.style.display = 'none';
+    document.getElementById('headerTitle').textContent = 'Signal Log';
+    if (historyData) renderHistory(); else fetchHistory();
   }
 }
 
@@ -1023,7 +1077,8 @@ async function doRefresh() {
   try {
     if      (activeTab === 'scanner')     { scannerData   = null; await fetchScanner(); }
     else if (activeTab === 'portfolio')   { portfolioData = null; await fetchPortfolio(); }
-    else                                  { analyticsData = null; await fetchAnalytics(); }
+    else if (activeTab === 'performance') { analyticsData = null; await fetchAnalytics(); }
+    else                                  { historyData   = null; await fetchHistory(); }
   } finally {
     btn.classList.remove('spinning');
   }
@@ -1448,6 +1503,75 @@ function renderPerformance() {
       <div class="trade-history-list">${recentHTML}</div>
     </div>` : ''}
     <div style="height:60px"></div>`;
+}
+
+// ── Signal Log ─────────────────────────────────────────────────────────────────
+async function fetchHistory() {
+  document.getElementById('main').innerHTML =
+    '<div class="loading"><div class="loading-bar"></div><p style="margin-top:14px">Loading signal log…</p></div>';
+  try {
+    const r = await fetch(HISTORY_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    historyData = await r.json();
+    renderHistory();
+  } catch(e) {
+    showError('Could not load signal log.<br>' + e.message);
+  }
+}
+
+function renderHistory() {
+  const main   = document.getElementById('main');
+  const trades = (historyData || []).slice().reverse();
+
+  if (!trades.length) {
+    main.innerHTML = `
+      <div class="empty-state" style="margin-top:40px">
+        <div class="empty-title">No signals yet</div>
+        <div class="empty-sub">Every scanner signal will be permanently recorded here.<br>Signals appear after the first daily scan runs.</div>
+      </div>`;
+    return;
+  }
+
+  const f = n => n != null ? `$${parseFloat(n).toFixed(2)}` : '—';
+  const fmtDate = s => {
+    const [y, m, d] = s.split('-');
+    const mon = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return `${parseInt(d)} ${mon[parseInt(m)-1]} ${y}`;
+  };
+  const dotCls = status => {
+    if (status === 'target_hit') return 'target';
+    if (status === 'stop_hit')   return 'stop';
+    if (status === 'expired')    return 'expired';
+    return 'open';
+  };
+
+  const items = trades.map(t => {
+    const name = t.company_name && t.company_name !== t.ticker ? t.company_name : '';
+    return `
+    <div class="log-item">
+      <div class="log-dot ${dotCls(t.status)}"></div>
+      <div class="log-body">
+        <div class="log-row1">
+          <div>
+            <span class="log-ticker">${t.ticker}</span>
+          </div>
+          <div class="log-date">${fmtDate(t.date_generated)}</div>
+        </div>
+        ${name ? `<div class="log-company">${name}</div>` : ''}
+        <div class="log-prices">
+          <div class="lp lp-buy"><div class="lp-label">Buy</div><div class="lp-val">${f(t.entry_price)}</div></div>
+          <div class="lp lp-stop"><div class="lp-label">Stop</div><div class="lp-val">${f(t.stop_loss)}</div></div>
+          <div class="lp lp-tgt"><div class="lp-label">Target</div><div class="lp-val">${f(t.target)}</div></div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  main.innerHTML = `
+    <div style="padding:10px 16px 6px;font-size:10px;color:var(--sub);text-transform:uppercase;letter-spacing:0.08em">
+      ${trades.length} signal${trades.length !== 1 ? 's' : ''} recorded
+    </div>
+    <div class="log-list">${items}</div>`;
 }
 
 // ── Run scan ───────────────────────────────────────────────────────────────────
