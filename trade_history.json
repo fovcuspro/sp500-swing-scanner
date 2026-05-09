@@ -37,7 +37,7 @@
       "stop_hit": false,
       "last_price": 213.15,
       "last_return_pct": -0.24,
-      "last_checked": "2026-05-08"
+      "last_checked": "2026-05-09"
     },
     "status": "open"
   },
@@ -74,12 +74,180 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": -1.24,
+      "max_drawdown_pct": -1.71,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 250.02,
-      "last_return_pct": -0.96,
-      "last_checked": "2026-05-08"
+      "last_price": 248.12,
+      "last_return_pct": -1.71,
+      "last_checked": "2026-05-09"
+    },
+    "status": "open"
+  },
+  {
+    "id": "CTVA_2026-05-09",
+    "ticker": "CTVA",
+    "company_name": "Corteva",
+    "date_generated": "2026-05-09",
+    "setup_type": "Momentum Pullback",
+    "score": 5.214,
+    "score_breakdown": {
+      "trend_strength": 4.32,
+      "pullback_quality": 8.67,
+      "volume_confirm": 0.09
+    },
+    "entry_price": 81.13,
+    "stop_loss": 78.54,
+    "target": 84.62,
+    "risk_reward": 1.35,
+    "indicators": {
+      "rsi": 50.9,
+      "ma50": 80.7,
+      "ma200": 71.7,
+      "high_20d": 84.62,
+      "pullback_pct": 4.1,
+      "volume_ratio": 1.31
+    },
+    "reasoning": "CTVA is 4.1% below its 20-day high with RSI at 50.9, offering a controlled pullback into an uptrend (price above 50 MA at 80.7). Volume spiked 1.31\u00d7 above average on a bullish candle, confirming institutional interest.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 81.13,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-09"
+    },
+    "status": "open"
+  },
+  {
+    "id": "ALB_2026-05-09",
+    "ticker": "ALB",
+    "company_name": "Albemarle Corporation",
+    "date_generated": "2026-05-09",
+    "setup_type": "Momentum Pullback",
+    "score": 4.344,
+    "score_breakdown": {
+      "trend_strength": 8.25,
+      "pullback_quality": 2.44,
+      "volume_confirm": 0.34
+    },
+    "entry_price": 203.52,
+    "stop_loss": 184.65,
+    "target": 221.0,
+    "risk_reward": 0.93,
+    "indicators": {
+      "rsi": 59.3,
+      "ma50": 180.14,
+      "ma200": 132.45,
+      "high_20d": 221.0,
+      "pullback_pct": 7.9,
+      "volume_ratio": 1.36
+    },
+    "reasoning": "ALB is 7.9% below its 20-day high with RSI at 59.3, offering a controlled pullback into an uptrend (price above 50 MA at 180.14). Volume spiked 1.36\u00d7 above average on a bullish candle, confirming institutional interest.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 203.52,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-09"
+    },
+    "status": "open"
+  },
+  {
+    "id": "ABNB_2026-05-09",
+    "ticker": "ABNB",
+    "company_name": "Airbnb",
+    "date_generated": "2026-05-09",
+    "setup_type": "Momentum Pullback",
+    "score": 3.782,
+    "score_breakdown": {
+      "trend_strength": 2.86,
+      "pullback_quality": 4.27,
+      "volume_confirm": 4.65
+    },
+    "entry_price": 141.49,
+    "stop_loss": 135.95,
+    "target": 147.25,
+    "risk_reward": 1.04,
+    "indicators": {
+      "rsi": 59.3,
+      "ma50": 133.97,
+      "ma200": 128.37,
+      "high_20d": 147.25,
+      "pullback_pct": 3.9,
+      "volume_ratio": 2.09
+    },
+    "reasoning": "ABNB is 3.9% below its 20-day high with RSI at 59.3, offering a controlled pullback into an uptrend (price above 50 MA at 133.97). Volume spiked 2.09\u00d7 above average on a bullish candle, confirming institutional interest.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 141.49,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-09"
+    },
+    "status": "open"
+  },
+  {
+    "id": "NSC_2026-05-09",
+    "ticker": "NSC",
+    "company_name": "Norfolk Southern",
+    "date_generated": "2026-05-09",
+    "setup_type": "Momentum Pullback",
+    "score": 2.856,
+    "score_breakdown": {
+      "trend_strength": 2.2,
+      "pullback_quality": 4.25,
+      "volume_confirm": 1.38
+    },
+    "entry_price": 312.01,
+    "stop_loss": 308.86,
+    "target": 321.98,
+    "risk_reward": 3.17,
+    "indicators": {
+      "rsi": 57.7,
+      "ma50": 298.8,
+      "ma200": 289.28,
+      "high_20d": 321.98,
+      "pullback_pct": 3.1,
+      "volume_ratio": 1.53
+    },
+    "reasoning": "NSC is 3.1% below its 20-day high with RSI at 57.7, offering a controlled pullback into an uptrend (price above 50 MA at 298.8). Volume spiked 1.53\u00d7 above average on a bullish candle, confirming institutional interest.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 312.01,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-09"
     },
     "status": "open"
   }
