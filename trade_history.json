@@ -35,8 +35,8 @@
       "max_drawdown_pct": -1.09,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 213.04,
-      "last_return_pct": -0.29,
+      "last_price": 213.8,
+      "last_return_pct": 0.06,
       "last_checked": "2026-05-11"
     },
     "status": "open"
@@ -77,8 +77,8 @@
       "max_drawdown_pct": -1.71,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 254.98,
-      "last_return_pct": 1.01,
+      "last_price": 253.18,
+      "last_return_pct": 0.29,
       "last_checked": "2026-05-11"
     },
     "status": "open"
@@ -119,8 +119,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 82.77,
-      "last_return_pct": 2.02,
+      "last_price": 82.83,
+      "last_return_pct": 2.1,
       "last_checked": "2026-05-11"
     },
     "status": "open"
@@ -161,8 +161,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 213.92,
-      "last_return_pct": 5.11,
+      "last_price": 209.99,
+      "last_return_pct": 3.18,
       "last_checked": "2026-05-11"
     },
     "status": "open"
@@ -200,11 +200,11 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0.71,
-      "max_drawdown_pct": -2.34,
+      "max_drawdown_pct": -3.14,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 138.18,
-      "last_return_pct": -2.34,
+      "last_price": 137.05,
+      "last_return_pct": -3.14,
       "last_checked": "2026-05-11"
     },
     "status": "open"
@@ -242,11 +242,11 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0.67,
-      "max_drawdown_pct": -0.25,
+      "max_drawdown_pct": -0.29,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 311.23,
-      "last_return_pct": -0.25,
+      "last_price": 311.11,
+      "last_return_pct": -0.29,
       "last_checked": "2026-05-11"
     },
     "status": "open"
@@ -287,8 +287,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 82.77,
-      "last_return_pct": 2.02,
+      "last_price": 82.83,
+      "last_return_pct": 2.1,
       "last_checked": "2026-05-11"
     },
     "status": "open"
@@ -329,8 +329,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 213.92,
-      "last_return_pct": 5.11,
+      "last_price": 209.99,
+      "last_return_pct": 3.18,
       "last_checked": "2026-05-11"
     },
     "status": "open"
@@ -368,11 +368,11 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0.71,
-      "max_drawdown_pct": -2.34,
+      "max_drawdown_pct": -3.14,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 138.18,
-      "last_return_pct": -2.34,
+      "last_price": 137.05,
+      "last_return_pct": -3.14,
       "last_checked": "2026-05-11"
     },
     "status": "open"
@@ -410,11 +410,95 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0.67,
-      "max_drawdown_pct": -0.25,
+      "max_drawdown_pct": -0.29,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 311.23,
-      "last_return_pct": -0.25,
+      "last_price": 311.11,
+      "last_return_pct": -0.29,
+      "last_checked": "2026-05-11"
+    },
+    "status": "open"
+  },
+  {
+    "id": "XEL_2026-05-11",
+    "ticker": "XEL",
+    "company_name": "Xcel Energy",
+    "date_generated": "2026-05-11",
+    "setup_type": "Momentum Pullback",
+    "score": 4.216,
+    "score_breakdown": {
+      "trend_strength": 1.61,
+      "pullback_quality": 8.23,
+      "volume_confirm": 1.4
+    },
+    "entry_price": 80.6,
+    "stop_loss": 78.24,
+    "target": 83.85,
+    "risk_reward": 1.38,
+    "indicators": {
+      "rsi": 51.3,
+      "ma50": 80.32,
+      "ma200": 76.8,
+      "high_20d": 83.85,
+      "pullback_pct": 3.9,
+      "volume_ratio": 1.54
+    },
+    "reasoning": "XEL is 3.9% below its 20-day high with RSI at 51.3, offering a controlled pullback into an uptrend (price above 50 MA at 80.32). Volume spiked 1.54\u00d7 above average on a bullish candle, confirming institutional interest.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 80.6,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-11"
+    },
+    "status": "open"
+  },
+  {
+    "id": "ETN_2026-05-11",
+    "ticker": "ETN",
+    "company_name": "Eaton Corporation",
+    "date_generated": "2026-05-11",
+    "setup_type": "Momentum Pullback",
+    "score": 3.7,
+    "score_breakdown": {
+      "trend_strength": 4.33,
+      "pullback_quality": 4.9,
+      "volume_confirm": 0.04
+    },
+    "entry_price": 419.0,
+    "stop_loss": 387.19,
+    "target": 434.23,
+    "risk_reward": 0.48,
+    "indicators": {
+      "rsi": 57.2,
+      "ma50": 382.71,
+      "ma200": 361.45,
+      "high_20d": 434.23,
+      "pullback_pct": 3.5,
+      "volume_ratio": 1.31
+    },
+    "reasoning": "ETN is 3.5% below its 20-day high with RSI at 57.2, offering a controlled pullback into an uptrend (price above 50 MA at 382.71). Volume spiked 1.31\u00d7 above average on a bullish candle, confirming institutional interest.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 419.0,
+      "last_return_pct": 0.0,
       "last_checked": "2026-05-11"
     },
     "status": "open"
