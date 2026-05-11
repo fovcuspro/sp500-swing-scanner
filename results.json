@@ -1,8 +1,8 @@
 {
-  "scan_date": "2026-05-10",
-  "scan_time_utc": "18:29:55",
+  "scan_date": "2026-05-11",
+  "scan_time_utc": "13:49:59",
   "universe": "S&P 500 (503 tickers)",
-  "candidates_found": 4,
+  "candidates_found": 0,
   "strategy": {
     "name": "Momentum Pullback",
     "timeframe": "Daily",
@@ -20,118 +20,5 @@
       "volume_confirm": "20%"
     }
   },
-  "top_setups": [
-    {
-      "ticker": "CTVA",
-      "company_name": "Corteva",
-      "score": 5.214,
-      "score_breakdown": {
-        "trend_strength": 4.32,
-        "pullback_quality": 8.67,
-        "volume_confirm": 0.09
-      },
-      "setup": "Momentum Pullback",
-      "price": 81.13,
-      "entry_zone": {
-        "low": 80.72,
-        "high": 81.54
-      },
-      "stop_loss": 78.54,
-      "target": 84.62,
-      "risk_reward": 1.35,
-      "indicators": {
-        "rsi": 50.9,
-        "ma50": 80.7,
-        "ma200": 71.7,
-        "high_20d": 84.62,
-        "pullback_pct": 4.1,
-        "volume_ratio": 1.31
-      },
-      "reasoning": "CTVA is 4.1% below its 20-day high with RSI at 50.9, offering a controlled pullback into an uptrend (price above 50 MA at 80.7). Volume spiked 1.31\u00d7 above average on a bullish candle, confirming institutional interest."
-    },
-    {
-      "ticker": "ALB",
-      "company_name": "Albemarle Corporation",
-      "score": 4.344,
-      "score_breakdown": {
-        "trend_strength": 8.25,
-        "pullback_quality": 2.44,
-        "volume_confirm": 0.34
-      },
-      "setup": "Momentum Pullback",
-      "price": 203.52,
-      "entry_zone": {
-        "low": 202.5,
-        "high": 204.54
-      },
-      "stop_loss": 184.65,
-      "target": 221.0,
-      "risk_reward": 0.93,
-      "indicators": {
-        "rsi": 59.3,
-        "ma50": 180.14,
-        "ma200": 132.45,
-        "high_20d": 221.0,
-        "pullback_pct": 7.9,
-        "volume_ratio": 1.36
-      },
-      "reasoning": "ALB is 7.9% below its 20-day high with RSI at 59.3, offering a controlled pullback into an uptrend (price above 50 MA at 180.14). Volume spiked 1.36\u00d7 above average on a bullish candle, confirming institutional interest."
-    },
-    {
-      "ticker": "ABNB",
-      "company_name": "Airbnb",
-      "score": 3.782,
-      "score_breakdown": {
-        "trend_strength": 2.86,
-        "pullback_quality": 4.27,
-        "volume_confirm": 4.65
-      },
-      "setup": "Momentum Pullback",
-      "price": 141.49,
-      "entry_zone": {
-        "low": 140.78,
-        "high": 142.2
-      },
-      "stop_loss": 135.95,
-      "target": 147.25,
-      "risk_reward": 1.04,
-      "indicators": {
-        "rsi": 59.3,
-        "ma50": 133.97,
-        "ma200": 128.37,
-        "high_20d": 147.25,
-        "pullback_pct": 3.9,
-        "volume_ratio": 2.09
-      },
-      "reasoning": "ABNB is 3.9% below its 20-day high with RSI at 59.3, offering a controlled pullback into an uptrend (price above 50 MA at 133.97). Volume spiked 2.09\u00d7 above average on a bullish candle, confirming institutional interest."
-    },
-    {
-      "ticker": "NSC",
-      "company_name": "Norfolk Southern",
-      "score": 2.856,
-      "score_breakdown": {
-        "trend_strength": 2.2,
-        "pullback_quality": 4.25,
-        "volume_confirm": 1.38
-      },
-      "setup": "Momentum Pullback",
-      "price": 312.01,
-      "entry_zone": {
-        "low": 310.45,
-        "high": 313.57
-      },
-      "stop_loss": 308.86,
-      "target": 321.98,
-      "risk_reward": 3.17,
-      "indicators": {
-        "rsi": 57.7,
-        "ma50": 298.8,
-        "ma200": 289.28,
-        "high_20d": 321.98,
-        "pullback_pct": 3.1,
-        "volume_ratio": 1.53
-      },
-      "reasoning": "NSC is 3.1% below its 20-day high with RSI at 57.7, offering a controlled pullback into an uptrend (price above 50 MA at 298.8). Volume spiked 1.53\u00d7 above average on a bullish candle, confirming institutional interest."
-    }
-  ]
+  "top_setups": []
 }
