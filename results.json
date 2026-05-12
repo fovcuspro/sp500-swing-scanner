@@ -1,8 +1,8 @@
 {
-  "scan_date": "2026-05-11",
-  "scan_time_utc": "21:42:25",
+  "scan_date": "2026-05-12",
+  "scan_time_utc": "17:35:23",
   "universe": "S&P 500 (503 tickers)",
-  "candidates_found": 2,
+  "candidates_found": 0,
   "strategy": {
     "name": "Momentum Pullback",
     "timeframe": "Daily",
@@ -20,62 +20,5 @@
       "volume_confirm": "20%"
     }
   },
-  "top_setups": [
-    {
-      "ticker": "XEL",
-      "company_name": "Xcel Energy",
-      "score": 4.216,
-      "score_breakdown": {
-        "trend_strength": 1.61,
-        "pullback_quality": 8.23,
-        "volume_confirm": 1.4
-      },
-      "setup": "Momentum Pullback",
-      "price": 80.6,
-      "entry_zone": {
-        "low": 80.2,
-        "high": 81.0
-      },
-      "stop_loss": 78.24,
-      "target": 83.85,
-      "risk_reward": 1.38,
-      "indicators": {
-        "rsi": 51.3,
-        "ma50": 80.32,
-        "ma200": 76.8,
-        "high_20d": 83.85,
-        "pullback_pct": 3.9,
-        "volume_ratio": 1.54
-      },
-      "reasoning": "XEL is 3.9% below its 20-day high with RSI at 51.3, offering a controlled pullback into an uptrend (price above 50 MA at 80.32). Volume spiked 1.54\u00d7 above average on a bullish candle, confirming institutional interest."
-    },
-    {
-      "ticker": "ETN",
-      "company_name": "Eaton Corporation",
-      "score": 3.7,
-      "score_breakdown": {
-        "trend_strength": 4.33,
-        "pullback_quality": 4.9,
-        "volume_confirm": 0.04
-      },
-      "setup": "Momentum Pullback",
-      "price": 419.0,
-      "entry_zone": {
-        "low": 416.9,
-        "high": 421.09
-      },
-      "stop_loss": 387.19,
-      "target": 434.23,
-      "risk_reward": 0.48,
-      "indicators": {
-        "rsi": 57.2,
-        "ma50": 382.71,
-        "ma200": 361.45,
-        "high_20d": 434.23,
-        "pullback_pct": 3.5,
-        "volume_ratio": 1.31
-      },
-      "reasoning": "ETN is 3.5% below its 20-day high with RSI at 57.2, offering a controlled pullback into an uptrend (price above 50 MA at 382.71). Volume spiked 1.31\u00d7 above average on a bullish candle, confirming institutional interest."
-    }
-  ]
+  "top_setups": []
 }

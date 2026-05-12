@@ -1,20 +1,28 @@
 {
-  "generated_at": "2026-05-11T21:42:26Z",
+  "generated_at": "2026-05-12T17:35:24Z",
   "total_trades": 12,
-  "open_trades": 12,
-  "closed_trades": 0,
+  "open_trades": 10,
+  "closed_trades": 2,
   "win_rate": 0.0,
-  "avg_return_pct": 0.0,
+  "avg_return_pct": -4.58,
   "avg_win_pct": 0.0,
-  "avg_loss_pct": 0.0,
-  "expectancy": 0.0,
-  "best_trade": null,
-  "worst_trade": null,
+  "avg_loss_pct": -4.58,
+  "expectancy": -4.58,
+  "best_trade": {
+    "ticker": "ABNB",
+    "date": "2026-05-09",
+    "return_pct": -4.58
+  },
+  "worst_trade": {
+    "ticker": "ABNB",
+    "date": "2026-05-09",
+    "return_pct": -4.58
+  },
   "by_score_range": {
     "5\u20136": {
-      "count": 0,
+      "count": 2,
       "win_rate": 0.0,
-      "avg_return": 0.0
+      "avg_return": -4.58
     },
     "6\u20137": {
       "count": 0,
@@ -54,16 +62,16 @@
       "avg_return": 0.0
     },
     "55\u201360": {
-      "count": 0,
+      "count": 2,
       "win_rate": 0.0,
-      "avg_return": 0.0
+      "avg_return": -4.58
     }
   },
   "by_pullback_range": {
     "3\u20135%": {
-      "count": 0,
+      "count": 2,
       "win_rate": 0.0,
-      "avg_return": 0.0
+      "avg_return": -4.58
     },
     "5\u20136%": {
       "count": 0,
@@ -76,5 +84,24 @@
       "avg_return": 0.0
     }
   },
-  "recent_trades": []
+  "recent_trades": [
+    {
+      "ticker": "ABNB",
+      "company_name": "Airbnb",
+      "date": "2026-05-10",
+      "score": 3.782,
+      "return_pct": -4.58,
+      "status": "stop_hit",
+      "days_held": 2
+    },
+    {
+      "ticker": "ABNB",
+      "company_name": "Airbnb",
+      "date": "2026-05-09",
+      "score": 3.782,
+      "return_pct": -4.58,
+      "status": "stop_hit",
+      "days_held": 3
+    }
+  ]
 }
