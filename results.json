@@ -1,8 +1,8 @@
 {
   "scan_date": "2026-05-13",
-  "scan_time_utc": "04:25:47",
+  "scan_time_utc": "19:25:12",
   "universe": "S&P 500 (503 tickers)",
-  "candidates_found": 2,
+  "candidates_found": 0,
   "strategy": {
     "name": "Momentum Pullback",
     "timeframe": "Daily",
@@ -20,62 +20,5 @@
       "volume_confirm": "20%"
     }
   },
-  "top_setups": [
-    {
-      "ticker": "LNT",
-      "company_name": "Alliant Energy",
-      "score": 4.052,
-      "score_breakdown": {
-        "trend_strength": 2.63,
-        "pullback_quality": 7.19,
-        "volume_confirm": 0.62
-      },
-      "setup": "Momentum Pullback",
-      "price": 72.59,
-      "entry_zone": {
-        "low": 72.23,
-        "high": 72.95
-      },
-      "stop_loss": 71.16,
-      "target": 75.76,
-      "risk_reward": 2.22,
-      "indicators": {
-        "rsi": 54.0,
-        "ma50": 71.54,
-        "ma200": 66.99,
-        "high_20d": 75.76,
-        "pullback_pct": 4.2,
-        "volume_ratio": 1.4
-      },
-      "reasoning": "LNT is 4.2% below its 20-day high with RSI at 54.0, offering a controlled pullback into an uptrend (price above 50 MA at 71.54). Volume spiked 1.4\u00d7 above average on a bullish candle, confirming institutional interest."
-    },
-    {
-      "ticker": "RF",
-      "company_name": "Regions Financial Corporation",
-      "score": 3.128,
-      "score_breakdown": {
-        "trend_strength": 0.86,
-        "pullback_quality": 6.79,
-        "volume_confirm": 0.34
-      },
-      "setup": "Momentum Pullback",
-      "price": 27.15,
-      "entry_zone": {
-        "low": 27.01,
-        "high": 27.29
-      },
-      "stop_loss": 26.56,
-      "target": 28.73,
-      "risk_reward": 2.68,
-      "indicators": {
-        "rsi": 44.6,
-        "ma50": 27.01,
-        "ma200": 26.43,
-        "high_20d": 28.73,
-        "pullback_pct": 5.5,
-        "volume_ratio": 1.36
-      },
-      "reasoning": "RF is 5.5% below its 20-day high with RSI at 44.6, offering a controlled pullback into an uptrend (price above 50 MA at 27.01). Volume spiked 1.36\u00d7 above average on a bullish candle, confirming institutional interest."
-    }
-  ]
+  "top_setups": []
 }
