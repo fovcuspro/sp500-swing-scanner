@@ -25,18 +25,18 @@
     },
     "reasoning": "ALL is 3.9% below its 20-day high with RSI at 49.4, offering a controlled pullback into an uptrend (price above 50 MA at 211.25). Volume spiked 1.95\u00d7 above average on a bullish candle, confirming institutional interest.",
     "outcomes": {
-      "1w_price": 218.48,
+      "1w_price": 218.28,
       "2w_price": null,
       "4w_price": null,
-      "1w_return_pct": 2.25,
+      "1w_return_pct": 2.16,
       "2w_return_pct": null,
       "4w_return_pct": null,
-      "max_gain_pct": 2.25,
+      "max_gain_pct": 2.16,
       "max_drawdown_pct": -1.09,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 218.48,
-      "last_return_pct": 2.25,
+      "last_price": 218.28,
+      "last_return_pct": 2.16,
       "last_checked": "2026-05-15"
     },
     "status": "open"
@@ -119,8 +119,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 83.29,
-      "last_return_pct": 2.66,
+      "last_price": 83.19,
+      "last_return_pct": 2.54,
       "last_checked": "2026-05-15"
     },
     "status": "open"
@@ -158,11 +158,11 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 5.46,
-      "max_drawdown_pct": -9.85,
+      "max_drawdown_pct": -9.83,
       "target_hit": false,
       "stop_hit": true,
-      "last_price": 183.48,
-      "last_return_pct": -9.85,
+      "last_price": 183.51,
+      "last_return_pct": -9.83,
       "last_checked": "2026-05-15"
     },
     "status": "stop_hit"
@@ -245,8 +245,8 @@
       "max_drawdown_pct": -0.46,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 314.79,
-      "last_return_pct": 0.89,
+      "last_price": 315.17,
+      "last_return_pct": 1.01,
       "last_checked": "2026-05-15"
     },
     "status": "open"
@@ -287,8 +287,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 83.29,
-      "last_return_pct": 2.66,
+      "last_price": 83.19,
+      "last_return_pct": 2.54,
       "last_checked": "2026-05-15"
     },
     "status": "open"
@@ -326,11 +326,11 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 5.46,
-      "max_drawdown_pct": -9.85,
+      "max_drawdown_pct": -9.83,
       "target_hit": false,
       "stop_hit": true,
-      "last_price": 183.48,
-      "last_return_pct": -9.85,
+      "last_price": 183.51,
+      "last_return_pct": -9.83,
       "last_checked": "2026-05-15"
     },
     "status": "stop_hit"
@@ -413,8 +413,8 @@
       "max_drawdown_pct": -0.46,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 314.79,
-      "last_return_pct": 0.89,
+      "last_price": 315.17,
+      "last_return_pct": 1.01,
       "last_checked": "2026-05-15"
     },
     "status": "open"
@@ -452,11 +452,11 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": -1.6,
+      "max_drawdown_pct": -1.45,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 79.31,
-      "last_return_pct": -1.6,
+      "last_price": 79.43,
+      "last_return_pct": -1.45,
       "last_checked": "2026-05-15"
     },
     "status": "open"
@@ -494,11 +494,11 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": -5.32,
+      "max_drawdown_pct": -4.93,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 396.7,
-      "last_return_pct": -5.32,
+      "last_price": 398.33,
+      "last_return_pct": -4.93,
       "last_checked": "2026-05-15"
     },
     "status": "open"
@@ -536,11 +536,11 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": -0.98,
+      "max_drawdown_pct": -0.94,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 71.88,
-      "last_return_pct": -0.98,
+      "last_price": 71.91,
+      "last_return_pct": -0.94,
       "last_checked": "2026-05-15"
     },
     "status": "open"
@@ -578,11 +578,11 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": -1.95,
+      "max_drawdown_pct": -2.1,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 26.62,
-      "last_return_pct": -1.95,
+      "last_price": 26.58,
+      "last_return_pct": -2.1,
       "last_checked": "2026-05-15"
     },
     "status": "open"

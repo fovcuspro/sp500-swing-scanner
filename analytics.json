@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-15T13:40:43Z",
+  "generated_at": "2026-05-15T13:41:12Z",
   "total_trades": 14,
   "open_trades": 9,
   "closed_trades": 5,
   "win_rate": 0.2,
-  "avg_return_pct": -4.91,
+  "avg_return_pct": -4.9,
   "avg_win_pct": 4.3,
   "avg_loss_pct": -7.21,
   "expectancy": -4.91,
@@ -16,13 +16,13 @@
   "worst_trade": {
     "ticker": "ALB",
     "date": "2026-05-09",
-    "return_pct": -9.85
+    "return_pct": -9.83
   },
   "by_score_range": {
     "5\u20136": {
       "count": 5,
       "win_rate": 0.2,
-      "avg_return": -4.91
+      "avg_return": -4.9
     },
     "6\u20137": {
       "count": 0,
@@ -64,7 +64,7 @@
     "55\u201360": {
       "count": 5,
       "win_rate": 0.2,
-      "avg_return": -4.91
+      "avg_return": -4.9
     }
   },
   "by_pullback_range": {
@@ -81,7 +81,7 @@
     "6\u20138%": {
       "count": 2,
       "win_rate": 0.0,
-      "avg_return": -9.85
+      "avg_return": -9.83
     }
   },
   "recent_trades": [
@@ -90,7 +90,7 @@
       "company_name": "Albemarle Corporation",
       "date": "2026-05-10",
       "score": 4.344,
-      "return_pct": -9.85,
+      "return_pct": -9.83,
       "status": "stop_hit",
       "days_held": 5
     },
@@ -108,7 +108,7 @@
       "company_name": "Albemarle Corporation",
       "date": "2026-05-09",
       "score": 4.344,
-      "return_pct": -9.85,
+      "return_pct": -9.83,
       "status": "stop_hit",
       "days_held": 6
     },
