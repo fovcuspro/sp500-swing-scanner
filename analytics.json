@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-05-15T13:41:12Z",
+  "generated_at": "2026-05-15T18:14:33Z",
   "total_trades": 14,
-  "open_trades": 9,
-  "closed_trades": 5,
-  "win_rate": 0.2,
-  "avg_return_pct": -4.9,
+  "open_trades": 7,
+  "closed_trades": 7,
+  "win_rate": 0.143,
+  "avg_return_pct": -4.28,
   "avg_win_pct": 4.3,
-  "avg_loss_pct": -7.21,
-  "expectancy": -4.91,
+  "avg_loss_pct": -5.71,
+  "expectancy": -4.28,
   "best_trade": {
     "ticker": "TRGP",
     "date": "2026-05-08",
@@ -20,9 +20,9 @@
   },
   "by_score_range": {
     "5\u20136": {
-      "count": 5,
-      "win_rate": 0.2,
-      "avg_return": -4.9
+      "count": 7,
+      "win_rate": 0.143,
+      "avg_return": -4.28
     },
     "6\u20137": {
       "count": 0,
@@ -57,9 +57,9 @@
       "avg_return": 0.0
     },
     "50\u201355": {
-      "count": 0,
+      "count": 2,
       "win_rate": 0.0,
-      "avg_return": 0.0
+      "avg_return": -2.71
     },
     "55\u201360": {
       "count": 5,
@@ -69,9 +69,9 @@
   },
   "by_pullback_range": {
     "3\u20135%": {
-      "count": 3,
-      "win_rate": 0.333,
-      "avg_return": -1.62
+      "count": 5,
+      "win_rate": 0.2,
+      "avg_return": -2.06
     },
     "5\u20136%": {
       "count": 0,
@@ -85,6 +85,24 @@
     }
   },
   "recent_trades": [
+    {
+      "ticker": "LNT",
+      "company_name": "Alliant Energy",
+      "date": "2026-05-13",
+      "score": 4.052,
+      "return_pct": -2.14,
+      "status": "stop_hit",
+      "days_held": 2
+    },
+    {
+      "ticker": "XEL",
+      "company_name": "Xcel Energy",
+      "date": "2026-05-11",
+      "score": 4.216,
+      "return_pct": -3.28,
+      "status": "stop_hit",
+      "days_held": 4
+    },
     {
       "ticker": "ALB",
       "company_name": "Albemarle Corporation",
