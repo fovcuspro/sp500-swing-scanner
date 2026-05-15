@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-05-15T13:12:51Z",
+  "generated_at": "2026-05-15T13:40:43Z",
   "total_trades": 14,
-  "open_trades": 11,
-  "closed_trades": 3,
-  "win_rate": 0.333,
-  "avg_return_pct": -1.62,
+  "open_trades": 9,
+  "closed_trades": 5,
+  "win_rate": 0.2,
+  "avg_return_pct": -4.91,
   "avg_win_pct": 4.3,
-  "avg_loss_pct": -4.58,
-  "expectancy": -1.62,
+  "avg_loss_pct": -7.21,
+  "expectancy": -4.91,
   "best_trade": {
     "ticker": "TRGP",
     "date": "2026-05-08",
     "return_pct": 4.3
   },
   "worst_trade": {
-    "ticker": "ABNB",
+    "ticker": "ALB",
     "date": "2026-05-09",
-    "return_pct": -4.58
+    "return_pct": -9.85
   },
   "by_score_range": {
     "5\u20136": {
-      "count": 3,
-      "win_rate": 0.333,
-      "avg_return": -1.62
+      "count": 5,
+      "win_rate": 0.2,
+      "avg_return": -4.91
     },
     "6\u20137": {
       "count": 0,
@@ -62,9 +62,9 @@
       "avg_return": 0.0
     },
     "55\u201360": {
-      "count": 3,
-      "win_rate": 0.333,
-      "avg_return": -1.62
+      "count": 5,
+      "win_rate": 0.2,
+      "avg_return": -4.91
     }
   },
   "by_pullback_range": {
@@ -79,12 +79,21 @@
       "avg_return": 0.0
     },
     "6\u20138%": {
-      "count": 0,
+      "count": 2,
       "win_rate": 0.0,
-      "avg_return": 0.0
+      "avg_return": -9.85
     }
   },
   "recent_trades": [
+    {
+      "ticker": "ALB",
+      "company_name": "Albemarle Corporation",
+      "date": "2026-05-10",
+      "score": 4.344,
+      "return_pct": -9.85,
+      "status": "stop_hit",
+      "days_held": 5
+    },
     {
       "ticker": "ABNB",
       "company_name": "Airbnb",
@@ -93,6 +102,15 @@
       "return_pct": -4.58,
       "status": "stop_hit",
       "days_held": 2
+    },
+    {
+      "ticker": "ALB",
+      "company_name": "Albemarle Corporation",
+      "date": "2026-05-09",
+      "score": 4.344,
+      "return_pct": -9.85,
+      "status": "stop_hit",
+      "days_held": 6
     },
     {
       "ticker": "ABNB",
