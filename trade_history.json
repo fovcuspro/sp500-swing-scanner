@@ -37,7 +37,7 @@
       "stop_hit": false,
       "last_price": 217.37,
       "last_return_pct": 1.73,
-      "last_checked": "2026-05-17"
+      "last_checked": "2026-05-18"
     },
     "status": "open"
   },
@@ -121,7 +121,7 @@
       "stop_hit": false,
       "last_price": 82.21,
       "last_return_pct": 1.33,
-      "last_checked": "2026-05-17"
+      "last_checked": "2026-05-18"
     },
     "status": "open"
   },
@@ -247,7 +247,7 @@
       "stop_hit": false,
       "last_price": 315.95,
       "last_return_pct": 1.26,
-      "last_checked": "2026-05-17"
+      "last_checked": "2026-05-18"
     },
     "status": "open"
   },
@@ -289,7 +289,7 @@
       "stop_hit": false,
       "last_price": 82.21,
       "last_return_pct": 1.33,
-      "last_checked": "2026-05-17"
+      "last_checked": "2026-05-18"
     },
     "status": "open"
   },
@@ -415,7 +415,7 @@
       "stop_hit": false,
       "last_price": 315.95,
       "last_return_pct": 1.26,
-      "last_checked": "2026-05-17"
+      "last_checked": "2026-05-18"
     },
     "status": "open"
   },
@@ -499,7 +499,7 @@
       "stop_hit": false,
       "last_price": 399.44,
       "last_return_pct": -4.67,
-      "last_checked": "2026-05-17"
+      "last_checked": "2026-05-18"
     },
     "status": "open"
   },
@@ -583,7 +583,7 @@
       "stop_hit": false,
       "last_price": 26.66,
       "last_return_pct": -1.8,
-      "last_checked": "2026-05-17"
+      "last_checked": "2026-05-18"
     },
     "status": "open"
   },
@@ -625,7 +625,7 @@
       "stop_hit": false,
       "last_price": 21.04,
       "last_return_pct": 0.0,
-      "last_checked": "2026-05-17"
+      "last_checked": "2026-05-18"
     },
     "status": "open"
   },
@@ -667,7 +667,49 @@
       "stop_hit": false,
       "last_price": 21.04,
       "last_return_pct": 0.0,
-      "last_checked": "2026-05-17"
+      "last_checked": "2026-05-18"
+    },
+    "status": "open"
+  },
+  {
+    "id": "KEY_2026-05-18",
+    "ticker": "KEY",
+    "company_name": "KeyCorp",
+    "date_generated": "2026-05-18",
+    "setup_type": "Momentum Pullback",
+    "score": 3.74,
+    "score_breakdown": {
+      "trend_strength": 2.43,
+      "pullback_quality": 5.6,
+      "volume_confirm": 2.64
+    },
+    "entry_price": 21.04,
+    "stop_loss": 20.69,
+    "target": 22.55,
+    "risk_reward": 4.31,
+    "indicators": {
+      "rsi": 44.6,
+      "ma50": 20.8,
+      "ma200": 19.54,
+      "high_20d": 22.55,
+      "pullback_pct": 6.7,
+      "volume_ratio": 1.75
+    },
+    "reasoning": "KEY is 6.7% below its 20-day high with RSI at 44.6, offering a controlled pullback into an uptrend (price above 50 MA at 20.8). Volume spiked 1.75\u00d7 above average on a bullish candle, confirming institutional interest.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 21.04,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-18"
     },
     "status": "open"
   }
