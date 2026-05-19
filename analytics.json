@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-05-19T06:17:56Z",
-  "total_trades": 18,
+  "generated_at": "2026-05-19T19:29:55Z",
+  "total_trades": 19,
   "open_trades": 10,
-  "closed_trades": 8,
-  "win_rate": 0.125,
-  "avg_return_pct": -4.94,
-  "avg_win_pct": 4.3,
+  "closed_trades": 9,
+  "win_rate": 0.222,
+  "avg_return_pct": -4.15,
+  "avg_win_pct": 3.23,
   "avg_loss_pct": -6.26,
-  "expectancy": -4.94,
+  "expectancy": -4.15,
   "best_trade": {
     "ticker": "TRGP",
     "date": "2026-05-08",
@@ -20,9 +20,9 @@
   },
   "by_score_range": {
     "5\u20136": {
-      "count": 8,
-      "win_rate": 0.125,
-      "avg_return": -4.94
+      "count": 9,
+      "win_rate": 0.222,
+      "avg_return": -4.15
     },
     "6\u20137": {
       "count": 0,
@@ -52,9 +52,9 @@
       "avg_return": 0.0
     },
     "45\u201350": {
-      "count": 0,
-      "win_rate": 0.0,
-      "avg_return": 0.0
+      "count": 1,
+      "win_rate": 1.0,
+      "avg_return": 2.16
     },
     "50\u201355": {
       "count": 2,
@@ -69,9 +69,9 @@
   },
   "by_pullback_range": {
     "3\u20135%": {
-      "count": 6,
-      "win_rate": 0.167,
-      "avg_return": -3.31
+      "count": 7,
+      "win_rate": 0.286,
+      "avg_return": -2.53
     },
     "5\u20136%": {
       "count": 0,
@@ -147,6 +147,15 @@
       "return_pct": -4.58,
       "status": "stop_hit",
       "days_held": 3
+    },
+    {
+      "ticker": "ALL",
+      "company_name": "Allstate",
+      "date": "2026-05-08",
+      "score": 4.748,
+      "return_pct": 2.16,
+      "status": "target_hit",
+      "days_held": 11
     },
     {
       "ticker": "TRGP",
