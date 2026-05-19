@@ -1,8 +1,8 @@
 {
-  "scan_date": "2026-05-18",
-  "scan_time_utc": "19:14:47",
+  "scan_date": "2026-05-19",
+  "scan_time_utc": "06:17:42",
   "universe": "S&P 500 (503 tickers)",
-  "candidates_found": 0,
+  "candidates_found": 1,
   "strategy": {
     "name": "Momentum Pullback",
     "timeframe": "Daily",
@@ -20,5 +20,34 @@
       "volume_confirm": "20%"
     }
   },
-  "top_setups": []
+  "top_setups": [
+    {
+      "ticker": "SPG",
+      "company_name": "Simon Property Group",
+      "score": 4.668,
+      "score_breakdown": {
+        "trend_strength": 2.77,
+        "pullback_quality": 8.73,
+        "volume_confirm": 0.34
+      },
+      "setup": "Momentum Pullback",
+      "price": 200.42,
+      "entry_zone": {
+        "low": 199.42,
+        "high": 201.42
+      },
+      "stop_loss": 199.0,
+      "target": 208.28,
+      "risk_reward": 5.54,
+      "indicators": {
+        "rsi": 49.9,
+        "ma50": 195.62,
+        "ma200": 183.74,
+        "high_20d": 208.28,
+        "pullback_pct": 3.8,
+        "volume_ratio": 1.36
+      },
+      "reasoning": "SPG is 3.8% below its 20-day high with RSI at 49.9, offering a controlled pullback into an uptrend (price above 50 MA at 195.62). Volume spiked 1.36\u00d7 above average on a bullish candle, confirming institutional interest."
+    }
+  ]
 }
