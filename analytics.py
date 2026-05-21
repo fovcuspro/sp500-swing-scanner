@@ -52,36 +52,65 @@ def group_stats(group: list[dict]) -> dict:
 
 
 def by_score_range(closed: list[dict]) -> dict:
-    buckets: dict[str, list] = {"5–6": [], "6–7": [], "7–8": [], "8–9": [], "9–10": []}
+    buckets: dict[str, list] = {"5-6": [], "6-7": [], "7-8": [], "8-9": [], "9-10": []}
     for t in closed:
         s = t.get("score", 0)
-        if   s >= 9: buckets["9–10"].append(t)
-        elif s >= 8: buckets["8–9"].append(t)
-        elif s >= 7: buckets["7–8"].append(t)
-        elif s >= 6: buckets["6–7"].append(t)
-        else:        buckets["5–6"].append(t)
+        if   s >= 9: buckets["9-10"].append(t)
+        elif s >= 8: buckets["8-9"].append(t)
+        elif s >= 7: buckets["7-8"].append(t)
+        elif s >= 6: buckets["6-7"].append(t)
+        else:        buckets["5-6"].append(t)
     return {k: group_stats(v) for k, v in buckets.items()}
 
 
 def by_rsi_range(closed: list[dict]) -> dict:
-    buckets: dict[str, list] = {"40–45": [], "45–50": [], "50–55": [], "55–60": []}
+    buckets: dict[str, list] = {"40-45": [], "45-50": [], "50-55": [], "55-60": []}
     for t in closed:
         rsi = t.get("indicators", {}).get("rsi", 0)
-        if   rsi >= 55: buckets["55–60"].append(t)
-        elif rsi >= 50: buckets["50–55"].append(t)
-        elif rsi >= 45: buckets["45–50"].append(t)
-        else:           buckets["40–45"].append(t)
+        if   rsi >= 55: buckets["55-60"].append(t)
+        elif rsi >= 50: buckets["50-55"].append(t)
+        elif rsi >= 45: buckets["45-50"].append(t)
+        else:           buckets["40-45"].append(t)
     return {k: group_stats(v) for k, v in buckets.items()}
 
 
 def by_pullback_range(closed: list[dict]) -> dict:
-    buckets: dict[str, list] = {"3–5%": [], "5–6%": [], "6–8%": []}
+    buckets: dict[str, list] = {"3-5%": [], "5-6%": [], "6-8%": []}
     for t in closed:
         pb = t.get("indicators", {}).get("pullback_pct", 0)
-        if   pb >= 6: buckets["6–8%"].append(t)
-        elif pb >= 5: buckets["5–6%"].append(t)
-        else:         buckets["3–5%"].append(t)
+        if   pb >= 6: buckets["6-8%"].append(t)
+        elif pb >= 5: buckets["5-6%"].append(t)
+        else:         buckets["3-5%"].append(t)
     return {k: group_stats(v) for k, v in buckets.items()}
+
+
+def by_regime(closed: list[dict]) -> dict:
+    """Group trades by regime field. Returns {regime: group_stats}."""
+    buckets: dict[str, list] = {"bull": [], "neutral": [], "bear": [], "unknown": []}
+    for t in closed:
+        r = t.get("regime", "") or "unknown"
+        bucket_key = r if r in buckets else "unknown"
+        buckets[bucket_key].append(t)
+    return {k: group_stats(v) for k, v in buckets.items() if v}
+
+
+def by_sector(closed: list[dict]) -> dict:
+    """Group trades by sector field."""
+    buckets: dict[str, list] = {}
+    for t in closed:
+        sec = t.get("sector", "") or "Unknown"
+        buckets.setdefault(sec, []).append(t)
+    return {k: group_stats(v) for k, v in sorted(buckets.items())}
+
+
+def stop_ab_test(closed: list[dict]) -> dict:
+    """Compare performance for trades where stop_method='swing' vs 'atr'."""
+    swing_trades = [t for t in closed if t.get("stop_method") == "swing"]
+    atr_trades   = [t for t in closed if t.get("stop_method") == "atr"]
+    return {
+        "swing": group_stats(swing_trades),
+        "atr":   group_stats(atr_trades),
+    }
 
 
 def compute_analytics(history: list[dict]) -> dict:
@@ -123,6 +152,9 @@ def compute_analytics(history: list[dict]) -> dict:
         "by_score_range":    by_score_range(closed),
         "by_rsi_range":      by_rsi_range(closed),
         "by_pullback_range": by_pullback_range(closed),
+        "by_regime":         by_regime(closed),
+        "by_sector":         by_sector(closed),
+        "stop_ab_test":      stop_ab_test(closed),
         "recent_trades": [
             {
                 "ticker":       t["ticker"],
@@ -160,6 +192,9 @@ def empty_analytics() -> dict:
         "by_score_range":    {},
         "by_rsi_range":      {},
         "by_pullback_range": {},
+        "by_regime":         {},
+        "by_sector":         {},
+        "stop_ab_test":      {},
         "recent_trades":     [],
     }
 

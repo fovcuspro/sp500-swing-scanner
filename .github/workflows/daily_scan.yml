@@ -34,6 +34,10 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Health check
+        run: python healthcheck.py
+        continue-on-error: true
+
       - name: Run scanner
         run: python scanner.py
 
@@ -59,18 +63,24 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Stash generated files before reset
-          cp results.json /tmp/results_new.json
+          cp results.json      /tmp/results_new.json
+          cp prev_results.json /tmp/prev_results_new.json 2>/dev/null || true
           cp trade_history.json /tmp/trade_history_new.json 2>/dev/null || true
-          cp analytics.json     /tmp/analytics_new.json     2>/dev/null || true
+          cp analytics.json    /tmp/analytics_new.json    2>/dev/null || true
+          cp health.json       /tmp/health_new.json       2>/dev/null || true
+          cp sectors.json      /tmp/sectors_new.json      2>/dev/null || true
 
           git fetch origin main
           git reset --hard origin/main
 
           # Restore generated files
           cp /tmp/results_new.json results.json
-          [ -f /tmp/trade_history_new.json ] && cp /tmp/trade_history_new.json trade_history.json
-          [ -f /tmp/analytics_new.json ]     && cp /tmp/analytics_new.json     analytics.json
+          [ -f /tmp/prev_results_new.json ]   && cp /tmp/prev_results_new.json   prev_results.json
+          [ -f /tmp/trade_history_new.json ]  && cp /tmp/trade_history_new.json  trade_history.json
+          [ -f /tmp/analytics_new.json ]      && cp /tmp/analytics_new.json      analytics.json
+          [ -f /tmp/health_new.json ]         && cp /tmp/health_new.json         health.json
+          [ -f /tmp/sectors_new.json ]        && cp /tmp/sectors_new.json        sectors.json
 
-          git add results.json trade_history.json analytics.json
+          git add results.json prev_results.json trade_history.json analytics.json health.json sectors.json
           git diff --staged --quiet || git commit -m "chore: scan + analytics $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push

@@ -75,6 +75,20 @@ def fetch_price_on_date(ticker: str, target_date: date) -> float | None:
         return None
 
 
+def check_exit_tiers(trade: dict, current: float) -> None:
+    """Mark which scale-out tiers have been reached."""
+    exit_plan = trade.get("exit_plan", {})
+    tiers     = exit_plan.get("tiers", [])
+    outcomes  = trade.setdefault("outcomes", {})
+    tiers_hit = outcomes.setdefault("tiers_hit", [])
+    for tier in tiers:
+        label = tier.get("label", "")
+        price = tier.get("price", 0)
+        if price and current >= price and label not in tiers_hit:
+            tiers_hit.append(label)
+            log.info(f"{trade['ticker']} tier reached: {label} @ {current}")
+
+
 def update_trade(trade: dict, today: date, current_prices: dict[str, float]) -> dict:
     if trade["status"] != "open":
         return trade
@@ -114,6 +128,8 @@ def update_trade(trade: dict, today: date, current_prices: dict[str, float]) -> 
         prev_min = outcomes.get("max_drawdown_pct") or 0
         outcomes["max_gain_pct"]     = round(max(prev_max, ret_pct), 2)
         outcomes["max_drawdown_pct"] = round(min(prev_min, ret_pct), 2)
+
+        check_exit_tiers(trade, current)
 
         if target    and current >= target:
             outcomes["target_hit"] = True
