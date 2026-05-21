@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-20T20:37:54Z",
-  "total_trades": 24,
-  "open_trades": 15,
+  "generated_at": "2026-05-21T12:46:21Z",
+  "total_trades": 29,
+  "open_trades": 20,
   "closed_trades": 9,
   "win_rate": 0.222,
   "avg_return_pct": -4.15,
@@ -19,69 +19,95 @@
     "return_pct": -9.83
   },
   "by_score_range": {
-    "5\u20136": {
+    "5-6": {
       "count": 9,
       "win_rate": 0.222,
       "avg_return": -4.15
     },
-    "6\u20137": {
+    "6-7": {
       "count": 0,
       "win_rate": 0.0,
       "avg_return": 0.0
     },
-    "7\u20138": {
+    "7-8": {
       "count": 0,
       "win_rate": 0.0,
       "avg_return": 0.0
     },
-    "8\u20139": {
+    "8-9": {
       "count": 0,
       "win_rate": 0.0,
       "avg_return": 0.0
     },
-    "9\u201310": {
+    "9-10": {
       "count": 0,
       "win_rate": 0.0,
       "avg_return": 0.0
     }
   },
   "by_rsi_range": {
-    "40\u201345": {
+    "40-45": {
       "count": 0,
       "win_rate": 0.0,
       "avg_return": 0.0
     },
-    "45\u201350": {
+    "45-50": {
       "count": 1,
       "win_rate": 1.0,
       "avg_return": 2.16
     },
-    "50\u201355": {
+    "50-55": {
       "count": 2,
       "win_rate": 0.0,
       "avg_return": -2.71
     },
-    "55\u201360": {
+    "55-60": {
       "count": 6,
       "win_rate": 0.167,
       "avg_return": -5.68
     }
   },
   "by_pullback_range": {
-    "3\u20135%": {
+    "3-5%": {
       "count": 7,
       "win_rate": 0.286,
       "avg_return": -2.53
     },
-    "5\u20136%": {
+    "5-6%": {
       "count": 0,
       "win_rate": 0.0,
       "avg_return": 0.0
     },
-    "6\u20138%": {
+    "6-8%": {
       "count": 2,
       "win_rate": 0.0,
       "avg_return": -9.83
+    }
+  },
+  "by_regime": {
+    "unknown": {
+      "count": 9,
+      "win_rate": 0.222,
+      "avg_return": -4.15
+    }
+  },
+  "by_sector": {
+    "Unknown": {
+      "count": 9,
+      "win_rate": 0.222,
+      "avg_return": -4.15
+    }
+  },
+  "stop_ab_test": {
+    "swing": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
+    },
+    "atr": {
+      "count": 0,
+      "win_rate": 0.0,
+      "avg_return": 0.0
     }
   },
   "recent_trades": [

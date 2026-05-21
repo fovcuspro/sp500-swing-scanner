@@ -121,7 +121,8 @@
       "stop_hit": false,
       "last_price": 78.8,
       "last_return_pct": -2.87,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -247,7 +248,8 @@
       "stop_hit": false,
       "last_price": 311.84,
       "last_return_pct": -0.05,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -289,7 +291,8 @@
       "stop_hit": false,
       "last_price": 78.8,
       "last_return_pct": -2.87,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -415,7 +418,8 @@
       "stop_hit": false,
       "last_price": 311.84,
       "last_return_pct": -0.05,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -583,7 +587,8 @@
       "stop_hit": false,
       "last_price": 27.53,
       "last_return_pct": 1.4,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -625,7 +630,8 @@
       "stop_hit": false,
       "last_price": 21.41,
       "last_return_pct": 1.76,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -667,7 +673,8 @@
       "stop_hit": false,
       "last_price": 21.41,
       "last_return_pct": 1.76,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -709,7 +716,8 @@
       "stop_hit": false,
       "last_price": 21.41,
       "last_return_pct": 1.76,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -751,7 +759,8 @@
       "stop_hit": false,
       "last_price": 204.1,
       "last_return_pct": 1.84,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -793,7 +802,8 @@
       "stop_hit": false,
       "last_price": 122.33,
       "last_return_pct": -2.97,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -835,7 +845,8 @@
       "stop_hit": false,
       "last_price": 122.33,
       "last_return_pct": 0.0,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -877,7 +888,8 @@
       "stop_hit": false,
       "last_price": 342.08,
       "last_return_pct": 0.0,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -919,7 +931,8 @@
       "stop_hit": false,
       "last_price": 164.44,
       "last_return_pct": 0.0,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -961,7 +974,8 @@
       "stop_hit": false,
       "last_price": 180.64,
       "last_return_pct": 0.0,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   },
@@ -1003,7 +1017,373 @@
       "stop_hit": false,
       "last_price": 135.55,
       "last_return_pct": 0.0,
-      "last_checked": "2026-05-20"
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
+    },
+    "status": "open"
+  },
+  {
+    "id": "TGT_2026-05-21",
+    "ticker": "TGT",
+    "company_name": "Target Corporation",
+    "sector": "Consumer Staples",
+    "date_generated": "2026-05-21",
+    "setup_type": "Momentum Pullback",
+    "score": 7.068,
+    "score_breakdown": {
+      "trend_strength": 5.16,
+      "pullback_quality": 7.51,
+      "volume_confirm": 10.0
+    },
+    "regime": "bull",
+    "entry_price": 122.33,
+    "stop_loss": 110.11,
+    "swing_stop": 116.57,
+    "atr_stop": 110.11,
+    "stop_method": "atr",
+    "target": 130.74,
+    "risk_reward": 0.69,
+    "exit_plan": {
+      "tiers": [
+        {
+          "label": "T1 \u2014 scale out",
+          "price": 126.53,
+          "fraction": 0.5
+        },
+        {
+          "label": "T2 \u2014 target",
+          "price": 130.74,
+          "fraction": 0.5
+        }
+      ],
+      "runner": {
+        "fraction": 0.0,
+        "trail_atr_multiple": 2.0
+      }
+    },
+    "position_sizing": {
+      "suggested_shares": 8,
+      "dollar_risk": 100.0,
+      "position_value": 978.64,
+      "regime_size_applied": "bull"
+    },
+    "indicators": {
+      "rsi": 47.9,
+      "ma50": 121.57,
+      "ma200": 102.84,
+      "atr": 4.89,
+      "high_20d": 130.74,
+      "pullback_pct": 6.4,
+      "volume_ratio": 3.63
+    },
+    "reasoning": "TGT is 6.4% below its 20-day high with RSI at 47.9, offering a controlled pullback into an uptrend (price above 50 MA at 121.57). Volume spiked 3.63x above average on a bullish candle, confirming institutional interest. Stop set via atr method at 110.11 (ATR stop: 110.11, swing low: 116.57). Market regime: bull \u2014 position sized to 100% of full risk.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 122.33,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
+    },
+    "status": "open"
+  },
+  {
+    "id": "KEYS_2026-05-21",
+    "ticker": "KEYS",
+    "company_name": "Keysight Technologies",
+    "sector": "Information Technology",
+    "date_generated": "2026-05-21",
+    "setup_type": "Momentum Pullback",
+    "score": 6.498,
+    "score_breakdown": {
+      "trend_strength": 6.58,
+      "pullback_quality": 7.38,
+      "volume_confirm": 4.57
+    },
+    "regime": "bull",
+    "entry_price": 342.08,
+    "stop_loss": 306.81,
+    "swing_stop": 326.48,
+    "atr_stop": 306.81,
+    "stop_method": "atr",
+    "target": 370.17,
+    "risk_reward": 0.8,
+    "exit_plan": {
+      "tiers": [
+        {
+          "label": "T1 \u2014 scale out",
+          "price": 356.12,
+          "fraction": 0.5
+        },
+        {
+          "label": "T2 \u2014 target",
+          "price": 370.17,
+          "fraction": 0.5
+        }
+      ],
+      "runner": {
+        "fraction": 0.0,
+        "trail_atr_multiple": 2.0
+      }
+    },
+    "position_sizing": {
+      "suggested_shares": 2,
+      "dollar_risk": 100.0,
+      "position_value": 684.16,
+      "regime_size_applied": "bull"
+    },
+    "indicators": {
+      "rsi": 50.1,
+      "ma50": 321.78,
+      "ma200": 228.53,
+      "atr": 14.11,
+      "high_20d": 370.17,
+      "pullback_pct": 7.6,
+      "volume_ratio": 2.08
+    },
+    "reasoning": "KEYS is 7.6% below its 20-day high with RSI at 50.1, offering a controlled pullback into an uptrend (price above 50 MA at 321.78). Volume spiked 2.08x above average on a bullish candle, confirming institutional interest. Stop set via atr method at 306.81 (ATR stop: 306.81, swing low: 326.48). Market regime: bull \u2014 position sized to 100% of full risk.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 342.08,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
+    },
+    "status": "open"
+  },
+  {
+    "id": "LYV_2026-05-21",
+    "ticker": "LYV",
+    "company_name": "Live Nation Entertainment",
+    "sector": "Communication Services",
+    "date_generated": "2026-05-21",
+    "setup_type": "Momentum Pullback",
+    "score": 4.566,
+    "score_breakdown": {
+      "trend_strength": 2.15,
+      "pullback_quality": 8.06,
+      "volume_confirm": 2.41
+    },
+    "regime": "bull",
+    "entry_price": 164.44,
+    "stop_loss": 152.09,
+    "swing_stop": 159.71,
+    "atr_stop": 152.09,
+    "stop_method": "atr",
+    "target": 173.12,
+    "risk_reward": 0.7,
+    "exit_plan": {
+      "tiers": [
+        {
+          "label": "T1 \u2014 scale out",
+          "price": 168.78,
+          "fraction": 0.5
+        },
+        {
+          "label": "T2 \u2014 target",
+          "price": 173.12,
+          "fraction": 0.5
+        }
+      ],
+      "runner": {
+        "fraction": 0.0,
+        "trail_atr_multiple": 2.0
+      }
+    },
+    "position_sizing": {
+      "suggested_shares": 8,
+      "dollar_risk": 100.0,
+      "position_value": 1315.52,
+      "regime_size_applied": "bull"
+    },
+    "indicators": {
+      "rsi": 53.9,
+      "ma50": 158.51,
+      "ma200": 152.95,
+      "atr": 4.94,
+      "high_20d": 173.12,
+      "pullback_pct": 5.0,
+      "volume_ratio": 1.71
+    },
+    "reasoning": "LYV is 5.0% below its 20-day high with RSI at 53.9, offering a controlled pullback into an uptrend (price above 50 MA at 158.51). Volume spiked 1.71x above average on a bullish candle, confirming institutional interest. Stop set via atr method at 152.09 (ATR stop: 152.09, swing low: 159.71). Market regime: bull \u2014 position sized to 100% of full risk.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 164.44,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
+    },
+    "status": "open"
+  },
+  {
+    "id": "CHRW_2026-05-21",
+    "ticker": "CHRW",
+    "company_name": "C.H. Robinson",
+    "sector": "Industrials",
+    "date_generated": "2026-05-21",
+    "setup_type": "Momentum Pullback",
+    "score": 4.31,
+    "score_breakdown": {
+      "trend_strength": 4.47,
+      "pullback_quality": 5.87,
+      "volume_confirm": 0.87
+    },
+    "regime": "bull",
+    "entry_price": 180.64,
+    "stop_loss": 150.4,
+    "swing_stop": 150.4,
+    "atr_stop": 161.41,
+    "stop_method": "swing",
+    "target": 190.15,
+    "risk_reward": 0.31,
+    "exit_plan": {
+      "tiers": [
+        {
+          "label": "T1 \u2014 scale out",
+          "price": 185.39,
+          "fraction": 0.5
+        },
+        {
+          "label": "T2 \u2014 target",
+          "price": 190.15,
+          "fraction": 0.5
+        }
+      ],
+      "runner": {
+        "fraction": 0.0,
+        "trail_atr_multiple": 2.0
+      }
+    },
+    "position_sizing": {
+      "suggested_shares": 3,
+      "dollar_risk": 100.0,
+      "position_value": 541.92,
+      "regime_size_applied": "bull"
+    },
+    "indicators": {
+      "rsi": 58.3,
+      "ma50": 172.1,
+      "ma200": 156.92,
+      "atr": 7.69,
+      "high_20d": 190.15,
+      "pullback_pct": 5.0,
+      "volume_ratio": 1.45
+    },
+    "reasoning": "CHRW is 5.0% below its 20-day high with RSI at 58.3, offering a controlled pullback into an uptrend (price above 50 MA at 172.1). Volume spiked 1.45x above average on a bullish candle, confirming institutional interest. Stop set via swing method at 150.4 (ATR stop: 161.41, swing low: 150.4). Market regime: bull \u2014 position sized to 100% of full risk.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 180.64,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
+    },
+    "status": "open"
+  },
+  {
+    "id": "ABNB_2026-05-21",
+    "ticker": "ABNB",
+    "company_name": "Airbnb",
+    "sector": "Consumer Discretionary",
+    "date_generated": "2026-05-21",
+    "setup_type": "Momentum Pullback",
+    "score": 3.822,
+    "score_breakdown": {
+      "trend_strength": 1.77,
+      "pullback_quality": 6.77,
+      "volume_confirm": 2.03
+    },
+    "regime": "bull",
+    "entry_price": 135.55,
+    "stop_loss": 122.9,
+    "swing_stop": 128.2,
+    "atr_stop": 122.9,
+    "stop_method": "atr",
+    "target": 146.97,
+    "risk_reward": 0.9,
+    "exit_plan": {
+      "tiers": [
+        {
+          "label": "T1 \u2014 scale out",
+          "price": 141.26,
+          "fraction": 0.5
+        },
+        {
+          "label": "T2 \u2014 target",
+          "price": 146.97,
+          "fraction": 0.5
+        }
+      ],
+      "runner": {
+        "fraction": 0.0,
+        "trail_atr_multiple": 2.0
+      }
+    },
+    "position_sizing": {
+      "suggested_shares": 7,
+      "dollar_risk": 100.0,
+      "position_value": 948.85,
+      "regime_size_applied": "bull"
+    },
+    "indicators": {
+      "rsi": 49.1,
+      "ma50": 133.99,
+      "ma200": 128.3,
+      "atr": 5.06,
+      "high_20d": 146.97,
+      "pullback_pct": 7.8,
+      "volume_ratio": 1.65
+    },
+    "reasoning": "ABNB is 7.8% below its 20-day high with RSI at 49.1, offering a controlled pullback into an uptrend (price above 50 MA at 133.99). Volume spiked 1.65x above average on a bullish candle, confirming institutional interest. Stop set via atr method at 122.9 (ATR stop: 122.9, swing low: 128.2). Market regime: bull \u2014 position sized to 100% of full risk.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 135.55,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-21",
+      "tiers_hit": []
     },
     "status": "open"
   }
