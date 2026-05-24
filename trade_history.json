@@ -121,7 +121,7 @@
       "stop_hit": false,
       "last_price": 79.56,
       "last_return_pct": -1.94,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -248,7 +248,7 @@
       "stop_hit": false,
       "last_price": 314.53,
       "last_return_pct": 0.81,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -291,7 +291,7 @@
       "stop_hit": false,
       "last_price": 79.56,
       "last_return_pct": -1.94,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -418,7 +418,7 @@
       "stop_hit": false,
       "last_price": 314.53,
       "last_return_pct": 0.81,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -587,7 +587,7 @@
       "stop_hit": false,
       "last_price": 27.83,
       "last_return_pct": 2.5,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -630,7 +630,7 @@
       "stop_hit": false,
       "last_price": 21.56,
       "last_return_pct": 2.47,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -673,7 +673,7 @@
       "stop_hit": false,
       "last_price": 21.56,
       "last_return_pct": 2.47,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -716,7 +716,7 @@
       "stop_hit": false,
       "last_price": 21.56,
       "last_return_pct": 2.47,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -759,7 +759,7 @@
       "stop_hit": false,
       "last_price": 204.41,
       "last_return_pct": 1.99,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -802,7 +802,7 @@
       "stop_hit": false,
       "last_price": 125.6,
       "last_return_pct": -0.38,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -845,7 +845,7 @@
       "stop_hit": false,
       "last_price": 125.6,
       "last_return_pct": 2.67,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -888,7 +888,7 @@
       "stop_hit": false,
       "last_price": 346.56,
       "last_return_pct": 1.31,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -931,7 +931,7 @@
       "stop_hit": false,
       "last_price": 165.55,
       "last_return_pct": 0.68,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -974,7 +974,7 @@
       "stop_hit": false,
       "last_price": 174.23,
       "last_return_pct": -3.55,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -1017,7 +1017,7 @@
       "stop_hit": false,
       "last_price": 132.35,
       "last_return_pct": -2.36,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -1090,7 +1090,7 @@
       "stop_hit": false,
       "last_price": 125.6,
       "last_return_pct": 2.67,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": [
         "T1 \u2014 scale out"
       ]
@@ -1165,7 +1165,7 @@
       "stop_hit": false,
       "last_price": 346.56,
       "last_return_pct": 1.31,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -1238,7 +1238,7 @@
       "stop_hit": false,
       "last_price": 165.55,
       "last_return_pct": 0.68,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -1311,7 +1311,7 @@
       "stop_hit": false,
       "last_price": 174.23,
       "last_return_pct": -3.55,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
@@ -1384,7 +1384,7 @@
       "stop_hit": false,
       "last_price": 132.35,
       "last_return_pct": -2.36,
-      "last_checked": "2026-05-22",
+      "last_checked": "2026-05-24",
       "tiers_hit": []
     },
     "status": "open"
