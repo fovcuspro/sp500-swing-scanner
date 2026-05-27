@@ -121,7 +121,7 @@
       "stop_hit": false,
       "last_price": 79.09,
       "last_return_pct": -2.51,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -248,7 +248,7 @@
       "stop_hit": false,
       "last_price": 320.22,
       "last_return_pct": 2.63,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -291,7 +291,7 @@
       "stop_hit": false,
       "last_price": 79.09,
       "last_return_pct": -2.51,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -418,7 +418,7 @@
       "stop_hit": false,
       "last_price": 320.22,
       "last_return_pct": 2.63,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -587,7 +587,7 @@
       "stop_hit": false,
       "last_price": 28.25,
       "last_return_pct": 4.05,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -630,7 +630,7 @@
       "stop_hit": false,
       "last_price": 21.77,
       "last_return_pct": 3.47,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -673,7 +673,7 @@
       "stop_hit": false,
       "last_price": 21.77,
       "last_return_pct": 3.47,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -716,7 +716,7 @@
       "stop_hit": false,
       "last_price": 21.77,
       "last_return_pct": 3.47,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -759,7 +759,7 @@
       "stop_hit": false,
       "last_price": 206.94,
       "last_return_pct": 3.25,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -802,7 +802,7 @@
       "stop_hit": false,
       "last_price": 125.43,
       "last_return_pct": -0.52,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -845,7 +845,7 @@
       "stop_hit": false,
       "last_price": 125.43,
       "last_return_pct": 2.53,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -888,7 +888,7 @@
       "stop_hit": false,
       "last_price": 355.74,
       "last_return_pct": 3.99,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -931,7 +931,7 @@
       "stop_hit": false,
       "last_price": 166.52,
       "last_return_pct": 1.26,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -974,7 +974,7 @@
       "stop_hit": false,
       "last_price": 177.91,
       "last_return_pct": -1.51,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -1017,7 +1017,7 @@
       "stop_hit": false,
       "last_price": 132.68,
       "last_return_pct": -2.12,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -1090,7 +1090,7 @@
       "stop_hit": false,
       "last_price": 125.43,
       "last_return_pct": 2.53,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": [
         "T1 \u2014 scale out"
       ]
@@ -1165,7 +1165,7 @@
       "stop_hit": false,
       "last_price": 355.74,
       "last_return_pct": 3.99,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -1238,7 +1238,7 @@
       "stop_hit": false,
       "last_price": 166.52,
       "last_return_pct": 1.26,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -1311,7 +1311,7 @@
       "stop_hit": false,
       "last_price": 177.91,
       "last_return_pct": -1.51,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
@@ -1384,7 +1384,153 @@
       "stop_hit": false,
       "last_price": 132.68,
       "last_return_pct": -2.12,
-      "last_checked": "2026-05-26",
+      "last_checked": "2026-05-27",
+      "tiers_hit": []
+    },
+    "status": "open"
+  },
+  {
+    "id": "ADI_2026-05-27",
+    "ticker": "ADI",
+    "company_name": "Analog Devices",
+    "sector": "Information Technology",
+    "date_generated": "2026-05-27",
+    "setup_type": "Momentum Pullback",
+    "score": 5.224,
+    "score_breakdown": {
+      "trend_strength": 8.58,
+      "pullback_quality": 3.82,
+      "volume_confirm": 1.32
+    },
+    "regime": "bull",
+    "entry_price": 419.94,
+    "stop_loss": 377.47,
+    "swing_stop": 381.22,
+    "atr_stop": 377.47,
+    "stop_method": "atr",
+    "target": 435.72,
+    "risk_reward": 0.37,
+    "exit_plan": {
+      "tiers": [
+        {
+          "label": "T1 \u2014 scale out",
+          "price": 427.83,
+          "fraction": 0.5
+        },
+        {
+          "label": "T2 \u2014 target",
+          "price": 435.72,
+          "fraction": 0.5
+        }
+      ],
+      "runner": {
+        "fraction": 0.0,
+        "trail_atr_multiple": 2.0
+      }
+    },
+    "position_sizing": {
+      "suggested_shares": 2,
+      "dollar_risk": 100.0,
+      "position_value": 839.88,
+      "regime_size_applied": "bull"
+    },
+    "indicators": {
+      "rsi": 59.6,
+      "ma50": 367.29,
+      "ma200": 294.71,
+      "atr": 16.99,
+      "high_20d": 435.72,
+      "pullback_pct": 3.6,
+      "volume_ratio": 1.52
+    },
+    "reasoning": "ADI is 3.6% below its 20-day high with RSI at 59.6, offering a controlled pullback into an uptrend (price above 50 MA at 367.29). Volume spiked 1.52x above average on a bullish candle, confirming institutional interest. Stop set via atr method at 377.47 (ATR stop: 377.47, swing low: 381.22). Market regime: bull \u2014 position sized to 100% of full risk.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 419.94,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-27",
+      "tiers_hit": []
+    },
+    "status": "open"
+  },
+  {
+    "id": "KEYS_2026-05-27",
+    "ticker": "KEYS",
+    "company_name": "Keysight Technologies",
+    "sector": "Information Technology",
+    "date_generated": "2026-05-27",
+    "setup_type": "Momentum Pullback",
+    "score": 4.86,
+    "score_breakdown": {
+      "trend_strength": 7.31,
+      "pullback_quality": 4.74,
+      "volume_confirm": 0.2
+    },
+    "regime": "bull",
+    "entry_price": 355.74,
+    "stop_loss": 322.26,
+    "swing_stop": 326.48,
+    "atr_stop": 322.26,
+    "stop_method": "atr",
+    "target": 370.17,
+    "risk_reward": 0.43,
+    "exit_plan": {
+      "tiers": [
+        {
+          "label": "T1 \u2014 scale out",
+          "price": 362.95,
+          "fraction": 0.5
+        },
+        {
+          "label": "T2 \u2014 target",
+          "price": 370.17,
+          "fraction": 0.5
+        }
+      ],
+      "runner": {
+        "fraction": 0.0,
+        "trail_atr_multiple": 2.0
+      }
+    },
+    "position_sizing": {
+      "suggested_shares": 2,
+      "dollar_risk": 100.0,
+      "position_value": 711.48,
+      "regime_size_applied": "bull"
+    },
+    "indicators": {
+      "rsi": 58.3,
+      "ma50": 325.64,
+      "ma200": 231.32,
+      "atr": 13.39,
+      "high_20d": 370.17,
+      "pullback_pct": 3.9,
+      "volume_ratio": 1.33
+    },
+    "reasoning": "KEYS is 3.9% below its 20-day high with RSI at 58.3, offering a controlled pullback into an uptrend (price above 50 MA at 325.64). Volume spiked 1.33x above average on a bullish candle, confirming institutional interest. Stop set via atr method at 322.26 (ATR stop: 322.26, swing low: 326.48). Market regime: bull \u2014 position sized to 100% of full risk.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 355.74,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-27",
       "tiers_hit": []
     },
     "status": "open"
