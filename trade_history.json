@@ -119,8 +119,8 @@
       "max_drawdown_pct": -2.87,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 80.5,
-      "last_return_pct": -0.78,
+      "last_price": 80.24,
+      "last_return_pct": -1.1,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -289,8 +289,8 @@
       "max_drawdown_pct": -2.87,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 80.5,
-      "last_return_pct": -0.78,
+      "last_price": 80.24,
+      "last_return_pct": -1.1,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -585,8 +585,8 @@
       "max_drawdown_pct": -2.1,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 27.88,
-      "last_return_pct": 2.69,
+      "last_price": 27.86,
+      "last_return_pct": 2.62,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -628,8 +628,8 @@
       "max_drawdown_pct": -0.62,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.36,
-      "last_return_pct": 1.52,
+      "last_price": 21.34,
+      "last_return_pct": 1.43,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -671,8 +671,8 @@
       "max_drawdown_pct": -0.62,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.36,
-      "last_return_pct": 1.52,
+      "last_price": 21.34,
+      "last_return_pct": 1.43,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -714,8 +714,8 @@
       "max_drawdown_pct": -0.62,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.36,
-      "last_return_pct": 1.52,
+      "last_price": 21.34,
+      "last_return_pct": 1.43,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -757,8 +757,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 205.41,
-      "last_return_pct": 2.49,
+      "last_price": 206.87,
+      "last_return_pct": 3.22,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -800,8 +800,8 @@
       "max_drawdown_pct": -2.97,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 128.81,
-      "last_return_pct": 2.17,
+      "last_price": 128.9,
+      "last_return_pct": 2.24,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -843,8 +843,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 128.81,
-      "last_return_pct": 5.3,
+      "last_price": 128.9,
+      "last_return_pct": 5.37,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -886,8 +886,8 @@
       "max_drawdown_pct": -1.69,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 343.11,
-      "last_return_pct": 0.3,
+      "last_price": 339.82,
+      "last_return_pct": -0.66,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -929,8 +929,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 165.53,
-      "last_return_pct": 0.66,
+      "last_price": 166.17,
+      "last_return_pct": 1.05,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -972,8 +972,8 @@
       "max_drawdown_pct": -4.35,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 172.79,
-      "last_return_pct": -4.35,
+      "last_price": 174.78,
+      "last_return_pct": -3.24,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -1015,8 +1015,8 @@
       "max_drawdown_pct": -3.28,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 131.1,
-      "last_return_pct": -3.28,
+      "last_price": 132.9,
+      "last_return_pct": -1.95,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -1088,8 +1088,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 128.81,
-      "last_return_pct": 5.3,
+      "last_price": 128.9,
+      "last_return_pct": 5.37,
       "last_checked": "2026-05-28",
       "tiers_hit": [
         "T1 \u2014 scale out"
@@ -1163,8 +1163,8 @@
       "max_drawdown_pct": -1.69,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 343.11,
-      "last_return_pct": 0.3,
+      "last_price": 339.82,
+      "last_return_pct": -0.66,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -1236,8 +1236,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 165.53,
-      "last_return_pct": 0.66,
+      "last_price": 166.17,
+      "last_return_pct": 1.05,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -1309,8 +1309,8 @@
       "max_drawdown_pct": -4.35,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 172.79,
-      "last_return_pct": -4.35,
+      "last_price": 174.78,
+      "last_return_pct": -3.24,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -1382,8 +1382,8 @@
       "max_drawdown_pct": -3.28,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 131.1,
-      "last_return_pct": -3.28,
+      "last_price": 132.9,
+      "last_return_pct": -1.95,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -1455,8 +1455,8 @@
       "max_drawdown_pct": -1.41,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 414.02,
-      "last_return_pct": -1.41,
+      "last_price": 418.11,
+      "last_return_pct": -0.44,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
@@ -1525,11 +1525,84 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": -3.55,
+      "max_drawdown_pct": -4.48,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 343.11,
-      "last_return_pct": -3.55,
+      "last_price": 339.82,
+      "last_return_pct": -4.48,
+      "last_checked": "2026-05-28",
+      "tiers_hit": []
+    },
+    "status": "open"
+  },
+  {
+    "id": "CARR_2026-05-28",
+    "ticker": "CARR",
+    "company_name": "Carrier Global",
+    "sector": "Industrials",
+    "date_generated": "2026-05-28",
+    "setup_type": "Momentum Pullback",
+    "score": 3.972,
+    "score_breakdown": {
+      "trend_strength": 2.36,
+      "pullback_quality": 7.46,
+      "volume_confirm": 0.22
+    },
+    "regime": "bull",
+    "entry_price": 63.99,
+    "stop_loss": 58.59,
+    "swing_stop": 61.12,
+    "atr_stop": 58.59,
+    "stop_method": "atr",
+    "target": 68.79,
+    "risk_reward": 0.89,
+    "exit_plan": {
+      "tiers": [
+        {
+          "label": "T1 \u2014 scale out",
+          "price": 66.39,
+          "fraction": 0.5
+        },
+        {
+          "label": "T2 \u2014 target",
+          "price": 68.79,
+          "fraction": 0.5
+        }
+      ],
+      "runner": {
+        "fraction": 0.0,
+        "trail_atr_multiple": 2.0
+      }
+    },
+    "position_sizing": {
+      "suggested_shares": 18,
+      "dollar_risk": 100.0,
+      "position_value": 1151.82,
+      "regime_size_applied": "bull"
+    },
+    "indicators": {
+      "rsi": 51.1,
+      "ma50": 61.49,
+      "ma200": 59.1,
+      "atr": 2.16,
+      "high_20d": 68.79,
+      "pullback_pct": 7.0,
+      "volume_ratio": 1.34
+    },
+    "reasoning": "CARR is 7.0% below its 20-day high with RSI at 51.1, offering a controlled pullback into an uptrend (price above 50 MA at 61.49). Volume spiked 1.34x above average on a bullish candle, confirming institutional interest. Stop set via atr method at 58.59 (ATR stop: 58.59, swing low: 61.12). Market regime: bull \u2014 position sized to 100% of full risk.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": -0.03,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 63.97,
+      "last_return_pct": -0.03,
       "last_checked": "2026-05-28",
       "tiers_hit": []
     },
