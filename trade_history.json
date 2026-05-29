@@ -116,15 +116,15 @@
       "2w_return_pct": -2.51,
       "4w_return_pct": null,
       "max_gain_pct": 2.96,
-      "max_drawdown_pct": -2.87,
+      "max_drawdown_pct": -3.51,
       "target_hit": false,
-      "stop_hit": false,
-      "last_price": 80.31,
-      "last_return_pct": -1.01,
+      "stop_hit": true,
+      "last_price": 78.28,
+      "last_return_pct": -3.51,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
-    "status": "open"
+    "status": "stop_hit"
   },
   {
     "id": "ALB_2026-05-09",
@@ -286,15 +286,15 @@
       "2w_return_pct": -2.51,
       "4w_return_pct": null,
       "max_gain_pct": 2.96,
-      "max_drawdown_pct": -2.87,
+      "max_drawdown_pct": -3.51,
       "target_hit": false,
-      "stop_hit": false,
-      "last_price": 80.31,
-      "last_return_pct": -1.01,
+      "stop_hit": true,
+      "last_price": 78.28,
+      "last_return_pct": -3.51,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
-    "status": "open"
+    "status": "stop_hit"
   },
   {
     "id": "ALB_2026-05-10",
@@ -585,8 +585,8 @@
       "max_drawdown_pct": -2.1,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 27.74,
-      "last_return_pct": 2.17,
+      "last_price": 28.0,
+      "last_return_pct": 3.13,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -628,8 +628,8 @@
       "max_drawdown_pct": -0.62,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.23,
-      "last_return_pct": 0.9,
+      "last_price": 21.33,
+      "last_return_pct": 1.38,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -671,8 +671,8 @@
       "max_drawdown_pct": -0.62,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.23,
-      "last_return_pct": 0.9,
+      "last_price": 21.33,
+      "last_return_pct": 1.38,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -714,8 +714,8 @@
       "max_drawdown_pct": -0.62,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.23,
-      "last_return_pct": 0.9,
+      "last_price": 21.33,
+      "last_return_pct": 1.38,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -757,8 +757,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 206.01,
-      "last_return_pct": 2.79,
+      "last_price": 204.91,
+      "last_return_pct": 2.24,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -800,8 +800,8 @@
       "max_drawdown_pct": -2.97,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 126.82,
-      "last_return_pct": 0.59,
+      "last_price": 127.07,
+      "last_return_pct": 0.79,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -843,8 +843,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 126.82,
-      "last_return_pct": 3.67,
+      "last_price": 127.07,
+      "last_return_pct": 3.87,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -886,8 +886,8 @@
       "max_drawdown_pct": -1.69,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 339.06,
-      "last_return_pct": -0.88,
+      "last_price": 338.33,
+      "last_return_pct": -1.1,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -925,12 +925,12 @@
       "1w_return_pct": 2.21,
       "2w_return_pct": null,
       "4w_return_pct": null,
-      "max_gain_pct": 2.21,
+      "max_gain_pct": 2.41,
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 166.57,
-      "last_return_pct": 1.3,
+      "last_price": 168.41,
+      "last_return_pct": 2.41,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -972,8 +972,8 @@
       "max_drawdown_pct": -4.35,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 174.15,
-      "last_return_pct": -3.59,
+      "last_price": 178.65,
+      "last_return_pct": -1.1,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -1015,8 +1015,8 @@
       "max_drawdown_pct": -3.28,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 134.12,
-      "last_return_pct": -1.05,
+      "last_price": 133.31,
+      "last_return_pct": -1.65,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -1088,8 +1088,8 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 126.82,
-      "last_return_pct": 3.67,
+      "last_price": 127.07,
+      "last_return_pct": 3.87,
       "last_checked": "2026-05-29",
       "tiers_hit": [
         "T1 \u2014 scale out"
@@ -1163,8 +1163,8 @@
       "max_drawdown_pct": -1.69,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 339.06,
-      "last_return_pct": -0.88,
+      "last_price": 338.33,
+      "last_return_pct": -1.1,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -1232,12 +1232,12 @@
       "1w_return_pct": 0.66,
       "2w_return_pct": null,
       "4w_return_pct": null,
-      "max_gain_pct": 2.21,
+      "max_gain_pct": 2.41,
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 166.57,
-      "last_return_pct": 1.3,
+      "last_price": 168.41,
+      "last_return_pct": 2.41,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -1309,8 +1309,8 @@
       "max_drawdown_pct": -4.35,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 174.15,
-      "last_return_pct": -3.59,
+      "last_price": 178.65,
+      "last_return_pct": -1.1,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -1382,8 +1382,8 @@
       "max_drawdown_pct": -3.28,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 134.12,
-      "last_return_pct": -1.05,
+      "last_price": 133.31,
+      "last_return_pct": -1.65,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -1452,11 +1452,11 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": -1.41,
+      "max_drawdown_pct": -1.45,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 416.46,
-      "last_return_pct": -0.83,
+      "last_price": 413.85,
+      "last_return_pct": -1.45,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -1525,11 +1525,11 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": -4.69,
+      "max_drawdown_pct": -4.89,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 339.06,
-      "last_return_pct": -4.69,
+      "last_price": 338.33,
+      "last_return_pct": -4.89,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -1601,8 +1601,8 @@
       "max_drawdown_pct": -0.56,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 63.63,
-      "last_return_pct": -0.56,
+      "last_price": 63.87,
+      "last_return_pct": -0.19,
       "last_checked": "2026-05-29",
       "tiers_hit": []
     },
@@ -1670,14 +1670,16 @@
       "1w_return_pct": null,
       "2w_return_pct": null,
       "4w_return_pct": null,
-      "max_gain_pct": 1.12,
+      "max_gain_pct": 4.64,
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 84.04,
-      "last_return_pct": 1.12,
+      "last_price": 86.97,
+      "last_return_pct": 4.64,
       "last_checked": "2026-05-29",
-      "tiers_hit": []
+      "tiers_hit": [
+        "T1 \u2014 scale out"
+      ]
     },
     "status": "open"
   },
@@ -1743,11 +1745,157 @@
       "1w_return_pct": null,
       "2w_return_pct": null,
       "4w_return_pct": null,
+      "max_gain_pct": 0.35,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 218.91,
+      "last_return_pct": 0.35,
+      "last_checked": "2026-05-29",
+      "tiers_hit": []
+    },
+    "status": "open"
+  },
+  {
+    "id": "KEY_2026-05-29",
+    "ticker": "KEY",
+    "company_name": "KeyCorp",
+    "sector": "Financials",
+    "date_generated": "2026-05-29",
+    "setup_type": "Momentum Pullback",
+    "score": 5.38,
+    "score_breakdown": {
+      "trend_strength": 2.61,
+      "pullback_quality": 9.34,
+      "volume_confirm": 3.0
+    },
+    "regime": "bull",
+    "entry_price": 21.33,
+    "stop_loss": 20.38,
+    "swing_stop": 20.69,
+    "atr_stop": 20.38,
+    "stop_method": "atr",
+    "target": 22.43,
+    "risk_reward": 1.16,
+    "exit_plan": {
+      "tiers": [
+        {
+          "label": "T1 \u2014 scale out",
+          "price": 21.88,
+          "fraction": 0.5
+        },
+        {
+          "label": "T2 \u2014 target",
+          "price": 22.43,
+          "fraction": 0.5
+        }
+      ],
+      "runner": {
+        "fraction": 0.0,
+        "trail_atr_multiple": 2.0
+      }
+    },
+    "position_sizing": {
+      "suggested_shares": 105,
+      "dollar_risk": 100.0,
+      "position_value": 2239.65,
+      "regime_size_applied": "bull"
+    },
+    "indicators": {
+      "rsi": 48.9,
+      "ma50": 21.16,
+      "ma200": 19.73,
+      "atr": 0.38,
+      "high_20d": 22.43,
+      "pullback_pct": 4.9,
+      "volume_ratio": 1.81
+    },
+    "reasoning": "KEY is 4.9% below its 20-day high with RSI at 48.9, offering a controlled pullback into an uptrend (price above 50 MA at 21.16). Volume spiked 1.81x above average on a bullish candle, confirming institutional interest. Stop set via atr method at 20.38 (ATR stop: 20.38, swing low: 20.69). Market regime: bull \u2014 position sized to 100% of full risk.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
       "max_gain_pct": 0,
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 218.14,
+      "last_price": 21.33,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-05-29",
+      "tiers_hit": []
+    },
+    "status": "open"
+  },
+  {
+    "id": "CFG_2026-05-29",
+    "ticker": "CFG",
+    "company_name": "Citizens Financial Group",
+    "sector": "Financials",
+    "date_generated": "2026-05-29",
+    "setup_type": "Momentum Pullback",
+    "score": 4.532,
+    "score_breakdown": {
+      "trend_strength": 3.09,
+      "pullback_quality": 8.14,
+      "volume_confirm": 0.2
+    },
+    "regime": "bull",
+    "entry_price": 62.26,
+    "stop_loss": 58.76,
+    "swing_stop": 59.74,
+    "atr_stop": 58.76,
+    "stop_method": "atr",
+    "target": 66.0,
+    "risk_reward": 1.07,
+    "exit_plan": {
+      "tiers": [
+        {
+          "label": "T1 \u2014 scale out",
+          "price": 64.13,
+          "fraction": 0.5
+        },
+        {
+          "label": "T2 \u2014 target",
+          "price": 66.0,
+          "fraction": 0.5
+        }
+      ],
+      "runner": {
+        "fraction": 0.0,
+        "trail_atr_multiple": 2.0
+      }
+    },
+    "position_sizing": {
+      "suggested_shares": 28,
+      "dollar_risk": 100.0,
+      "position_value": 1743.28,
+      "regime_size_applied": "bull"
+    },
+    "indicators": {
+      "rsi": 47.6,
+      "ma50": 62.23,
+      "ma200": 56.97,
+      "atr": 1.4,
+      "high_20d": 66.0,
+      "pullback_pct": 5.7,
+      "volume_ratio": 1.33
+    },
+    "reasoning": "CFG is 5.7% below its 20-day high with RSI at 47.6, offering a controlled pullback into an uptrend (price above 50 MA at 62.23). Volume spiked 1.33x above average on a bullish candle, confirming institutional interest. Stop set via atr method at 58.76 (ATR stop: 58.76, swing low: 59.74). Market regime: bull \u2014 position sized to 100% of full risk.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 62.26,
       "last_return_pct": 0.0,
       "last_checked": "2026-05-29",
       "tiers_hit": []

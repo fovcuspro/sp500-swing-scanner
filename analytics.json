@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-05-29T13:32:33Z",
-  "total_trades": 34,
+  "generated_at": "2026-05-29T20:19:36Z",
+  "total_trades": 36,
   "open_trades": 23,
-  "closed_trades": 11,
-  "win_rate": 0.364,
-  "avg_return_pct": -2.92,
+  "closed_trades": 13,
+  "win_rate": 0.308,
+  "avg_return_pct": -2.85,
   "avg_win_pct": 2.93,
-  "avg_loss_pct": -6.26,
-  "expectancy": -2.91,
+  "avg_loss_pct": -5.43,
+  "expectancy": -2.86,
   "best_trade": {
     "ticker": "TRGP",
     "date": "2026-05-08",
@@ -20,9 +20,9 @@
   },
   "by_score_range": {
     "5-6": {
-      "count": 11,
-      "win_rate": 0.364,
-      "avg_return": -2.92
+      "count": 13,
+      "win_rate": 0.308,
+      "avg_return": -2.85
     },
     "6-7": {
       "count": 0,
@@ -57,9 +57,9 @@
       "avg_return": 2.16
     },
     "50-55": {
-      "count": 2,
+      "count": 4,
       "win_rate": 0.0,
-      "avg_return": -2.71
+      "avg_return": -2.61
     },
     "55-60": {
       "count": 8,
@@ -69,9 +69,9 @@
   },
   "by_pullback_range": {
     "3-5%": {
-      "count": 9,
-      "win_rate": 0.444,
-      "avg_return": -1.38
+      "count": 11,
+      "win_rate": 0.364,
+      "avg_return": -1.59
     },
     "5-6%": {
       "count": 0,
@@ -86,16 +86,16 @@
   },
   "by_regime": {
     "unknown": {
-      "count": 11,
-      "win_rate": 0.364,
-      "avg_return": -2.92
+      "count": 13,
+      "win_rate": 0.308,
+      "avg_return": -2.85
     }
   },
   "by_sector": {
     "Unknown": {
-      "count": 11,
-      "win_rate": 0.364,
-      "avg_return": -2.92
+      "count": 13,
+      "win_rate": 0.308,
+      "avg_return": -2.85
     }
   },
   "stop_ab_test": {
@@ -139,6 +139,15 @@
       "days_held": 7
     },
     {
+      "ticker": "CTVA",
+      "company_name": "Corteva",
+      "date": "2026-05-10",
+      "score": 5.214,
+      "return_pct": -2.51,
+      "status": "stop_hit",
+      "days_held": 19
+    },
+    {
       "ticker": "ALB",
       "company_name": "Albemarle Corporation",
       "date": "2026-05-10",
@@ -164,6 +173,15 @@
       "return_pct": 2.63,
       "status": "target_hit",
       "days_held": 17
+    },
+    {
+      "ticker": "CTVA",
+      "company_name": "Corteva",
+      "date": "2026-05-09",
+      "score": 5.214,
+      "return_pct": -2.51,
+      "status": "stop_hit",
+      "days_held": 20
     },
     {
       "ticker": "ALB",
