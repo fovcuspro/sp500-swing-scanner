@@ -103,21 +103,6 @@
       animation: pulse 1.4s ease-in-out infinite;
     }
 
-    /* ── Regime banner ── */
-    .regime-banner {
-      margin: 8px 12px 0;
-      padding: 7px 12px;
-      border-radius: 6px;
-      font-size: 11px;
-      display: none;
-      align-items: center;
-      gap: 8px;
-      letter-spacing: 0.04em;
-    }
-    .regime-bull    { background: rgba(76,175,125,0.08); border: 1px solid rgba(76,175,125,0.25); color: var(--green); }
-    .regime-neutral { background: rgba(138,132,120,0.08); border: 1px solid var(--border); color: var(--sub); }
-    .regime-bear    { background: rgba(224,85,85,0.08); border: 1px solid rgba(224,85,85,0.25); color: var(--red); }
-
     /* ── Scrollable content ── */
     #main {
       flex: 1;
@@ -781,6 +766,152 @@
     .lp-buy  .lp-val { color: var(--gold); }
     .lp-stop .lp-val { color: var(--red); }
     .lp-tgt  .lp-val { color: var(--green); }
+
+    /* ── Insights tab ── */
+    .insights-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 20px 16px;
+    }
+    .insights-title-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .insights-sub {
+      font-size: 10px;
+      color: var(--sub);
+      line-height: 1.5;
+      margin-top: 6px;
+    }
+    .insights-run-btn {
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      border-radius: 8px;
+      padding: 9px 16px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent;
+      transition: opacity 0.15s;
+    }
+    .insights-run-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .insights-run-btn:active   { opacity: 0.8; }
+
+    .insights-body { padding: 0 0 80px; }
+
+    .insight-card {
+      margin: 10px 12px 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: fadeUp 0.35s ease forwards;
+    }
+    .insight-card:nth-child(1) { animation-delay: 0.04s; }
+    .insight-card:nth-child(2) { animation-delay: 0.09s; }
+    .insight-card:nth-child(3) { animation-delay: 0.14s; }
+    .insight-card:nth-child(4) { animation-delay: 0.19s; }
+    .insight-card:nth-child(5) { animation-delay: 0.24s; }
+    .insight-card:nth-child(n+6) { animation-delay: 0.28s; }
+
+    .insight-card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 14px 11px;
+      border-bottom: 1px solid var(--border);
+    }
+    .insight-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .insight-icon.warn  { background: rgba(232,162,69,0.12);  }
+    .insight-icon.good  { background: rgba(76,175,125,0.12);  }
+    .insight-icon.info  { background: rgba(91,141,239,0.12);  }
+    .insight-icon.alert { background: rgba(224,85,85,0.12);   }
+    .insight-icon.idea  { background: rgba(201,168,76,0.10);  }
+
+    .insight-label {
+      flex: 1;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      min-width: 0;
+    }
+    .insight-badge {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 2px 7px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .insight-badge.high   { background: rgba(224,85,85,0.12);   color: var(--red);   border: 1px solid rgba(224,85,85,0.25); }
+    .insight-badge.medium { background: rgba(232,162,69,0.12);  color: var(--amber); border: 1px solid rgba(232,162,69,0.25); }
+    .insight-badge.low    { background: rgba(76,175,125,0.10);  color: var(--green); border: 1px solid rgba(76,175,125,0.2); }
+
+    .insight-card-body {
+      padding: 11px 14px 13px;
+      font-size: 12px;
+      color: var(--sub);
+      line-height: 1.65;
+    }
+    .insight-card-action {
+      padding: 0 14px 13px;
+      font-size: 11px;
+      color: var(--gold);
+    }
+
+    .insights-thinking {
+      text-align: center;
+      padding: 50px 20px;
+      color: var(--sub);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .insights-thinking .loading-bar { margin: 14px auto 0; }
+
+    .insights-empty {
+      text-align: center;
+      padding: 50px 30px;
+    }
+    .insights-empty-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .insights-empty-sub { font-size: 11px; color: var(--sub); line-height: 1.65; }
+
+    .insights-context-bar {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .ctx-pill {
+      font-size: 10px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--sub);
+    }
+    .ctx-pill span { color: var(--gold); }
   </style>
 </head>
 <body>
@@ -804,7 +935,6 @@
     <div class="alert-dot"></div>
     <span id="alertText"></span>
   </div>
-  <div class="regime-banner" id="regimeBanner"></div>
 </header>
 
 <main id="main">
@@ -846,11 +976,13 @@
     </svg>
     Log
   </button>
-  <button class="tab" data-tab="lab" onclick="setTab('lab')">
+  <button class="tab" data-tab="insights" onclick="setTab('insights')">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="12" y1="8" x2="12" y2="12"/>
+      <line x1="12" y1="16" x2="12.01" y2="16"/>
     </svg>
-    Lab
+    Insights
   </button>
 </nav>
 
@@ -929,15 +1061,12 @@ const SCANNER_URL     = 'https://fovcuspro.github.io/sp500-swing-scanner/results
 const PORTFOLIO_URL   = 'https://fovcuspro.github.io/sp500-swing-scanner/portfolio_results.json';
 const ANALYTICS_URL   = 'https://fovcuspro.github.io/sp500-swing-scanner/analytics.json';
 const HISTORY_URL     = 'https://fovcuspro.github.io/sp500-swing-scanner/trade_history.json';
-const BACKTEST_URL = 'https://fovcuspro.github.io/sp500-swing-scanner/backtest_compare.json';
-const HEALTH_URL   = 'https://fovcuspro.github.io/sp500-swing-scanner/health.json';
 
 let activeTab     = 'scanner';
 let scannerData   = null;
 let portfolioData = null;
 let analyticsData = null;
 let historyData   = null;
-let labData       = null;
 let editTicker    = null;
 let sortMode      = 'signal'; // 'signal' | 'value' | 'pnl'
 
@@ -985,10 +1114,6 @@ function setTab(t) {
     document.getElementById('headerTitle').innerHTML =
       'SP500 <span style="color:var(--gold2)">Scanner</span>';
     if (scannerData) renderScanner(); else fetchScanner();
-    // Show regime banner if data available
-    if (scannerData) {
-      showRegimeBanner(scannerData.market_regime);
-    }
   } else if (t === 'portfolio') {
     document.getElementById('headerTitle').textContent = 'Portfolio';
     if (portfolioData) renderPortfolio(); else fetchPortfolio();
@@ -996,15 +1121,14 @@ function setTab(t) {
     banner.style.display = 'none';
     document.getElementById('headerTitle').textContent = 'Performance';
     if (analyticsData) renderPerformance(); else fetchAnalytics();
-  } else if (t === 'log') {
+  } else if (t === 'insights') {
+    banner.style.display = 'none';
+    document.getElementById('headerTitle').textContent = 'Insights';
+    renderInsightsShell();
+  } else {
     banner.style.display = 'none';
     document.getElementById('headerTitle').textContent = 'Signal Log';
     if (historyData) renderHistory(); else fetchHistory();
-  } else {
-    // lab tab
-    banner.style.display = 'none';
-    document.getElementById('headerTitle').textContent = 'Lab';
-    if (labData) renderLab(); else fetchLab();
   }
 }
 
@@ -1136,7 +1260,6 @@ function renderScanner() {
     return;
   }
 
-  showRegimeBanner(scannerData?.market_regime);
   main.innerHTML = `
     <div class="scan-meta">${date}${time} · ${found} candidates · ${setups.length} setups</div>
     <div class="cards">${setups.map((s, i) => scannerCard(s, i + 1)).join('')}</div>`;
@@ -1158,11 +1281,6 @@ function scannerCard(s, rank) {
   const vScore = Number(sb.volume_confirm   || 0).toFixed(1);
   const total  = Number(s.score || 0).toFixed(1);
 
-  const sector = s.sector || '';
-  const ps     = s.position_sizing || {};
-  const sharesStr = ps.suggested_shares ? `${ps.suggested_shares} shares` : '';
-  const riskStr   = ps.dollar_risk     ? `$${Number(ps.dollar_risk).toFixed(0)} risk` : '';
-
   return `
   <div class="card scanner-card">
     <div class="card-header">
@@ -1183,14 +1301,11 @@ function scannerCard(s, rank) {
         <span class="score-pill">Pullback ${pScore}/10</span>
         <span class="score-pill">Volume ${vScore}/10</span>
       </div>
-      ${sector ? `<div style="margin-top:8px;font-size:10px;color:var(--sub)">${sector}${sharesStr ? ` · ${sharesStr}` : ''}${riskStr ? ` · ${riskStr}` : ''}</div>` : ''}
       <div class="detail-grid" style="margin-top:12px">
         <div><div class="detail-label">Entry zone</div><div class="detail-value">$${f(ez.low)} – $${f(ez.high)}</div></div>
         <div><div class="detail-label">Risk / Reward</div><div class="detail-value ${s.risk_reward >= 2 ? 'pos' : ''}">${f(s.risk_reward)}×</div></div>
         <div><div class="detail-label">Stop loss</div><div class="detail-value neg">$${f(s.stop_loss)}</div></div>
         <div><div class="detail-label">Target</div><div class="detail-value pos">$${f(s.target)}</div></div>
-        ${s.swing_stop ? `<div><div class="detail-label">Swing stop</div><div class="detail-value neg">$${f(s.swing_stop)}</div></div>` : ''}
-        ${s.atr_stop   ? `<div><div class="detail-label">ATR stop (${s.stop_method || 'atr'})</div><div class="detail-value neg">$${f(s.atr_stop)}</div></div>` : ''}
         <div><div class="detail-label">RSI (14)</div><div class="detail-value">${f(ind.rsi, 1)}</div></div>
         <div><div class="detail-label">Pullback</div><div class="detail-value">${f(ind.pullback_pct, 1)}%</div></div>
         <div><div class="detail-label">50 MA</div><div class="detail-value">$${f(ind.ma50)}</div></div>
@@ -1447,34 +1562,6 @@ function renderPerformance() {
       </div>`;
     }).join('');
 
-  const regimeRows = Object.entries(d.by_regime || {})
-    .filter(([, v]) => v.count > 0)
-    .map(([regime, s]) => {
-      const ret = s.avg_return;
-      return `
-    <div class="breakdown-row">
-      <div class="breakdown-col">${regime}</div>
-      <div class="breakdown-col right">${s.count}</div>
-      <div class="breakdown-col right">${(s.win_rate * 100).toFixed(0)}%</div>
-      <div class="breakdown-col ${ret > 0 ? 'pos' : ret < 0 ? 'neg' : 'neu'}">${ret >= 0 ? '+' : ''}${Number(ret).toFixed(1)}%</div>
-    </div>`;
-    }).join('');
-
-  const sectorRows = Object.entries(d.by_sector || {})
-    .filter(([, v]) => v.count > 0)
-    .sort(([, a], [, b]) => b.count - a.count)
-    .slice(0, 8)
-    .map(([sector, s]) => {
-      const ret = s.avg_return;
-      return `
-    <div class="breakdown-row">
-      <div class="breakdown-col" style="font-size:11px">${sector}</div>
-      <div class="breakdown-col right">${s.count}</div>
-      <div class="breakdown-col right">${(s.win_rate * 100).toFixed(0)}%</div>
-      <div class="breakdown-col ${ret > 0 ? 'pos' : ret < 0 ? 'neg' : 'neu'}">${ret >= 0 ? '+' : ''}${Number(ret).toFixed(1)}%</div>
-    </div>`;
-    }).join('');
-
   // Recent closed trades
   const recentHTML = (d.recent_trades || []).map(t => {
     const ret    = t.return_pct;
@@ -1555,30 +1642,6 @@ function renderPerformance() {
       ${rsiRows}
     </div>` : ''}
 
-    ${regimeRows ? `
-<div class="breakdown-section">
-  <div class="breakdown-title">By Market Regime</div>
-  <div class="breakdown-header">
-    <div>Regime</div>
-    <div style="text-align:right">Trades</div>
-    <div style="text-align:right">Win %</div>
-    <div style="text-align:right">Avg Ret</div>
-  </div>
-  ${regimeRows}
-</div>` : ''}
-
-    ${sectorRows ? `
-<div class="breakdown-section">
-  <div class="breakdown-title">By Sector</div>
-  <div class="breakdown-header">
-    <div>Sector</div>
-    <div style="text-align:right">Trades</div>
-    <div style="text-align:right">Win %</div>
-    <div style="text-align:right">Avg Ret</div>
-  </div>
-  ${sectorRows}
-</div>` : ''}
-
     ${d.best_trade || d.worst_trade ? `
     <div class="breakdown-section">
       <div class="breakdown-title">Highlights</div>
@@ -1647,9 +1710,8 @@ function renderHistory() {
       <div class="log-dot ${dotCls(t.status)}"></div>
       <div class="log-body">
         <div class="log-row1">
-          <div style="display:flex;align-items:baseline;gap:7px">
+          <div>
             <span class="log-ticker">${t.ticker}</span>
-            ${t.score != null ? `<span style="font-size:10px;color:var(--gold);font-weight:500">${parseFloat(t.score).toFixed(1)}<span style="color:var(--sub)">/10</span></span>` : ''}
           </div>
           <div class="log-date">${fmtDate(t.date_generated)}</div>
         </div>
@@ -1668,55 +1730,6 @@ function renderHistory() {
       ${trades.length} signal${trades.length !== 1 ? 's' : ''} recorded
     </div>
     <div class="log-list">${items}</div>`;
-}
-
-// ── Lab ────────────────────────────────────────────────────────────────────────
-async function fetchLab() {
-  document.getElementById('main').innerHTML =
-    '<div class="loading"><div class="loading-bar"></div><p style="margin-top:14px">Loading lab…</p></div>';
-  try {
-    const r = await fetch(BACKTEST_URL + '?t=' + Date.now());
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    labData = await r.json();
-    renderLab();
-  } catch(e) {
-    document.getElementById('main').innerHTML = `
-      <div class="empty-state" style="margin-top:40px">
-        <div class="empty-title">No backtest data</div>
-        <div class="empty-sub">Run <code>python backtest.py compare</code> locally and commit the result to populate this tab.</div>
-      </div>`;
-  }
-}
-
-function renderLab() {
-  const d    = labData || {};
-  const main = document.getElementById('main');
-  const variants = d.variants || [];
-  const pct = (v, dp=1) => `${v >= 0 ? '+' : ''}${Number(v).toFixed(dp)}%`;
-  const cc  = v => v > 0 ? 'pos' : v < 0 ? 'neg' : 'neu';
-
-  const variantHTML = variants.map(v => `
-    <div class="stat-box" style="grid-column: span 2">
-      <div class="stat-label">${v.label}</div>
-      <div style="display:flex;gap:20px;margin-top:8px;font-size:12px">
-        <span>Trades <strong>${v.closed_trades}</strong></span>
-        <span>Win <strong class="${parseFloat(v.win_rate) >= 0.5 ? 'pos' : 'neg'}">${(v.win_rate*100).toFixed(0)}%</strong></span>
-        <span>Avg <strong class="${cc(v.avg_return_pct)}">${pct(v.avg_return_pct)}</strong></span>
-        <span>Edge <strong class="${cc(v.expectancy)}">${pct(v.expectancy)}</strong></span>
-      </div>
-    </div>`).join('');
-
-  main.innerHTML = `
-    <div class="perf-hero">
-      <div class="port-hero-label">Strategy Lab</div>
-      <div style="margin-top:6px;font-size:11px;color:var(--sub)">
-        Statistical comparison across ${d.total_trades || 0} logged trades.
-        ${d.note ? `<br>${d.note}` : ''}
-      </div>
-      <div class="perf-stats" style="margin-top:16px">${variantHTML || '<div style="color:var(--sub);font-size:12px;margin-top:8px">No variants available yet.</div>'}</div>
-      ${d.generated_at ? `<div style="font-size:9px;color:var(--muted);margin-top:10px;text-transform:uppercase;letter-spacing:0.08em">Updated ${d.generated_at.split('T')[0]}</div>` : ''}
-    </div>
-    <div style="height:60px"></div>`;
 }
 
 // ── Run scan ───────────────────────────────────────────────────────────────────
@@ -1880,13 +1893,190 @@ function showError(msg) {
     `<div class="error-state"><strong>Could not load data</strong><br><br>${msg}</div>`;
 }
 
-function showRegimeBanner(regime) {
-  const el = document.getElementById('regimeBanner');
-  if (!regime) { el.style.display = 'none'; return; }
-  const labels = { bull: '▲ Bull market — full position sizing', neutral: '◆ Neutral regime — 75% sizing', bear: '▼ Bear market — 50% sizing' };
-  el.textContent = labels[regime] || regime;
-  el.className   = `regime-banner regime-${regime}`;
-  el.style.display = 'flex';
+// ── Insights tab ────────────────────────────────────────────────────────────────
+let insightsData = null; // cached AI response
+
+function renderInsightsShell() {
+  const main = document.getElementById('main');
+  const d = analyticsData || {};
+  const h = historyData || [];
+  const closed = d.closed_trades || 0;
+  const total  = d.total_trades  || 0;
+
+  const ctxPills = total > 0 ? `
+    <div class="insights-context-bar">
+      <div class="ctx-pill"><span>${total}</span> signals</div>
+      <div class="ctx-pill"><span>${closed}</span> closed</div>
+      ${d.win_rate != null ? `<div class="ctx-pill">Win rate <span>${(d.win_rate*100).toFixed(0)}%</span></div>` : ''}
+      ${d.expectancy != null ? `<div class="ctx-pill">Expectancy <span>${d.expectancy >= 0 ? '+' : ''}${Number(d.expectancy).toFixed(1)}%</span></div>` : ''}
+    </div>` : '';
+
+  main.innerHTML = `
+    <div class="insights-header">
+      <div class="insights-title-row">
+        <div>
+          <div class="port-hero-label">Strategy Insights</div>
+          <div class="insights-sub">AI analysis of your scanner data.<br>Improves as more trades close.</div>
+        </div>
+        <button class="insights-run-btn" id="insightsRunBtn" onclick="runInsights()">Analyse</button>
+      </div>
+      ${ctxPills}
+    </div>
+    <div class="insights-body" id="insightsBody">
+      ${insightsData
+        ? renderInsightCards(insightsData)
+        : `<div class="insights-empty">
+            <div class="insights-empty-title">Ready to analyse</div>
+            <div class="insights-empty-sub">Tap Analyse to review your strategy data and get specific improvement recommendations.</div>
+           </div>`
+      }
+    </div>`;
+}
+
+async function runInsights() {
+  const btn = document.getElementById('insightsRunBtn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Thinking…'; }
+
+  document.getElementById('insightsBody').innerHTML = `
+    <div class="insights-thinking">
+      <div class="loading-bar"></div>
+      <p style="margin-top:16px">Analysing strategy data…</p>
+    </div>`;
+
+  // Fetch fresh data if not already loaded
+  try {
+    if (!analyticsData) {
+      const r = await fetch(ANALYTICS_URL + '?t=' + Date.now());
+      analyticsData = await r.json();
+    }
+    if (!historyData) {
+      const r = await fetch(HISTORY_URL + '?t=' + Date.now());
+      historyData = await r.json();
+    }
+  } catch(e) { /* proceed with whatever we have */ }
+
+  const prompt = buildInsightsPrompt(analyticsData, historyData);
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: `You are a quantitative trading strategy analyst reviewing performance data for a momentum pullback scanner on the S&P 500. 
+The scanner uses these rules: Price > 50 MA > 200 MA, RSI 40-60, pullback 3-8% from 20-day high, volume > 1.3x average, bullish candle.
+Scoring weights: Trend 40%, Pullback quality 40%, Volume 20%.
+
+Respond ONLY with a valid JSON array of insight objects. No preamble, no markdown, no backticks.
+Each insight object must have exactly these fields:
+- "title": string (max 8 words, specific and actionable)
+- "body": string (2-3 sentences of specific, data-driven analysis)
+- "action": string (one concrete next step, max 15 words)
+- "priority": "high" | "medium" | "low"
+- "type": "warn" | "good" | "info" | "alert" | "idea"
+
+Generate 4-6 insights. Be specific — reference actual numbers from the data. If data is thin, reason about parameter quality and structural issues instead.`,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    const data = await response.json();
+    const raw = data.content?.find(b => b.type === 'text')?.text || '[]';
+    const cleaned = raw.replace(/```json|```/g, '').trim();
+    insightsData = JSON.parse(cleaned);
+
+    document.getElementById('insightsBody').innerHTML = renderInsightCards(insightsData);
+  } catch(e) {
+    document.getElementById('insightsBody').innerHTML = `
+      <div style="margin:16px;padding:14px;background:rgba(224,85,85,0.06);border:1px solid rgba(224,85,85,0.2);border-radius:8px;color:var(--red);font-size:12px;line-height:1.6">
+        Analysis failed. Check your connection and try again.<br><small style="opacity:.6">${e.message}</small>
+      </div>`;
+  } finally {
+    const b = document.getElementById('insightsRunBtn');
+    if (b) { b.disabled = false; b.textContent = 'Re-analyse'; }
+    // refresh shell to update context pills
+    const header = document.querySelector('.insights-header');
+    if (!header) renderInsightsShell();
+  }
+}
+
+function buildInsightsPrompt(analytics, history) {
+  const a = analytics || {};
+  const h = Array.isArray(history) ? history : [];
+
+  const closed = h.filter(t => t.status !== 'open');
+  const open   = h.filter(t => t.status === 'open');
+
+  // Score distribution
+  const scores = h.map(t => t.score).filter(Boolean);
+  const avgScore = scores.length ? (scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(2) : 'N/A';
+
+  // RSI distribution
+  const rsiVals = h.map(t => t.indicators?.rsi).filter(Boolean);
+  const avgRsi = rsiVals.length ? (rsiVals.reduce((a,b)=>a+b,0)/rsiVals.length).toFixed(1) : 'N/A';
+
+  // R:R distribution
+  const rrs = h.map(t => t.risk_reward).filter(Boolean);
+  const belowMinRR = rrs.filter(r => r < 2).length;
+
+  // Pullback distribution
+  const pullbacks = h.map(t => t.indicators?.pullback_pct).filter(Boolean);
+  const avgPullback = pullbacks.length ? (pullbacks.reduce((a,b)=>a+b,0)/pullbacks.length).toFixed(1) : 'N/A';
+
+  // RSI breakdown from analytics
+  const rsiBest = Object.entries(a.by_rsi_range || {})
+    .filter(([,v]) => v.count > 0)
+    .sort(([,a],[,b]) => b.avg_return - a.avg_return)[0];
+
+  const scoreBreakdown = JSON.stringify(a.by_score_range || {});
+  const rsiBreakdown   = JSON.stringify(a.by_rsi_range   || {});
+  const pullBreakdown  = JSON.stringify(a.by_pullback_range || {});
+
+  return `STRATEGY PERFORMANCE DATA:
+
+Total signals generated: ${h.length}
+Open trades: ${open.length}
+Closed trades: ${closed.length}
+Win rate: ${a.win_rate != null ? (a.win_rate*100).toFixed(1)+'%' : 'N/A (no closed trades yet)'}
+Avg return (closed): ${a.avg_return_pct != null ? a.avg_return_pct.toFixed(2)+'%' : 'N/A'}
+Avg win: ${a.avg_win_pct != null ? a.avg_win_pct.toFixed(2)+'%' : 'N/A'}
+Avg loss: ${a.avg_loss_pct != null ? a.avg_loss_pct.toFixed(2)+'%' : 'N/A'}
+Expectancy: ${a.expectancy != null ? a.expectancy.toFixed(2)+'%' : 'N/A'}
+
+SIGNAL QUALITY:
+Avg score of generated signals: ${avgScore}/10
+Signals with R:R < 2:1: ${belowMinRR} of ${rrs.length} (R:R minimum should be 2:1 for positive expectancy)
+Avg RSI at signal: ${avgRsi}
+Avg pullback depth: ${avgPullback}%
+
+BREAKDOWNS:
+By score range: ${scoreBreakdown}
+By RSI range: ${rsiBreakdown}
+By pullback range: ${pullBreakdown}
+
+RECENT TRADES (last 5):
+${closed.slice(-5).map(t => `${t.ticker}: entry=${t.entry_price}, rr=${t.risk_reward}, score=${t.score?.toFixed(1)}, rsi=${t.indicators?.rsi?.toFixed(1)}, pullback=${t.indicators?.pullback_pct}%, status=${t.status}, return=${t.outcomes?.last_return_pct?.toFixed(2) ?? 'open'}%`).join('\n') || 'No closed trades yet'}
+
+CURRENT OPEN SIGNALS:
+${open.slice(0,5).map(t => `${t.ticker}: score=${t.score?.toFixed(1)}, rr=${t.risk_reward}, rsi=${t.indicators?.rsi?.toFixed(1)}, pullback=${t.indicators?.pullback_pct}%, current_return=${t.outcomes?.last_return_pct?.toFixed(2) ?? '?'}%`).join('\n') || 'None'}`;
+}
+
+function renderInsightCards(insights) {
+  if (!Array.isArray(insights) || !insights.length) return '<div class="insights-empty"><div class="insights-empty-title">No insights yet</div><div class="insights-empty-sub">Tap Re-analyse to try again.</div></div>';
+
+  const iconMap = { warn: '⚠️', good: '✅', info: '📊', alert: '🚨', idea: '💡' };
+
+  return insights.map(ins => `
+    <div class="insight-card">
+      <div class="insight-card-head">
+        <div class="insight-icon ${ins.type || 'info'}">${iconMap[ins.type] || '📊'}</div>
+        <div class="insight-label">${ins.title || ''}</div>
+        <div class="insight-badge ${ins.priority || 'medium'}">${ins.priority || 'medium'}</div>
+      </div>
+      <div class="insight-card-body">${ins.body || ''}</div>
+      ${ins.action ? `<div class="insight-card-action">→ ${ins.action}</div>` : ''}
+    </div>`).join('');
 }
 
 setTab('scanner');
