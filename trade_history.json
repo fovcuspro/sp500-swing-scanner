@@ -585,9 +585,9 @@
       "max_drawdown_pct": -2.1,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 28.0,
-      "last_return_pct": 3.13,
-      "last_checked": "2026-05-29",
+      "last_price": 27.53,
+      "last_return_pct": 1.4,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -619,18 +619,18 @@
     "reasoning": "KEY is 6.7% below its 20-day high with RSI at 44.6, offering a controlled pullback into an uptrend (price above 50 MA at 20.8). Volume spiked 1.75\u00d7 above average on a bullish candle, confirming institutional interest.",
     "outcomes": {
       "1w_price": 21.77,
-      "2w_price": null,
+      "2w_price": 21.08,
       "4w_price": null,
       "1w_return_pct": 3.47,
-      "2w_return_pct": null,
+      "2w_return_pct": 0.19,
       "4w_return_pct": null,
       "max_gain_pct": 3.47,
       "max_drawdown_pct": -0.62,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.33,
-      "last_return_pct": 1.38,
-      "last_checked": "2026-05-29",
+      "last_price": 21.08,
+      "last_return_pct": 0.19,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -662,18 +662,18 @@
     "reasoning": "KEY is 6.7% below its 20-day high with RSI at 44.6, offering a controlled pullback into an uptrend (price above 50 MA at 20.8). Volume spiked 1.75\u00d7 above average on a bullish candle, confirming institutional interest.",
     "outcomes": {
       "1w_price": 21.77,
-      "2w_price": null,
+      "2w_price": 21.08,
       "4w_price": null,
       "1w_return_pct": 3.47,
-      "2w_return_pct": null,
+      "2w_return_pct": 0.19,
       "4w_return_pct": null,
       "max_gain_pct": 3.47,
       "max_drawdown_pct": -0.62,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.33,
-      "last_return_pct": 1.38,
-      "last_checked": "2026-05-29",
+      "last_price": 21.08,
+      "last_return_pct": 0.19,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -705,18 +705,18 @@
     "reasoning": "KEY is 6.7% below its 20-day high with RSI at 44.6, offering a controlled pullback into an uptrend (price above 50 MA at 20.8). Volume spiked 1.75\u00d7 above average on a bullish candle, confirming institutional interest.",
     "outcomes": {
       "1w_price": 21.77,
-      "2w_price": null,
+      "2w_price": 21.08,
       "4w_price": null,
       "1w_return_pct": 3.47,
-      "2w_return_pct": null,
+      "2w_return_pct": 0.19,
       "4w_return_pct": null,
       "max_gain_pct": 3.47,
       "max_drawdown_pct": -0.62,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.33,
-      "last_return_pct": 1.38,
-      "last_checked": "2026-05-29",
+      "last_price": 21.08,
+      "last_return_pct": 0.19,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -757,9 +757,9 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 204.91,
-      "last_return_pct": 2.24,
-      "last_checked": "2026-05-29",
+      "last_price": 202.32,
+      "last_return_pct": 0.95,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -800,9 +800,9 @@
       "max_drawdown_pct": -2.97,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 127.07,
-      "last_return_pct": 0.79,
-      "last_checked": "2026-05-29",
+      "last_price": 124.94,
+      "last_return_pct": -0.9,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -843,9 +843,9 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 127.07,
-      "last_return_pct": 3.87,
-      "last_checked": "2026-05-29",
+      "last_price": 124.94,
+      "last_return_pct": 2.13,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -883,12 +883,12 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 3.99,
-      "max_drawdown_pct": -1.69,
+      "max_drawdown_pct": -3.3,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 338.33,
-      "last_return_pct": -1.1,
-      "last_checked": "2026-05-29",
+      "last_price": 330.78,
+      "last_return_pct": -3.3,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -929,9 +929,9 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 168.41,
-      "last_return_pct": 2.41,
-      "last_checked": "2026-05-29",
+      "last_price": 167.46,
+      "last_return_pct": 1.84,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -972,9 +972,9 @@
       "max_drawdown_pct": -4.35,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 178.65,
-      "last_return_pct": -1.1,
-      "last_checked": "2026-05-29",
+      "last_price": 179.5,
+      "last_return_pct": -0.63,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -1015,9 +1015,9 @@
       "max_drawdown_pct": -3.28,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 133.31,
-      "last_return_pct": -1.65,
-      "last_checked": "2026-05-29",
+      "last_price": 134.14,
+      "last_return_pct": -1.04,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -1088,9 +1088,9 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 127.07,
-      "last_return_pct": 3.87,
-      "last_checked": "2026-05-29",
+      "last_price": 124.94,
+      "last_return_pct": 2.13,
+      "last_checked": "2026-06-01",
       "tiers_hit": [
         "T1 \u2014 scale out"
       ]
@@ -1160,12 +1160,12 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 3.99,
-      "max_drawdown_pct": -1.69,
+      "max_drawdown_pct": -3.3,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 338.33,
-      "last_return_pct": -1.1,
-      "last_checked": "2026-05-29",
+      "last_price": 330.78,
+      "last_return_pct": -3.3,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -1236,9 +1236,9 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 168.41,
-      "last_return_pct": 2.41,
-      "last_checked": "2026-05-29",
+      "last_price": 167.46,
+      "last_return_pct": 1.84,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -1309,9 +1309,9 @@
       "max_drawdown_pct": -4.35,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 178.65,
-      "last_return_pct": -1.1,
-      "last_checked": "2026-05-29",
+      "last_price": 179.5,
+      "last_return_pct": -0.63,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -1382,9 +1382,9 @@
       "max_drawdown_pct": -3.28,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 133.31,
-      "last_return_pct": -1.65,
-      "last_checked": "2026-05-29",
+      "last_price": 134.14,
+      "last_return_pct": -1.04,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -1452,12 +1452,12 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": -1.45,
+      "max_drawdown_pct": -3.7,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 413.85,
-      "last_return_pct": -1.45,
-      "last_checked": "2026-05-29",
+      "last_price": 404.42,
+      "last_return_pct": -3.7,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -1525,12 +1525,12 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": -4.89,
+      "max_drawdown_pct": -7.02,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 338.33,
-      "last_return_pct": -4.89,
-      "last_checked": "2026-05-29",
+      "last_price": 330.78,
+      "last_return_pct": -7.02,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -1601,9 +1601,9 @@
       "max_drawdown_pct": -0.56,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 63.87,
-      "last_return_pct": -0.19,
-      "last_checked": "2026-05-29",
+      "last_price": 63.69,
+      "last_return_pct": -0.47,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -1674,9 +1674,9 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 86.97,
-      "last_return_pct": 4.64,
-      "last_checked": "2026-05-29",
+      "last_price": 85.86,
+      "last_return_pct": 3.31,
+      "last_checked": "2026-06-01",
       "tiers_hit": [
         "T1 \u2014 scale out"
       ]
@@ -1746,12 +1746,12 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0.35,
-      "max_drawdown_pct": 0,
+      "max_drawdown_pct": -1.35,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 218.91,
-      "last_return_pct": 0.35,
-      "last_checked": "2026-05-29",
+      "last_price": 215.2,
+      "last_return_pct": -1.35,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -1819,12 +1819,12 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": 0,
+      "max_drawdown_pct": -1.17,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.33,
-      "last_return_pct": 0.0,
-      "last_checked": "2026-05-29",
+      "last_price": 21.08,
+      "last_return_pct": -1.17,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
@@ -1892,12 +1892,12 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
-      "max_drawdown_pct": 0,
+      "max_drawdown_pct": -1.86,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 62.26,
-      "last_return_pct": 0.0,
-      "last_checked": "2026-05-29",
+      "last_price": 61.1,
+      "last_return_pct": -1.86,
+      "last_checked": "2026-06-01",
       "tiers_hit": []
     },
     "status": "open"
