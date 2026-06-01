@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-01T13:49:23Z",
+  "generated_at": "2026-06-01T22:35:53Z",
   "total_trades": 36,
-  "open_trades": 23,
-  "closed_trades": 13,
-  "win_rate": 0.308,
-  "avg_return_pct": -2.85,
-  "avg_win_pct": 2.93,
+  "open_trades": 22,
+  "closed_trades": 14,
+  "win_rate": 0.357,
+  "avg_return_pct": -2.17,
+  "avg_win_pct": 3.69,
   "avg_loss_pct": -5.43,
-  "expectancy": -2.86,
+  "expectancy": -2.17,
   "best_trade": {
-    "ticker": "TRGP",
-    "date": "2026-05-08",
-    "return_pct": 4.3
+    "ticker": "IBKR",
+    "date": "2026-05-28",
+    "return_pct": 6.71
   },
   "worst_trade": {
     "ticker": "ALB",
@@ -20,9 +20,9 @@
   },
   "by_score_range": {
     "5-6": {
-      "count": 13,
-      "win_rate": 0.308,
-      "avg_return": -2.85
+      "count": 14,
+      "win_rate": 0.357,
+      "avg_return": -2.17
     },
     "6-7": {
       "count": 0,
@@ -57,9 +57,9 @@
       "avg_return": 2.16
     },
     "50-55": {
-      "count": 4,
-      "win_rate": 0.0,
-      "avg_return": -2.61
+      "count": 5,
+      "win_rate": 0.2,
+      "avg_return": -0.75
     },
     "55-60": {
       "count": 8,
@@ -79,12 +79,17 @@
       "avg_return": 0.0
     },
     "6-8%": {
-      "count": 2,
-      "win_rate": 0.0,
-      "avg_return": -9.83
+      "count": 3,
+      "win_rate": 0.333,
+      "avg_return": -4.32
     }
   },
   "by_regime": {
+    "bull": {
+      "count": 1,
+      "win_rate": 1.0,
+      "avg_return": 6.71
+    },
     "unknown": {
       "count": 13,
       "win_rate": 0.308,
@@ -92,6 +97,11 @@
     }
   },
   "by_sector": {
+    "Financials": {
+      "count": 1,
+      "win_rate": 1.0,
+      "avg_return": 6.71
+    },
     "Unknown": {
       "count": 13,
       "win_rate": 0.308,
@@ -105,12 +115,21 @@
       "avg_return": 0.0
     },
     "atr": {
-      "count": 0,
-      "win_rate": 0.0,
-      "avg_return": 0.0
+      "count": 1,
+      "win_rate": 1.0,
+      "avg_return": 6.71
     }
   },
   "recent_trades": [
+    {
+      "ticker": "IBKR",
+      "company_name": "Interactive Brokers",
+      "date": "2026-05-28",
+      "score": 5.69,
+      "return_pct": 6.71,
+      "status": "target_hit",
+      "days_held": 4
+    },
     {
       "ticker": "LNT",
       "company_name": "Alliant Energy",
