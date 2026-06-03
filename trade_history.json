@@ -585,9 +585,9 @@
       "max_drawdown_pct": -2.1,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 28.03,
-      "last_return_pct": 3.24,
-      "last_checked": "2026-06-02",
+      "last_price": 27.82,
+      "last_return_pct": 2.47,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -628,9 +628,9 @@
       "max_drawdown_pct": -0.67,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.18,
-      "last_return_pct": 0.67,
-      "last_checked": "2026-06-02",
+      "last_price": 21.0,
+      "last_return_pct": -0.19,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -671,9 +671,9 @@
       "max_drawdown_pct": -0.67,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.18,
-      "last_return_pct": 0.67,
-      "last_checked": "2026-06-02",
+      "last_price": 21.0,
+      "last_return_pct": -0.19,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -714,9 +714,9 @@
       "max_drawdown_pct": -0.67,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.18,
-      "last_return_pct": 0.67,
-      "last_checked": "2026-06-02",
+      "last_price": 21.0,
+      "last_return_pct": -0.19,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -757,9 +757,9 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 203.53,
-      "last_return_pct": 1.55,
-      "last_checked": "2026-06-02",
+      "last_price": 203.39,
+      "last_return_pct": 1.48,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -800,9 +800,9 @@
       "max_drawdown_pct": -2.97,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 123.18,
-      "last_return_pct": -2.3,
-      "last_checked": "2026-06-02",
+      "last_price": 122.83,
+      "last_return_pct": -2.58,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -834,18 +834,18 @@
     "reasoning": "TGT is 6.4% below its 20-day high with RSI at 47.9, offering a controlled pullback into an uptrend (price above 50 MA at 121.57). Volume spiked 3.6\u00d7 above average on a bullish candle, confirming institutional interest.",
     "outcomes": {
       "1w_price": 129.08,
-      "2w_price": null,
+      "2w_price": 122.83,
       "4w_price": null,
       "1w_return_pct": 5.52,
-      "2w_return_pct": null,
+      "2w_return_pct": 0.41,
       "4w_return_pct": null,
       "max_gain_pct": 5.52,
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 123.18,
-      "last_return_pct": 0.69,
-      "last_checked": "2026-06-02",
+      "last_price": 122.83,
+      "last_return_pct": 0.41,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -877,18 +877,18 @@
     "reasoning": "KEYS is 7.6% below its 20-day high with RSI at 50.1, offering a controlled pullback into an uptrend (price above 50 MA at 321.78). Volume spiked 1.77\u00d7 above average on a bullish candle, confirming institutional interest.",
     "outcomes": {
       "1w_price": 347.58,
-      "2w_price": null,
+      "2w_price": 347.52,
       "4w_price": null,
       "1w_return_pct": 1.61,
-      "2w_return_pct": null,
+      "2w_return_pct": 1.59,
       "4w_return_pct": null,
       "max_gain_pct": 3.99,
       "max_drawdown_pct": -3.53,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 346.57,
-      "last_return_pct": 1.31,
-      "last_checked": "2026-06-02",
+      "last_price": 347.52,
+      "last_return_pct": 1.59,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -920,18 +920,18 @@
     "reasoning": "LYV is 5.0% below its 20-day high with RSI at 53.9, offering a controlled pullback into an uptrend (price above 50 MA at 158.51). Volume spiked 1.5\u00d7 above average on a bullish candle, confirming institutional interest.",
     "outcomes": {
       "1w_price": 168.07,
-      "2w_price": null,
+      "2w_price": 166.6,
       "4w_price": null,
       "1w_return_pct": 2.21,
-      "2w_return_pct": null,
+      "2w_return_pct": 1.31,
       "4w_return_pct": null,
       "max_gain_pct": 3.65,
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 167.64,
-      "last_return_pct": 1.95,
-      "last_checked": "2026-06-02",
+      "last_price": 166.6,
+      "last_return_pct": 1.31,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -974,7 +974,7 @@
       "stop_hit": false,
       "last_price": 178.52,
       "last_return_pct": -1.17,
-      "last_checked": "2026-06-02",
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -1006,18 +1006,18 @@
     "reasoning": "ABNB is 7.8% below its 20-day high with RSI at 49.1, offering a controlled pullback into an uptrend (price above 50 MA at 133.99). Volume spiked 1.63\u00d7 above average on a bullish candle, confirming institutional interest.",
     "outcomes": {
       "1w_price": 132.99,
-      "2w_price": null,
+      "2w_price": 133.6,
       "4w_price": null,
       "1w_return_pct": -1.89,
-      "2w_return_pct": null,
+      "2w_return_pct": -1.44,
       "4w_return_pct": null,
       "max_gain_pct": 1.71,
       "max_drawdown_pct": -3.28,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 134.35,
-      "last_return_pct": -0.89,
-      "last_checked": "2026-06-02",
+      "last_price": 133.61,
+      "last_return_pct": -1.43,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -1088,9 +1088,9 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 123.18,
-      "last_return_pct": 0.69,
-      "last_checked": "2026-06-02",
+      "last_price": 122.83,
+      "last_return_pct": 0.41,
+      "last_checked": "2026-06-03",
       "tiers_hit": [
         "T1 \u2014 scale out"
       ]
@@ -1163,9 +1163,9 @@
       "max_drawdown_pct": -3.53,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 346.57,
-      "last_return_pct": 1.31,
-      "last_checked": "2026-06-02",
+      "last_price": 347.52,
+      "last_return_pct": 1.59,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -1236,9 +1236,9 @@
       "max_drawdown_pct": 0,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 167.64,
-      "last_return_pct": 1.95,
-      "last_checked": "2026-06-02",
+      "last_price": 166.6,
+      "last_return_pct": 1.31,
+      "last_checked": "2026-06-03",
       "tiers_hit": [
         "T1 \u2014 scale out"
       ]
@@ -1313,7 +1313,7 @@
       "stop_hit": false,
       "last_price": 178.52,
       "last_return_pct": -1.17,
-      "last_checked": "2026-06-02",
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -1384,9 +1384,9 @@
       "max_drawdown_pct": -3.28,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 134.35,
-      "last_return_pct": -0.89,
-      "last_checked": "2026-06-02",
+      "last_price": 133.61,
+      "last_return_pct": -1.43,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -1447,19 +1447,19 @@
     },
     "reasoning": "ADI is 3.6% below its 20-day high with RSI at 59.6, offering a controlled pullback into an uptrend (price above 50 MA at 367.29). Volume spiked 1.52x above average on a bullish candle, confirming institutional interest. Stop set via atr method at 377.47 (ATR stop: 377.47, swing low: 381.22). Market regime: bull \u2014 position sized to 100% of full risk.",
     "outcomes": {
-      "1w_price": null,
+      "1w_price": 424.03,
       "2w_price": null,
       "4w_price": null,
-      "1w_return_pct": null,
+      "1w_return_pct": 0.97,
       "2w_return_pct": null,
       "4w_return_pct": null,
-      "max_gain_pct": 0.78,
+      "max_gain_pct": 1.08,
       "max_drawdown_pct": -4.11,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 423.2,
-      "last_return_pct": 0.78,
-      "last_checked": "2026-06-02",
+      "last_price": 424.48,
+      "last_return_pct": 1.08,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -1520,19 +1520,19 @@
     },
     "reasoning": "KEYS is 3.9% below its 20-day high with RSI at 58.3, offering a controlled pullback into an uptrend (price above 50 MA at 325.64). Volume spiked 1.33x above average on a bullish candle, confirming institutional interest. Stop set via atr method at 322.26 (ATR stop: 322.26, swing low: 326.48). Market regime: bull \u2014 position sized to 100% of full risk.",
     "outcomes": {
-      "1w_price": null,
+      "1w_price": 347.52,
       "2w_price": null,
       "4w_price": null,
-      "1w_return_pct": null,
+      "1w_return_pct": -2.31,
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 0,
       "max_drawdown_pct": -7.24,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 346.57,
-      "last_return_pct": -2.58,
-      "last_checked": "2026-06-02",
+      "last_price": 347.52,
+      "last_return_pct": -2.31,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -1603,9 +1603,9 @@
       "max_drawdown_pct": -0.56,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 66.42,
-      "last_return_pct": 3.8,
-      "last_checked": "2026-06-02",
+      "last_price": 66.17,
+      "last_return_pct": 3.41,
+      "last_checked": "2026-06-03",
       "tiers_hit": [
         "T1 \u2014 scale out"
       ]
@@ -1756,7 +1756,7 @@
       "stop_hit": false,
       "last_price": 224.83,
       "last_return_pct": 3.07,
-      "last_checked": "2026-06-02",
+      "last_checked": "2026-06-03",
       "tiers_hit": [
         "T1 \u2014 scale out"
       ]
@@ -1829,9 +1829,9 @@
       "max_drawdown_pct": -2.02,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.18,
-      "last_return_pct": -0.7,
-      "last_checked": "2026-06-02",
+      "last_price": 21.0,
+      "last_return_pct": -1.55,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
@@ -1902,9 +1902,9 @@
       "max_drawdown_pct": -2.38,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 62.31,
-      "last_return_pct": 0.08,
-      "last_checked": "2026-06-02",
+      "last_price": 61.95,
+      "last_return_pct": -0.5,
+      "last_checked": "2026-06-03",
       "tiers_hit": []
     },
     "status": "open"
