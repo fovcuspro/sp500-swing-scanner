@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-03T17:11:15Z",
+  "generated_at": "2026-06-03T17:57:24Z",
   "total_trades": 36,
-  "open_trades": 22,
-  "closed_trades": 14,
-  "win_rate": 0.357,
-  "avg_return_pct": -2.17,
-  "avg_win_pct": 3.69,
+  "open_trades": 21,
+  "closed_trades": 15,
+  "win_rate": 0.4,
+  "avg_return_pct": -1.96,
+  "avg_win_pct": 3.23,
   "avg_loss_pct": -5.43,
-  "expectancy": -2.17,
+  "expectancy": -1.97,
   "best_trade": {
     "ticker": "IBKR",
     "date": "2026-05-28",
@@ -20,9 +20,9 @@
   },
   "by_score_range": {
     "5-6": {
-      "count": 14,
-      "win_rate": 0.357,
-      "avg_return": -2.17
+      "count": 15,
+      "win_rate": 0.4,
+      "avg_return": -1.96
     },
     "6-7": {
       "count": 0,
@@ -62,16 +62,16 @@
       "avg_return": -0.75
     },
     "55-60": {
-      "count": 8,
-      "win_rate": 0.375,
-      "avg_return": -3.6
+      "count": 9,
+      "win_rate": 0.444,
+      "avg_return": -3.1
     }
   },
   "by_pullback_range": {
     "3-5%": {
-      "count": 11,
-      "win_rate": 0.364,
-      "avg_return": -1.59
+      "count": 12,
+      "win_rate": 0.417,
+      "avg_return": -1.37
     },
     "5-6%": {
       "count": 0,
@@ -86,9 +86,9 @@
   },
   "by_regime": {
     "bull": {
-      "count": 1,
+      "count": 2,
       "win_rate": 1.0,
-      "avg_return": 6.71
+      "avg_return": 3.84
     },
     "unknown": {
       "count": 13,
@@ -101,6 +101,11 @@
       "count": 1,
       "win_rate": 1.0,
       "avg_return": 6.71
+    },
+    "Information Technology": {
+      "count": 1,
+      "win_rate": 1.0,
+      "avg_return": 0.97
     },
     "Unknown": {
       "count": 13,
@@ -115,9 +120,9 @@
       "avg_return": 0.0
     },
     "atr": {
-      "count": 1,
+      "count": 2,
       "win_rate": 1.0,
-      "avg_return": 6.71
+      "avg_return": 3.84
     }
   },
   "recent_trades": [
@@ -129,6 +134,15 @@
       "return_pct": 6.71,
       "status": "target_hit",
       "days_held": 4
+    },
+    {
+      "ticker": "ADI",
+      "company_name": "Analog Devices",
+      "date": "2026-05-27",
+      "score": 5.224,
+      "return_pct": 0.97,
+      "status": "target_hit",
+      "days_held": 7
     },
     {
       "ticker": "LNT",
