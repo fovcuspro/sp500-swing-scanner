@@ -1,5 +1,5 @@
 {
-  "scan_date": "2026-06-04 12:57 UTC",
+  "scan_date": "2026-06-04 13:03 UTC",
   "summary": {
     "total_cost_basis": 1420.28,
     "total_market_value": 1597.16,
@@ -68,9 +68,9 @@
       "unrealised_pnl": 2.59,
       "unrealised_pct": 22.32,
       "day_change": 0.02,
-      "day_change_pct": 0.48,
-      "volume": 5745315,
-      "avg_volume": 15734882,
+      "day_change_pct": 0.52,
+      "volume": 5797574,
+      "avg_volume": 15745334,
       "pct_to_stop": null,
       "pct_to_target": null,
       "risk_reward": null,
