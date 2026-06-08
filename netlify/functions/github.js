@@ -86,7 +86,7 @@ Each insight object must have exactly these fields:
 Generate 4-6 insights. Be specific — reference actual numbers from the data. If data is thin, reason about parameter quality and structural issues instead.`;
 
       const r = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
