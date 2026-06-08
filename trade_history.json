@@ -628,8 +628,8 @@
       "max_drawdown_pct": -0.76,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.9,
-      "last_return_pct": 4.09,
+      "last_price": 21.81,
+      "last_return_pct": 3.66,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -671,8 +671,8 @@
       "max_drawdown_pct": -0.76,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.9,
-      "last_return_pct": 4.09,
+      "last_price": 21.81,
+      "last_return_pct": 3.66,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -714,8 +714,8 @@
       "max_drawdown_pct": -0.76,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.9,
-      "last_return_pct": 4.09,
+      "last_price": 21.81,
+      "last_return_pct": 3.66,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -800,8 +800,8 @@
       "max_drawdown_pct": -3.15,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 122.11,
-      "last_return_pct": -3.15,
+      "last_price": 123.04,
+      "last_return_pct": -2.41,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -843,8 +843,8 @@
       "max_drawdown_pct": -0.18,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 122.11,
-      "last_return_pct": -0.18,
+      "last_price": 123.04,
+      "last_return_pct": 0.58,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -886,8 +886,8 @@
       "max_drawdown_pct": -3.58,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 329.83,
-      "last_return_pct": -3.58,
+      "last_price": 330.83,
+      "last_return_pct": -3.29,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -929,8 +929,8 @@
       "max_drawdown_pct": -2.66,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 160.96,
-      "last_return_pct": -2.12,
+      "last_price": 162.15,
+      "last_return_pct": -1.39,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -968,12 +968,12 @@
       "1w_return_pct": -1.26,
       "2w_return_pct": -1.05,
       "4w_return_pct": null,
-      "max_gain_pct": 2.73,
+      "max_gain_pct": 3.59,
       "max_drawdown_pct": -4.35,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 183.18,
-      "last_return_pct": 1.41,
+      "last_price": 187.13,
+      "last_return_pct": 3.59,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -1015,8 +1015,8 @@
       "max_drawdown_pct": -3.28,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 134.22,
-      "last_return_pct": -0.98,
+      "last_price": 135.39,
+      "last_return_pct": -0.12,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -1088,8 +1088,8 @@
       "max_drawdown_pct": -0.18,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 122.11,
-      "last_return_pct": -0.18,
+      "last_price": 123.04,
+      "last_return_pct": 0.58,
       "last_checked": "2026-06-08",
       "tiers_hit": [
         "T1 \u2014 scale out"
@@ -1163,8 +1163,8 @@
       "max_drawdown_pct": -3.58,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 329.83,
-      "last_return_pct": -3.58,
+      "last_price": 330.83,
+      "last_return_pct": -3.29,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -1236,8 +1236,8 @@
       "max_drawdown_pct": -2.66,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 160.96,
-      "last_return_pct": -2.12,
+      "last_price": 162.15,
+      "last_return_pct": -1.39,
       "last_checked": "2026-06-08",
       "tiers_hit": [
         "T1 \u2014 scale out"
@@ -1307,12 +1307,12 @@
       "1w_return_pct": -4.35,
       "2w_return_pct": 2.3,
       "4w_return_pct": null,
-      "max_gain_pct": 2.73,
+      "max_gain_pct": 3.59,
       "max_drawdown_pct": -4.35,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 183.18,
-      "last_return_pct": 1.41,
+      "last_price": 187.13,
+      "last_return_pct": 3.59,
       "last_checked": "2026-06-08",
       "tiers_hit": [
         "T1 \u2014 scale out"
@@ -1386,8 +1386,8 @@
       "max_drawdown_pct": -3.28,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 134.22,
-      "last_return_pct": -0.98,
+      "last_price": 135.39,
+      "last_return_pct": -0.12,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -1535,8 +1535,8 @@
       "max_drawdown_pct": -7.28,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 329.83,
-      "last_return_pct": -7.28,
+      "last_price": 330.83,
+      "last_return_pct": -7.0,
       "last_checked": "2026-06-08",
       "tiers_hit": []
     },
@@ -1608,8 +1608,8 @@
       "max_drawdown_pct": -0.56,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 67.39,
-      "last_return_pct": 5.31,
+      "last_price": 67.88,
+      "last_return_pct": 6.08,
       "last_checked": "2026-06-08",
       "tiers_hit": [
         "T1 \u2014 scale out"
@@ -1759,8 +1759,8 @@
       "max_drawdown_pct": -1.35,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 222.82,
-      "last_return_pct": 2.15,
+      "last_price": 221.34,
+      "last_return_pct": 1.47,
       "last_checked": "2026-06-08",
       "tiers_hit": [
         "T1 \u2014 scale out"
@@ -1834,8 +1834,8 @@
       "max_drawdown_pct": -2.11,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 21.9,
-      "last_return_pct": 2.67,
+      "last_price": 21.81,
+      "last_return_pct": 2.25,
       "last_checked": "2026-06-08",
       "tiers_hit": [
         "T1 \u2014 scale out"
@@ -1909,8 +1909,8 @@
       "max_drawdown_pct": -2.38,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 64.75,
-      "last_return_pct": 4.0,
+      "last_price": 64.25,
+      "last_return_pct": 3.2,
       "last_checked": "2026-06-08",
       "tiers_hit": [
         "T1 \u2014 scale out"
