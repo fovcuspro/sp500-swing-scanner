@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-09T13:31:26Z",
+  "generated_at": "2026-06-09T15:51:05Z",
   "total_trades": 36,
-  "open_trades": 18,
-  "closed_trades": 18,
-  "win_rate": 0.5,
-  "avg_return_pct": -1.27,
-  "avg_win_pct": 2.89,
+  "open_trades": 16,
+  "closed_trades": 20,
+  "win_rate": 0.55,
+  "avg_return_pct": -0.71,
+  "avg_win_pct": 3.15,
   "avg_loss_pct": -5.43,
-  "expectancy": -1.27,
+  "expectancy": -0.71,
   "best_trade": {
-    "ticker": "IBKR",
+    "ticker": "CARR",
     "date": "2026-05-28",
-    "return_pct": 6.71
+    "return_pct": 7.06
   },
   "worst_trade": {
     "ticker": "ALB",
@@ -20,14 +20,14 @@
   },
   "by_score_range": {
     "5-6": {
-      "count": 18,
-      "win_rate": 0.5,
-      "avg_return": -1.27
+      "count": 19,
+      "win_rate": 0.526,
+      "avg_return": -0.83
     },
     "6-7": {
-      "count": 0,
-      "win_rate": 0.0,
-      "avg_return": 0.0
+      "count": 1,
+      "win_rate": 1.0,
+      "avg_return": 1.59
     },
     "7-8": {
       "count": 0,
@@ -57,9 +57,9 @@
       "avg_return": 1.85
     },
     "50-55": {
-      "count": 6,
-      "win_rate": 0.333,
-      "avg_return": -0.4
+      "count": 8,
+      "win_rate": 0.5,
+      "avg_return": 0.78
     },
     "55-60": {
       "count": 9,
@@ -79,21 +79,21 @@
       "avg_return": 2.52
     },
     "6-8%": {
-      "count": 3,
-      "win_rate": 0.333,
-      "avg_return": -4.32
+      "count": 5,
+      "win_rate": 0.6,
+      "avg_return": -0.86
     }
   },
   "by_regime": {
     "bull": {
-      "count": 2,
+      "count": 3,
       "win_rate": 1.0,
-      "avg_return": 3.84
+      "avg_return": 4.91
     },
     "unknown": {
-      "count": 16,
-      "win_rate": 0.438,
-      "avg_return": -1.91
+      "count": 17,
+      "win_rate": 0.471,
+      "avg_return": -1.7
     }
   },
   "by_sector": {
@@ -102,15 +102,20 @@
       "win_rate": 1.0,
       "avg_return": 6.71
     },
+    "Industrials": {
+      "count": 1,
+      "win_rate": 1.0,
+      "avg_return": 7.06
+    },
     "Information Technology": {
       "count": 1,
       "win_rate": 1.0,
       "avg_return": 0.97
     },
     "Unknown": {
-      "count": 16,
-      "win_rate": 0.438,
-      "avg_return": -1.91
+      "count": 17,
+      "win_rate": 0.471,
+      "avg_return": -1.7
     }
   },
   "stop_ab_test": {
@@ -120,12 +125,21 @@
       "avg_return": 0.0
     },
     "atr": {
-      "count": 2,
+      "count": 3,
       "win_rate": 1.0,
-      "avg_return": 3.84
+      "avg_return": 4.91
     }
   },
   "recent_trades": [
+    {
+      "ticker": "CARR",
+      "company_name": "Carrier Global",
+      "date": "2026-05-28",
+      "score": 3.972,
+      "return_pct": 7.06,
+      "status": "target_hit",
+      "days_held": 12
+    },
     {
       "ticker": "IBKR",
       "company_name": "Interactive Brokers",
@@ -143,6 +157,15 @@
       "return_pct": 0.97,
       "status": "target_hit",
       "days_held": 7
+    },
+    {
+      "ticker": "KEYS",
+      "company_name": "Keysight Technologies",
+      "date": "2026-05-20",
+      "score": 6.14,
+      "return_pct": 1.59,
+      "status": "stop_hit",
+      "days_held": 20
     },
     {
       "ticker": "LYV",
