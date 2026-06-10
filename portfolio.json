@@ -13,10 +13,5 @@
     "ticker": "ONDS",
     "shares": 20,
     "entry_price": 9.24
-  },
-  {
-    "ticker": "TRGP",
-    "shares": 1,
-    "entry_price": 251.48
   }
 ]
