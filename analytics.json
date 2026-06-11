@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-11T12:36:24Z",
+  "generated_at": "2026-06-11T16:45:55Z",
   "total_trades": 36,
-  "open_trades": 16,
-  "closed_trades": 20,
-  "win_rate": 0.55,
-  "avg_return_pct": -0.71,
-  "avg_win_pct": 3.15,
+  "open_trades": 14,
+  "closed_trades": 22,
+  "win_rate": 0.591,
+  "avg_return_pct": -0.52,
+  "avg_win_pct": 2.87,
   "avg_loss_pct": -5.43,
-  "expectancy": -0.71,
+  "expectancy": -0.52,
   "best_trade": {
     "ticker": "CARR",
     "date": "2026-05-28",
@@ -30,9 +30,9 @@
       "avg_return": 1.59
     },
     "7-8": {
-      "count": 0,
-      "win_rate": 0.0,
-      "avg_return": 0.0
+      "count": 2,
+      "win_rate": 1.0,
+      "avg_return": 1.33
     },
     "8-9": {
       "count": 0,
@@ -52,9 +52,9 @@
       "avg_return": 3.72
     },
     "45-50": {
-      "count": 2,
+      "count": 4,
       "win_rate": 1.0,
-      "avg_return": 1.85
+      "avg_return": 1.59
     },
     "50-55": {
       "count": 8,
@@ -79,24 +79,29 @@
       "avg_return": 2.52
     },
     "6-8%": {
-      "count": 5,
-      "win_rate": 0.6,
-      "avg_return": -0.86
+      "count": 7,
+      "win_rate": 0.714,
+      "avg_return": -0.23
     }
   },
   "by_regime": {
     "bull": {
-      "count": 3,
+      "count": 4,
       "win_rate": 1.0,
-      "avg_return": 4.91
+      "avg_return": 4.25
     },
     "unknown": {
-      "count": 17,
-      "win_rate": 0.471,
-      "avg_return": -1.7
+      "count": 18,
+      "win_rate": 0.5,
+      "avg_return": -1.58
     }
   },
   "by_sector": {
+    "Consumer Staples": {
+      "count": 1,
+      "win_rate": 1.0,
+      "avg_return": 2.25
+    },
     "Financials": {
       "count": 1,
       "win_rate": 1.0,
@@ -113,9 +118,9 @@
       "avg_return": 0.97
     },
     "Unknown": {
-      "count": 17,
-      "win_rate": 0.471,
-      "avg_return": -1.7
+      "count": 18,
+      "win_rate": 0.5,
+      "avg_return": -1.58
     }
   },
   "stop_ab_test": {
@@ -125,9 +130,9 @@
       "avg_return": 0.0
     },
     "atr": {
-      "count": 3,
+      "count": 4,
       "win_rate": 1.0,
-      "avg_return": 4.91
+      "avg_return": 4.25
     }
   },
   "recent_trades": [
@@ -157,6 +162,24 @@
       "return_pct": 0.97,
       "status": "target_hit",
       "days_held": 7
+    },
+    {
+      "ticker": "TGT",
+      "company_name": "Target Corporation",
+      "date": "2026-05-21",
+      "score": 7.068,
+      "return_pct": 2.25,
+      "status": "target_hit",
+      "days_held": 21
+    },
+    {
+      "ticker": "TGT",
+      "company_name": "Target Corporation",
+      "date": "2026-05-20",
+      "score": 7.068,
+      "return_pct": 0.41,
+      "status": "target_hit",
+      "days_held": 22
     },
     {
       "ticker": "KEYS",
