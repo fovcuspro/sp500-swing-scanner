@@ -65,13 +65,26 @@ exports.handler = async (event) => {
       return { statusCode: 200, headers: cors, body: JSON.stringify({ ok: true }) };
     }
 
-    // Proxy Gemini insights request — keeps API key server-side
+    // Proxy Groq insights request — keeps API key server-side
     if (action === 'insights') {
-      const apiKey = process.env.GOOGLE_AI_KEY;
-      if (!apiKey) throw new Error('GOOGLE_AI_KEY not set on server');
+      const apiKey = process.env.GROQ_API_KEY;
+      if (!apiKey) throw new Error('GROQ_API_KEY not set on server');
 
       const { prompt } = body;
-      const systemPrompt = `You are a quantitative trading strategy analyst reviewing performance data for a momentum pullback scanner on the S&P 500.
+      const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: 'llama-3.1-8b-instant',
+          max_tokens: 1000,
+          temperature: 0.4,
+          messages: [
+            {
+              role: 'system',
+              content: `You are a quantitative trading strategy analyst reviewing performance data for a momentum pullback scanner on the S&P 500.
 The scanner uses these rules: Price > 50 MA > 200 MA, RSI 40-52, pullback 3-8% from 20-day high, volume > 1.3x average, bullish candle.
 Scoring weights: Trend 40%, Pullback quality 40%, Volume 20%.
 
@@ -83,26 +96,18 @@ Each insight object must have exactly these fields:
 - "priority": "high" | "medium" | "low"
 - "type": "warn" | "good" | "info" | "alert" | "idea"
 
-Generate 4-6 insights. Be specific — reference actual numbers from the data. If data is thin, reason about parameter quality and structural issues instead.`;
-
-      const r = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            system_instruction: { parts: [{ text: systemPrompt }] },
-            contents: [{ role: 'user', parts: [{ text: prompt }] }],
-            generationConfig: { maxOutputTokens: 1000, temperature: 0.4 },
-          }),
-        }
-      );
+Generate 4-6 insights. Be specific — reference actual numbers from the data. If data is thin, reason about parameter quality and structural issues instead.`,
+            },
+            { role: 'user', content: prompt },
+          ],
+        }),
+      });
       if (!r.ok) {
         const e = await r.json().catch(() => ({}));
-        throw new Error(e.error?.message || `Gemini API error ${r.status}`);
+        throw new Error(e.error?.message || `Groq API error ${r.status}`);
       }
       const data = await r.json();
-      const raw = data.candidates?.[0]?.content?.parts?.[0]?.text || '[]';
+      const raw = data.choices?.[0]?.message?.content || '[]';
       const cleaned = raw.replace(/```json|```/g, '').trim();
       const insights = JSON.parse(cleaned);
       return { statusCode: 200, headers: cors, body: JSON.stringify({ insights }) };
