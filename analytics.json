@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-11T16:45:55Z",
+  "generated_at": "2026-06-12T16:13:25Z",
   "total_trades": 36,
-  "open_trades": 14,
-  "closed_trades": 22,
-  "win_rate": 0.591,
-  "avg_return_pct": -0.52,
-  "avg_win_pct": 2.87,
-  "avg_loss_pct": -5.43,
-  "expectancy": -0.52,
+  "open_trades": 6,
+  "closed_trades": 30,
+  "win_rate": 0.633,
+  "avg_return_pct": 0.07,
+  "avg_win_pct": 2.86,
+  "avg_loss_pct": -4.74,
+  "expectancy": 0.07,
   "best_trade": {
-    "ticker": "CARR",
-    "date": "2026-05-28",
-    "return_pct": 7.06
+    "ticker": "CFG",
+    "date": "2026-05-29",
+    "return_pct": 8.19
   },
   "worst_trade": {
     "ticker": "ALB",
@@ -20,9 +20,9 @@
   },
   "by_score_range": {
     "5-6": {
-      "count": 19,
-      "win_rate": 0.526,
-      "avg_return": -0.83
+      "count": 27,
+      "win_rate": 0.593,
+      "avg_return": -0.08
     },
     "6-7": {
       "count": 1,
@@ -47,53 +47,53 @@
   },
   "by_rsi_range": {
     "40-45": {
-      "count": 1,
-      "win_rate": 1.0,
-      "avg_return": 3.72
-    },
-    "45-50": {
       "count": 4,
       "win_rate": 1.0,
-      "avg_return": 1.59
+      "avg_return": 1.07
+    },
+    "45-50": {
+      "count": 6,
+      "win_rate": 1.0,
+      "avg_return": 3.41
     },
     "50-55": {
-      "count": 8,
-      "win_rate": 0.5,
-      "avg_return": 0.78
-    },
-    "55-60": {
       "count": 9,
       "win_rate": 0.444,
-      "avg_return": -3.1
+      "avg_return": 0.44
+    },
+    "55-60": {
+      "count": 11,
+      "win_rate": 0.455,
+      "avg_return": -2.42
     }
   },
   "by_pullback_range": {
     "3-5%": {
-      "count": 13,
-      "win_rate": 0.462,
-      "avg_return": -1.15
+      "count": 15,
+      "win_rate": 0.467,
+      "avg_return": -0.75
     },
     "5-6%": {
-      "count": 2,
-      "win_rate": 1.0,
-      "avg_return": 2.52
+      "count": 5,
+      "win_rate": 0.8,
+      "avg_return": 2.89
     },
     "6-8%": {
-      "count": 7,
-      "win_rate": 0.714,
-      "avg_return": -0.23
+      "count": 10,
+      "win_rate": 0.8,
+      "avg_return": -0.11
     }
   },
   "by_regime": {
     "bull": {
-      "count": 4,
+      "count": 7,
       "win_rate": 1.0,
-      "avg_return": 4.25
+      "avg_return": 4.77
     },
     "unknown": {
-      "count": 18,
-      "win_rate": 0.5,
-      "avg_return": -1.58
+      "count": 23,
+      "win_rate": 0.522,
+      "avg_return": -1.36
     }
   },
   "by_sector": {
@@ -103,14 +103,14 @@
       "avg_return": 2.25
     },
     "Financials": {
-      "count": 1,
+      "count": 3,
       "win_rate": 1.0,
-      "avg_return": 6.71
+      "avg_return": 6.94
     },
     "Industrials": {
-      "count": 1,
+      "count": 2,
       "win_rate": 1.0,
-      "avg_return": 7.06
+      "avg_return": 4.68
     },
     "Information Technology": {
       "count": 1,
@@ -118,24 +118,42 @@
       "avg_return": 0.97
     },
     "Unknown": {
-      "count": 18,
-      "win_rate": 0.5,
-      "avg_return": -1.58
+      "count": 23,
+      "win_rate": 0.522,
+      "avg_return": -1.36
     }
   },
   "stop_ab_test": {
     "swing": {
-      "count": 0,
-      "win_rate": 0.0,
-      "avg_return": 0.0
+      "count": 1,
+      "win_rate": 1.0,
+      "avg_return": 2.3
     },
     "atr": {
-      "count": 4,
+      "count": 6,
       "win_rate": 1.0,
-      "avg_return": 4.25
+      "avg_return": 5.18
     }
   },
   "recent_trades": [
+    {
+      "ticker": "KEY",
+      "company_name": "KeyCorp",
+      "date": "2026-05-29",
+      "score": 5.38,
+      "return_pct": 5.91,
+      "status": "target_hit",
+      "days_held": 14
+    },
+    {
+      "ticker": "CFG",
+      "company_name": "Citizens Financial Group",
+      "date": "2026-05-29",
+      "score": 4.532,
+      "return_pct": 8.19,
+      "status": "target_hit",
+      "days_held": 14
+    },
     {
       "ticker": "CARR",
       "company_name": "Carrier Global",
@@ -173,6 +191,15 @@
       "days_held": 21
     },
     {
+      "ticker": "CHRW",
+      "company_name": "C.H. Robinson",
+      "date": "2026-05-21",
+      "score": 4.31,
+      "return_pct": 2.3,
+      "status": "target_hit",
+      "days_held": 22
+    },
+    {
       "ticker": "TGT",
       "company_name": "Target Corporation",
       "date": "2026-05-20",
@@ -200,6 +227,15 @@
       "days_held": 20
     },
     {
+      "ticker": "CHRW",
+      "company_name": "C.H. Robinson",
+      "date": "2026-05-20",
+      "score": 4.294,
+      "return_pct": -1.05,
+      "status": "target_hit",
+      "days_held": 23
+    },
+    {
       "ticker": "SPG",
       "company_name": "Simon Property Group",
       "date": "2026-05-19",
@@ -207,6 +243,42 @@
       "return_pct": 1.55,
       "status": "target_hit",
       "days_held": 17
+    },
+    {
+      "ticker": "TGT",
+      "company_name": "Target Corporation",
+      "date": "2026-05-19",
+      "score": 5.14,
+      "return_pct": -2.3,
+      "status": "target_hit",
+      "days_held": 24
+    },
+    {
+      "ticker": "KEY",
+      "company_name": "KeyCorp",
+      "date": "2026-05-18",
+      "score": 3.74,
+      "return_pct": 0.19,
+      "status": "target_hit",
+      "days_held": 25
+    },
+    {
+      "ticker": "KEY",
+      "company_name": "KeyCorp",
+      "date": "2026-05-17",
+      "score": 3.74,
+      "return_pct": 0.19,
+      "status": "target_hit",
+      "days_held": 26
+    },
+    {
+      "ticker": "KEY",
+      "company_name": "KeyCorp",
+      "date": "2026-05-16",
+      "score": 3.74,
+      "return_pct": 0.19,
+      "status": "target_hit",
+      "days_held": 27
     },
     {
       "ticker": "LNT",
