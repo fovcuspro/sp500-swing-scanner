@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-14T10:29:19Z",
+  "generated_at": "2026-06-15T17:49:29Z",
   "total_trades": 36,
-  "open_trades": 6,
-  "closed_trades": 30,
-  "win_rate": 0.633,
-  "avg_return_pct": 0.07,
-  "avg_win_pct": 2.86,
-  "avg_loss_pct": -4.74,
-  "expectancy": 0.07,
+  "open_trades": 4,
+  "closed_trades": 32,
+  "win_rate": 0.625,
+  "avg_return_pct": 0.15,
+  "avg_win_pct": 2.94,
+  "avg_loss_pct": -4.51,
+  "expectancy": 0.15,
   "best_trade": {
     "ticker": "CFG",
     "date": "2026-05-29",
@@ -20,9 +20,9 @@
   },
   "by_score_range": {
     "5-6": {
-      "count": 27,
-      "win_rate": 0.593,
-      "avg_return": -0.08
+      "count": 29,
+      "win_rate": 0.586,
+      "avg_return": 0.02
     },
     "6-7": {
       "count": 1,
@@ -57,9 +57,9 @@
       "avg_return": 3.41
     },
     "50-55": {
-      "count": 9,
-      "win_rate": 0.444,
-      "avg_return": 0.44
+      "count": 11,
+      "win_rate": 0.455,
+      "avg_return": 0.6
     },
     "55-60": {
       "count": 11,
@@ -74,9 +74,9 @@
       "avg_return": -0.75
     },
     "5-6%": {
-      "count": 5,
-      "win_rate": 0.8,
-      "avg_return": 2.89
+      "count": 7,
+      "win_rate": 0.714,
+      "avg_return": 2.45
     },
     "6-8%": {
       "count": 10,
@@ -86,9 +86,9 @@
   },
   "by_regime": {
     "bull": {
-      "count": 7,
-      "win_rate": 1.0,
-      "avg_return": 4.77
+      "count": 9,
+      "win_rate": 0.889,
+      "avg_return": 4.01
     },
     "unknown": {
       "count": 23,
@@ -97,6 +97,11 @@
     }
   },
   "by_sector": {
+    "Communication Services": {
+      "count": 1,
+      "win_rate": 0.0,
+      "avg_return": -1.9
+    },
     "Consumer Staples": {
       "count": 1,
       "win_rate": 1.0,
@@ -117,6 +122,11 @@
       "win_rate": 1.0,
       "avg_return": 0.97
     },
+    "Materials": {
+      "count": 1,
+      "win_rate": 1.0,
+      "avg_return": 4.56
+    },
     "Unknown": {
       "count": 23,
       "win_rate": 0.522,
@@ -125,17 +135,26 @@
   },
   "stop_ab_test": {
     "swing": {
-      "count": 1,
+      "count": 2,
       "win_rate": 1.0,
-      "avg_return": 2.3
+      "avg_return": 3.43
     },
     "atr": {
-      "count": 6,
-      "win_rate": 1.0,
-      "avg_return": 5.18
+      "count": 7,
+      "win_rate": 0.857,
+      "avg_return": 4.17
     }
   },
   "recent_trades": [
+    {
+      "ticker": "PKG",
+      "company_name": "Packaging Corporation of America",
+      "date": "2026-05-29",
+      "score": 3.594,
+      "return_pct": 4.56,
+      "status": "target_hit",
+      "days_held": 17
+    },
     {
       "ticker": "KEY",
       "company_name": "KeyCorp",
@@ -189,6 +208,15 @@
       "return_pct": 2.25,
       "status": "target_hit",
       "days_held": 21
+    },
+    {
+      "ticker": "LYV",
+      "company_name": "Live Nation Entertainment",
+      "date": "2026-05-21",
+      "score": 4.566,
+      "return_pct": -1.9,
+      "status": "target_hit",
+      "days_held": 25
     },
     {
       "ticker": "CHRW",
@@ -387,24 +415,6 @@
       "return_pct": 2.63,
       "status": "target_hit",
       "days_held": 18
-    },
-    {
-      "ticker": "ALL",
-      "company_name": "Allstate",
-      "date": "2026-05-08",
-      "score": 4.748,
-      "return_pct": 2.16,
-      "status": "target_hit",
-      "days_held": 11
-    },
-    {
-      "ticker": "TRGP",
-      "company_name": "Targa Resources",
-      "date": "2026-05-08",
-      "score": 4.498,
-      "return_pct": 4.3,
-      "status": "target_hit",
-      "days_held": 6
     }
   ]
 }
