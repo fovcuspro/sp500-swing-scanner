@@ -1015,8 +1015,8 @@
       "max_drawdown_pct": -5.41,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 140.03,
-      "last_return_pct": 3.31,
+      "last_price": 139.93,
+      "last_return_pct": 3.23,
       "last_checked": "2026-06-16",
       "tiers_hit": []
     },
@@ -1164,8 +1164,8 @@
       "max_drawdown_pct": -5.29,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 361.54,
-      "last_return_pct": 5.69,
+      "last_price": 360.49,
+      "last_return_pct": 5.38,
       "last_checked": "2026-06-16",
       "tiers_hit": [
         "T1 \u2014 scale out"
@@ -1391,8 +1391,8 @@
       "max_drawdown_pct": -5.41,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 140.03,
-      "last_return_pct": 3.31,
+      "last_price": 139.93,
+      "last_return_pct": 3.23,
       "last_checked": "2026-06-16",
       "tiers_hit": []
     },
@@ -1540,8 +1540,8 @@
       "max_drawdown_pct": -8.92,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 361.54,
-      "last_return_pct": 1.63,
+      "last_price": 360.49,
+      "last_return_pct": 1.34,
       "last_checked": "2026-06-16",
       "tiers_hit": []
     },
