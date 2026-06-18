@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-17T16:34:34Z",
+  "generated_at": "2026-06-18T16:22:43Z",
   "total_trades": 36,
-  "open_trades": 3,
-  "closed_trades": 33,
-  "win_rate": 0.606,
-  "avg_return_pct": 0.1,
-  "avg_win_pct": 2.94,
+  "open_trades": 1,
+  "closed_trades": 35,
+  "win_rate": 0.629,
+  "avg_return_pct": 0.42,
+  "avg_win_pct": 3.19,
   "avg_loss_pct": -4.27,
-  "expectancy": 0.1,
+  "expectancy": 0.42,
   "best_trade": {
     "ticker": "CFG",
     "date": "2026-05-29",
@@ -20,14 +20,14 @@
   },
   "by_score_range": {
     "5-6": {
-      "count": 30,
-      "win_rate": 0.567,
-      "avg_return": -0.03
+      "count": 31,
+      "win_rate": 0.581,
+      "avg_return": 0.15
     },
     "6-7": {
-      "count": 1,
+      "count": 2,
       "win_rate": 1.0,
-      "avg_return": 1.59
+      "avg_return": 3.72
     },
     "7-8": {
       "count": 2,
@@ -52,14 +52,14 @@
       "avg_return": 1.07
     },
     "45-50": {
-      "count": 7,
-      "win_rate": 0.857,
-      "avg_return": 2.72
+      "count": 8,
+      "win_rate": 0.875,
+      "avg_return": 3.07
     },
     "50-55": {
-      "count": 11,
-      "win_rate": 0.455,
-      "avg_return": 0.6
+      "count": 12,
+      "win_rate": 0.5,
+      "avg_return": 1.04
     },
     "55-60": {
       "count": 11,
@@ -79,16 +79,16 @@
       "avg_return": 2.45
     },
     "6-8%": {
-      "count": 11,
-      "win_rate": 0.727,
-      "avg_return": -0.23
+      "count": 13,
+      "win_rate": 0.769,
+      "avg_return": 0.68
     }
   },
   "by_regime": {
     "bull": {
-      "count": 9,
-      "win_rate": 0.889,
-      "avg_return": 4.01
+      "count": 11,
+      "win_rate": 0.909,
+      "avg_return": 4.31
     },
     "unknown": {
       "count": 24,
@@ -101,6 +101,11 @@
       "count": 1,
       "win_rate": 0.0,
       "avg_return": -1.9
+    },
+    "Consumer Discretionary": {
+      "count": 1,
+      "win_rate": 1.0,
+      "avg_return": 5.51
     },
     "Consumer Staples": {
       "count": 1,
@@ -118,9 +123,9 @@
       "avg_return": 4.68
     },
     "Information Technology": {
-      "count": 1,
+      "count": 2,
       "win_rate": 1.0,
-      "avg_return": 0.97
+      "avg_return": 3.41
     },
     "Materials": {
       "count": 1,
@@ -140,9 +145,9 @@
       "avg_return": 3.43
     },
     "atr": {
-      "count": 7,
-      "win_rate": 0.857,
-      "avg_return": 4.17
+      "count": 9,
+      "win_rate": 0.889,
+      "avg_return": 4.51
     }
   },
   "recent_trades": [
@@ -210,6 +215,15 @@
       "days_held": 21
     },
     {
+      "ticker": "KEYS",
+      "company_name": "Keysight Technologies",
+      "date": "2026-05-21",
+      "score": 6.498,
+      "return_pct": 5.85,
+      "status": "expired",
+      "days_held": 28
+    },
+    {
       "ticker": "LYV",
       "company_name": "Live Nation Entertainment",
       "date": "2026-05-21",
@@ -226,6 +240,15 @@
       "return_pct": 2.3,
       "status": "target_hit",
       "days_held": 22
+    },
+    {
+      "ticker": "ABNB",
+      "company_name": "Airbnb",
+      "date": "2026-05-21",
+      "score": 3.822,
+      "return_pct": 5.51,
+      "status": "expired",
+      "days_held": 28
     },
     {
       "ticker": "TGT",
@@ -397,24 +420,6 @@
       "return_pct": -2.51,
       "status": "stop_hit",
       "days_held": 20
-    },
-    {
-      "ticker": "ALB",
-      "company_name": "Albemarle Corporation",
-      "date": "2026-05-09",
-      "score": 4.344,
-      "return_pct": -9.83,
-      "status": "stop_hit",
-      "days_held": 6
-    },
-    {
-      "ticker": "ABNB",
-      "company_name": "Airbnb",
-      "date": "2026-05-09",
-      "score": 3.782,
-      "return_pct": -4.58,
-      "status": "stop_hit",
-      "days_held": 3
     }
   ]
 }
