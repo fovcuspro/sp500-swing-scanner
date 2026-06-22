@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-22T11:58:42Z",
+  "generated_at": "2026-06-22T17:27:08Z",
   "total_trades": 38,
-  "open_trades": 3,
-  "closed_trades": 35,
-  "win_rate": 0.629,
-  "avg_return_pct": 0.42,
+  "open_trades": 2,
+  "closed_trades": 36,
+  "win_rate": 0.611,
+  "avg_return_pct": 0.18,
   "avg_win_pct": 3.19,
-  "avg_loss_pct": -4.27,
-  "expectancy": 0.42,
+  "avg_loss_pct": -4.56,
+  "expectancy": 0.18,
   "best_trade": {
     "ticker": "CFG",
     "date": "2026-05-29",
@@ -20,9 +20,9 @@
   },
   "by_score_range": {
     "5-6": {
-      "count": 31,
-      "win_rate": 0.581,
-      "avg_return": 0.15
+      "count": 32,
+      "win_rate": 0.562,
+      "avg_return": -0.12
     },
     "6-7": {
       "count": 2,
@@ -62,16 +62,16 @@
       "avg_return": 1.04
     },
     "55-60": {
-      "count": 11,
-      "win_rate": 0.455,
-      "avg_return": -2.42
+      "count": 12,
+      "win_rate": 0.417,
+      "avg_return": -2.91
     }
   },
   "by_pullback_range": {
     "3-5%": {
-      "count": 15,
-      "win_rate": 0.467,
-      "avg_return": -0.75
+      "count": 16,
+      "win_rate": 0.438,
+      "avg_return": -1.22
     },
     "5-6%": {
       "count": 7,
@@ -86,9 +86,9 @@
   },
   "by_regime": {
     "bull": {
-      "count": 11,
-      "win_rate": 0.909,
-      "avg_return": 4.31
+      "count": 12,
+      "win_rate": 0.833,
+      "avg_return": 3.26
     },
     "unknown": {
       "count": 24,
@@ -123,9 +123,9 @@
       "avg_return": 4.68
     },
     "Information Technology": {
-      "count": 2,
-      "win_rate": 1.0,
-      "avg_return": 3.41
+      "count": 3,
+      "win_rate": 0.667,
+      "avg_return": -0.48
     },
     "Materials": {
       "count": 1,
@@ -145,9 +145,9 @@
       "avg_return": 3.43
     },
     "atr": {
-      "count": 9,
-      "win_rate": 0.889,
-      "avg_return": 4.51
+      "count": 10,
+      "win_rate": 0.8,
+      "avg_return": 3.23
     }
   },
   "recent_trades": [
@@ -204,6 +204,15 @@
       "return_pct": 0.97,
       "status": "target_hit",
       "days_held": 7
+    },
+    {
+      "ticker": "KEYS",
+      "company_name": "Keysight Technologies",
+      "date": "2026-05-27",
+      "score": 4.86,
+      "return_pct": -8.27,
+      "status": "target_hit",
+      "days_held": 26
     },
     {
       "ticker": "TGT",
@@ -411,15 +420,6 @@
       "return_pct": 2.63,
       "status": "target_hit",
       "days_held": 17
-    },
-    {
-      "ticker": "CTVA",
-      "company_name": "Corteva",
-      "date": "2026-05-09",
-      "score": 5.214,
-      "return_pct": -2.51,
-      "status": "stop_hit",
-      "days_held": 20
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "scan_date": "2026-06-22",
-  "scan_time_utc": "11:58:40",
+  "scan_time_utc": "17:27:07",
   "universe": "S&P 500 (503 tickers)",
-  "candidates_found": 1,
+  "candidates_found": 0,
   "strategy": {
     "name": "Momentum Pullback",
     "timeframe": "Daily",
@@ -21,34 +21,5 @@
       "volume_confirm": "20%"
     }
   },
-  "top_setups": [
-    {
-      "ticker": "JBHT",
-      "company_name": "J.B. Hunt",
-      "score": 6.226,
-      "score_breakdown": {
-        "trend_strength": 6.32,
-        "pullback_quality": 7.28,
-        "volume_confirm": 3.93
-      },
-      "setup": "Momentum Pullback",
-      "price": 271.22,
-      "entry_zone": {
-        "low": 269.86,
-        "high": 272.58
-      },
-      "stop_loss": 265.37,
-      "target": 293.54,
-      "risk_reward": 3.82,
-      "indicators": {
-        "rsi": 50.2,
-        "ma50": 257.61,
-        "ma200": 202.94,
-        "high_20d": 293.54,
-        "pullback_pct": 7.6,
-        "volume_ratio": 1.97
-      },
-      "reasoning": "JBHT is 7.6% below its 20-day high with RSI at 50.2, offering a controlled pullback into an uptrend (price above 50 MA at 257.61). Volume spiked 1.97\u00d7 above average on a bullish candle, confirming institutional interest."
-    }
-  ]
+  "top_setups": []
 }
