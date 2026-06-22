@@ -1544,7 +1544,7 @@
       "stop_hit": false,
       "last_price": 363.67,
       "last_return_pct": 2.23,
-      "last_checked": "2026-06-19",
+      "last_checked": "2026-06-22",
       "tiers_hit": [
         "T1 \u2014 scale out"
       ]
@@ -1976,7 +1976,57 @@
       "stop_hit": false,
       "last_price": 271.22,
       "last_return_pct": 0.0,
-      "last_checked": "2026-06-19",
+      "last_checked": "2026-06-22",
+      "tiers_hit": []
+    },
+    "status": "open"
+  },
+  {
+    "id": "JBHT_2026-06-22",
+    "ticker": "JBHT",
+    "company_name": "J.B. Hunt",
+    "sector": "",
+    "date_generated": "2026-06-22",
+    "setup_type": "Momentum Pullback",
+    "score": 6.226,
+    "score_breakdown": {
+      "trend_strength": 6.32,
+      "pullback_quality": 7.28,
+      "volume_confirm": 3.93
+    },
+    "regime": "",
+    "entry_price": 271.22,
+    "stop_loss": 265.37,
+    "swing_stop": null,
+    "atr_stop": null,
+    "stop_method": "swing",
+    "target": 293.54,
+    "risk_reward": 3.82,
+    "exit_plan": {},
+    "position_sizing": {},
+    "indicators": {
+      "rsi": 50.2,
+      "ma50": 257.61,
+      "ma200": 202.94,
+      "high_20d": 293.54,
+      "pullback_pct": 7.6,
+      "volume_ratio": 1.97
+    },
+    "reasoning": "JBHT is 7.6% below its 20-day high with RSI at 50.2, offering a controlled pullback into an uptrend (price above 50 MA at 257.61). Volume spiked 1.97\u00d7 above average on a bullish candle, confirming institutional interest.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": 0,
+      "max_drawdown_pct": 0,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": 271.22,
+      "last_return_pct": 0.0,
+      "last_checked": "2026-06-22",
       "tiers_hit": []
     },
     "status": "open"
