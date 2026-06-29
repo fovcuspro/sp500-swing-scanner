@@ -2015,10 +2015,10 @@
     },
     "reasoning": "JBHT is 7.6% below its 20-day high with RSI at 50.2, offering a controlled pullback into an uptrend (price above 50 MA at 257.61). Volume spiked 1.97\u00d7 above average on a bullish candle, confirming institutional interest.",
     "outcomes": {
-      "1w_price": null,
+      "1w_price": 283.67,
       "2w_price": null,
       "4w_price": null,
-      "1w_return_pct": null,
+      "1w_return_pct": 4.59,
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 1.57,
