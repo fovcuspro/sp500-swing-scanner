@@ -23,3 +23,6 @@ scanner.log
 # Secrets / env
 .env
 *.env
+
+# Local Netlify folder
+.netlify

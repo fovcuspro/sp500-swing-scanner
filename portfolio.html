@@ -1047,7 +1047,9 @@ async function submitPosition() {
     await pushPortfolio(positions, sha, `portfolio: add ${ticker}`);
     ['fTicker','fShares','fEntry','fStop','fTarget'].forEach(id => document.getElementById(id).value = '');
     closeSheet();
-    load();
+    showToast(`${ticker} added — refreshing data…`);
+    try { await triggerWorkflow('daily_portfolio.yml'); } catch(_) {}
+    setTimeout(load, 15000);
   } catch(e) {
     errEl.textContent = e.message;
   } finally {
@@ -1068,6 +1070,7 @@ async function removePosition(ticker) {
       }
     }
     showToast(`${ticker} removed`);
+    try { await triggerWorkflow('daily_portfolio.yml'); } catch(_) {}
   } catch(e) {
     alert(`Error: ${e.message}`);
   }
