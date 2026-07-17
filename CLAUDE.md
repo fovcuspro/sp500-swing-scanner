@@ -1,5 +1,9 @@
 # SP500 Swing Scanner — Claude Code Instructions
 
+## Framework Docs
+- Always check PRD.md, PLANNING.md, and TASKS.md before coding; STATUS.md tracks session state.
+- Run local tests frequently.
+
 ## What This Is
 Automated S&P 500 swing trading scanner. Runs daily on GitHub Actions, pushes iPhone notifications via ntfy.sh, and serves a mobile dashboard via GitHub Pages.
 

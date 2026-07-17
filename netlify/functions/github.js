@@ -1,16 +1,33 @@
+const crypto = require('crypto');
+
 const REPO = 'fovcuspro/sp500-swing-scanner';
 const BASE = 'https://api.github.com';
+const ALLOWED_ORIGIN = 'https://radiant-bublanina-25b939.netlify.app';
+
+function keyMatches(provided, secret) {
+  const a = crypto.createHash('sha256').update(provided).digest();
+  const b = crypto.createHash('sha256').update(secret).digest();
+  return crypto.timingSafeEqual(a, b);
+}
 
 exports.handler = async (event) => {
   const cors = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+    'Access-Control-Allow-Headers': 'Content-Type, X-Dashboard-Key',
     'Content-Type': 'application/json',
   };
 
   if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers: cors };
   if (event.httpMethod !== 'POST')
     return { statusCode: 405, headers: cors, body: JSON.stringify({ error: 'Method not allowed' }) };
+
+  const dashboardKey = process.env.DASHBOARD_KEY;
+  if (!dashboardKey)
+    return { statusCode: 500, headers: cors, body: JSON.stringify({ error: 'Server misconfigured — DASHBOARD_KEY not set' }) };
+
+  const providedKey = event.headers['x-dashboard-key'] || '';
+  if (!keyMatches(providedKey, dashboardKey))
+    return { statusCode: 401, headers: cors, body: JSON.stringify({ error: 'Unauthorized' }) };
 
   const token = process.env.GITHUB_TOKEN;
   if (!token)
@@ -71,6 +88,8 @@ exports.handler = async (event) => {
       if (!apiKey) throw new Error('GROQ_API_KEY not set on server');
 
       const { prompt } = body;
+      if (typeof prompt !== 'string' || !prompt.trim() || prompt.length > 4000)
+        return { statusCode: 400, headers: cors, body: JSON.stringify({ error: 'prompt must be a non-empty string of at most 4000 characters' }) };
       const r = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {

@@ -1071,13 +1071,28 @@ let editTicker    = null;
 let sortMode      = 'signal'; // 'signal' | 'value' | 'pnl'
 
 // ── Netlify API ────────────────────────────────────────────────────────────────
+const KEY_NAME = 'dashboard_key'; // shared with portfolio.html (same origin)
+
+function getDashboardKey() {
+  let k = localStorage.getItem(KEY_NAME);
+  if (!k) {
+    k = (window.prompt('Enter your dashboard key (the DASHBOARD_KEY value from Netlify):') || '').trim();
+    if (k) localStorage.setItem(KEY_NAME, k);
+  }
+  return k;
+}
+
 async function api(action, params = {}) {
   const r = await fetch('/api/github', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 'X-Dashboard-Key': getDashboardKey() || '' },
     body: JSON.stringify({ action, ...params })
   });
   const data = await r.json().catch(() => ({}));
+  if (r.status === 401) {
+    localStorage.removeItem(KEY_NAME);
+    throw new Error('Invalid dashboard key — retry the action to re-enter it.');
+  }
   if (!r.ok) throw new Error(data.error || `Error ${r.status}`);
   return data;
 }

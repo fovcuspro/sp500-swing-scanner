@@ -1,6 +1,10 @@
 [build]
   publish = "."
   functions = "netlify/functions"
+  # Skip builds for data-only commits (the daily workflow pushes). Dashboards
+  # read these JSON files from GitHub Pages / jsDelivr, not from Netlify, so
+  # rebuilding for them only burns free-plan build credits.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)results.json' ':(exclude)prev_results.json' ':(exclude)portfolio_results.json' ':(exclude)analytics.json' ':(exclude)trade_history.json' ':(exclude)health.json' ':(exclude)sectors.json'"
 
 [[redirects]]
   from = "/api/github"

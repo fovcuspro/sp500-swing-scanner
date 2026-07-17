@@ -8,6 +8,12 @@ on:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
+# Shared group with daily_scan.yml — both reset-hard and push to main,
+# so they must queue rather than race.
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+
 jobs:
   track:
     runs-on: ubuntu-latest
@@ -39,9 +45,28 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           cp portfolio_results.json /tmp/portfolio_results_new.json
-          git fetch origin main
-          git reset --hard origin/main
-          cp /tmp/portfolio_results_new.json portfolio_results.json
-          git add portfolio_results.json
-          git diff --staged --quiet || git commit -m "Portfolio update $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git push
+
+          attempt() {
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/portfolio_results_new.json portfolio_results.json
+            git add portfolio_results.json
+            if git diff --staged --quiet; then return 0; fi
+            git commit -m "Portfolio update $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          }
+
+          for i in 1 2 3; do
+            if attempt; then exit 0; fi
+            echo "Push rejected (attempt $i) — retrying after refetch…"
+            sleep 5
+          done
+          echo "Failed to push results after 3 attempts" >&2
+          exit 1
+
+      - name: Alert on failure
+        if: failure()
+        run: |
+          curl -s -H "Title: Portfolio workflow FAILED" -H "Priority: high" \
+            -d "Portfolio tracker workflow failed on $(date -u +'%Y-%m-%d %H:%M UTC'). Check GitHub Actions logs." \
+            https://ntfy.sh/swing13cat

@@ -952,12 +952,14 @@ async function load() {
   }
 }
 
-// ── GitHub API ──
-const REPO      = 'fovcuspro/sp500-swing-scanner';
-const GH_API    = `https://api.github.com/repos/${REPO}/contents/portfolio.json`;
-const TOKEN_KEY = 'gh_pat';
+// ── Dashboard API (Netlify function proxies GitHub server-side) ──
+const TOKEN_KEY = 'dashboard_key';
 
 function getToken() { return localStorage.getItem(TOKEN_KEY); }
+
+function apiHeaders() {
+  return { 'Content-Type': 'application/json', 'X-Dashboard-Key': getToken() || '' };
+}
 
 function openSheet() {
   const hasToken = !!getToken();
@@ -985,7 +987,7 @@ function showTokenScreen() {
 
 function saveToken() {
   const val = document.getElementById('tokenInput').value.trim();
-  if (!val) { document.getElementById('tokenError').textContent = 'Token is required.'; return; }
+  if (!val) { document.getElementById('tokenError').textContent = 'Key is required.'; return; }
   localStorage.setItem(TOKEN_KEY, val);
   document.getElementById('tokenInput').value = '';
   document.getElementById('tokenScreen').style.display = 'none';
@@ -993,30 +995,30 @@ function saveToken() {
 }
 
 async function fetchPortfolio() {
-  const res = await fetch(GH_API, {
-    headers: { Authorization: `token ${getToken()}`, Accept: 'application/vnd.github.v3+json' }
+  const res = await fetch('/api/github', {
+    method: 'POST',
+    headers: apiHeaders(),
+    body: JSON.stringify({ action: 'get_portfolio' })
   });
-  if (res.status === 401) throw new Error('Invalid token — tap "Change GitHub token" to update it.');
-  if (!res.ok) throw new Error(`GitHub API error ${res.status}`);
+  if (res.status === 401) throw new Error('Invalid key — tap "Change dashboard key" to update it.');
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || `API error ${res.status}`);
+  }
   const data = await res.json();
-  return { positions: JSON.parse(atob(data.content.replace(/\s/g, ''))), sha: data.sha };
+  return { positions: data.positions, sha: data.sha };
 }
 
 async function pushPortfolio(positions, sha, message) {
-  const content = btoa(JSON.stringify(positions, null, 2) + '\n');
-  const res = await fetch(GH_API, {
-    method: 'PUT',
-    headers: {
-      Authorization: `token ${getToken()}`,
-      Accept: 'application/vnd.github.v3+json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ message, content, sha })
+  const res = await fetch('/api/github', {
+    method: 'POST',
+    headers: apiHeaders(),
+    body: JSON.stringify({ action: 'save_portfolio', positions, sha, message })
   });
-  if (res.status === 401) throw new Error('Invalid token — tap "Change GitHub token" to update it.');
+  if (res.status === 401) throw new Error('Invalid key — tap "Change dashboard key" to update it.');
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
-    throw new Error(err.message || `GitHub API error ${res.status}`);
+    throw new Error(err.error || `API error ${res.status}`);
   }
 }
 
@@ -1048,7 +1050,7 @@ async function submitPosition() {
     ['fTicker','fShares','fEntry','fStop','fTarget'].forEach(id => document.getElementById(id).value = '');
     closeSheet();
     showToast(`${ticker} added — refreshing data…`);
-    try { await triggerWorkflow('daily_portfolio.yml'); } catch(_) {}
+    try { await triggerWorkflow(); } catch(_) {}
     setTimeout(load, 15000);
   } catch(e) {
     errEl.textContent = e.message;
@@ -1070,25 +1072,21 @@ async function removePosition(ticker) {
       }
     }
     showToast(`${ticker} removed`);
-    try { await triggerWorkflow('daily_portfolio.yml'); } catch(_) {}
+    try { await triggerWorkflow(); } catch(_) {}
   } catch(e) {
     alert(`Error: ${e.message}`);
   }
 }
 
-async function triggerWorkflow(workflow) {
-  const res = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${workflow}/dispatches`, {
+async function triggerWorkflow() {
+  const res = await fetch('/api/github', {
     method: 'POST',
-    headers: {
-      Authorization: `token ${getToken()}`,
-      Accept: 'application/vnd.github.v3+json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ ref: 'main' })
+    headers: apiHeaders(),
+    body: JSON.stringify({ action: 'run' })
   });
-  if (res.status !== 204) {
+  if (!res.ok) {
     const err = await res.json().catch(() => ({}));
-    throw new Error(err.message || `HTTP ${res.status}`);
+    throw new Error(err.error || `HTTP ${res.status}`);
   }
 }
 
@@ -1097,10 +1095,7 @@ async function runWorkflows() {
   const btn = document.getElementById('runBtn');
   btn.disabled = true;
   try {
-    await Promise.all([
-      triggerWorkflow('daily_scan.yml'),
-      triggerWorkflow('daily_portfolio.yml')
-    ]);
+    await triggerWorkflow();
     showToast('Scan started — refresh in ~2 min');
   } catch(e) {
     showToast(e.message, true);
@@ -1138,24 +1133,17 @@ load();
   <div id="tokenScreen">
     <div class="sheet-title">One-time Setup</div>
     <p class="token-hint" style="margin-bottom:16px;font-size:11px;">
-      To add/remove positions and run scans from this page, you need a GitHub token. This takes about 2 minutes and you only do it once.
-    </p>
-    <p class="token-hint" style="margin-bottom:14px;">
-      <strong style="color:var(--text)">Step 1</strong> — Tap the link below and sign in to GitHub:<br>
-      <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" style="font-size:11px;">github.com → Settings → Fine-grained tokens → Generate new</a>
-    </p>
-    <p class="token-hint" style="margin-bottom:14px;">
-      <strong style="color:var(--text)">Step 2</strong> — Set Repository access to <strong>fovcuspro/sp500-swing-scanner</strong>, then under Permissions set <strong>Contents</strong> and <strong>Actions</strong> both to <strong>Read and write</strong>.
+      To add/remove positions and run scans from this page, you need the dashboard key. You only enter it once on this device.
     </p>
     <p class="token-hint" style="margin-bottom:16px;">
-      <strong style="color:var(--text)">Step 3</strong> — Generate the token, copy it (starts with <code style="color:var(--gold)">github_pat_</code>), and paste it below.
+      It's the <strong>DASHBOARD_KEY</strong> value set in the Netlify site's environment variables. Paste it below.
     </p>
     <div class="form-group">
-      <label class="form-label">Paste token here</label>
-      <input class="form-input" id="tokenInput" type="password" placeholder="github_pat_…" autocomplete="off" spellcheck="false">
+      <label class="form-label">Paste key here</label>
+      <input class="form-input" id="tokenInput" type="password" placeholder="dashboard key…" autocomplete="off" spellcheck="false">
     </div>
     <div class="form-error" id="tokenError"></div>
-    <button class="btn-primary" onclick="saveToken()">Save Token</button>
+    <button class="btn-primary" onclick="saveToken()">Save Key</button>
   </div>
 
   <div id="addScreen" style="display:none">
@@ -1186,7 +1174,7 @@ load();
     </div>
     <div class="form-error" id="addError"></div>
     <button class="btn-primary" id="addBtn" onclick="submitPosition()">Add Position</button>
-    <button class="link-btn" onclick="showTokenScreen()">Change GitHub token</button>
+    <button class="link-btn" onclick="showTokenScreen()">Change dashboard key</button>
   </div>
 </div>
 

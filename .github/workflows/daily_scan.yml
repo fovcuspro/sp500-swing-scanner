@@ -9,6 +9,12 @@ on:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
+# Shared group with daily_portfolio.yml — both reset-hard and push to main,
+# so they must queue rather than race.
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -62,25 +68,37 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          FILES="results.json prev_results.json trade_history.json analytics.json health.json sectors.json"
+
           # Stash generated files before reset
-          cp results.json      /tmp/results_new.json
-          cp prev_results.json /tmp/prev_results_new.json 2>/dev/null || true
-          cp trade_history.json /tmp/trade_history_new.json 2>/dev/null || true
-          cp analytics.json    /tmp/analytics_new.json    2>/dev/null || true
-          cp health.json       /tmp/health_new.json       2>/dev/null || true
-          cp sectors.json      /tmp/sectors_new.json      2>/dev/null || true
+          mkdir -p /tmp/gen
+          for f in $FILES; do
+            if [ -f "$f" ]; then cp "$f" /tmp/gen/; fi
+          done
 
-          git fetch origin main
-          git reset --hard origin/main
+          attempt() {
+            git fetch origin main
+            git reset --hard origin/main
+            for f in $FILES; do
+              if [ -f "/tmp/gen/$f" ]; then cp "/tmp/gen/$f" "$f"; fi
+            done
+            git add $FILES
+            if git diff --staged --quiet; then return 0; fi
+            git commit -m "chore: scan + analytics $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          }
 
-          # Restore generated files
-          cp /tmp/results_new.json results.json
-          [ -f /tmp/prev_results_new.json ]   && cp /tmp/prev_results_new.json   prev_results.json
-          [ -f /tmp/trade_history_new.json ]  && cp /tmp/trade_history_new.json  trade_history.json
-          [ -f /tmp/analytics_new.json ]      && cp /tmp/analytics_new.json      analytics.json
-          [ -f /tmp/health_new.json ]         && cp /tmp/health_new.json         health.json
-          [ -f /tmp/sectors_new.json ]        && cp /tmp/sectors_new.json        sectors.json
+          for i in 1 2 3; do
+            if attempt; then exit 0; fi
+            echo "Push rejected (attempt $i) — retrying after refetch…"
+            sleep 5
+          done
+          echo "Failed to push results after 3 attempts" >&2
+          exit 1
 
-          git add results.json prev_results.json trade_history.json analytics.json health.json sectors.json
-          git diff --staged --quiet || git commit -m "chore: scan + analytics $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git push
+      - name: Alert on failure
+        if: failure()
+        run: |
+          curl -s -H "Title: Scanner workflow FAILED" -H "Priority: high" \
+            -d "Daily scan workflow failed on $(date -u +'%Y-%m-%d %H:%M UTC'). Check GitHub Actions logs." \
+            https://ntfy.sh/swing13cat
