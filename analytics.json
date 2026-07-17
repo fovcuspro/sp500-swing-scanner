@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-16T14:53:52Z",
+  "generated_at": "2026-07-17T13:32:25Z",
   "total_trades": 38,
-  "open_trades": 2,
-  "closed_trades": 36,
-  "win_rate": 0.611,
-  "avg_return_pct": 0.18,
-  "avg_win_pct": 3.19,
+  "open_trades": 1,
+  "closed_trades": 37,
+  "win_rate": 0.622,
+  "avg_return_pct": 0.43,
+  "avg_win_pct": 3.46,
   "avg_loss_pct": -4.56,
-  "expectancy": 0.18,
+  "expectancy": 0.43,
   "best_trade": {
-    "ticker": "CFG",
-    "date": "2026-05-29",
-    "return_pct": 8.19
+    "ticker": "JBHT",
+    "date": "2026-06-19",
+    "return_pct": 9.51
   },
   "worst_trade": {
     "ticker": "ALB",
@@ -25,9 +25,9 @@
       "avg_return": -0.12
     },
     "6-7": {
-      "count": 2,
+      "count": 3,
       "win_rate": 1.0,
-      "avg_return": 3.72
+      "avg_return": 5.65
     },
     "7-8": {
       "count": 2,
@@ -57,9 +57,9 @@
       "avg_return": 3.07
     },
     "50-55": {
-      "count": 12,
-      "win_rate": 0.5,
-      "avg_return": 1.04
+      "count": 13,
+      "win_rate": 0.538,
+      "avg_return": 1.69
     },
     "55-60": {
       "count": 12,
@@ -79,9 +79,9 @@
       "avg_return": 2.45
     },
     "6-8%": {
-      "count": 13,
-      "win_rate": 0.769,
-      "avg_return": 0.68
+      "count": 14,
+      "win_rate": 0.786,
+      "avg_return": 1.31
     }
   },
   "by_regime": {
@@ -91,9 +91,9 @@
       "avg_return": 3.26
     },
     "unknown": {
-      "count": 24,
-      "win_rate": 0.5,
-      "avg_return": -1.36
+      "count": 25,
+      "win_rate": 0.52,
+      "avg_return": -0.93
     }
   },
   "by_sector": {
@@ -133,16 +133,16 @@
       "avg_return": 4.56
     },
     "Unknown": {
-      "count": 24,
-      "win_rate": 0.5,
-      "avg_return": -1.36
+      "count": 25,
+      "win_rate": 0.52,
+      "avg_return": -0.93
     }
   },
   "stop_ab_test": {
     "swing": {
-      "count": 2,
+      "count": 3,
       "win_rate": 1.0,
-      "avg_return": 3.43
+      "avg_return": 5.46
     },
     "atr": {
       "count": 10,
@@ -151,6 +151,15 @@
     }
   },
   "recent_trades": [
+    {
+      "ticker": "JBHT",
+      "company_name": "J.B. Hunt",
+      "date": "2026-06-19",
+      "score": 6.226,
+      "return_pct": 9.51,
+      "status": "expired",
+      "days_held": 3
+    },
     {
       "ticker": "PKG",
       "company_name": "Packaging Corporation of America",
@@ -411,15 +420,6 @@
       "return_pct": -4.58,
       "status": "stop_hit",
       "days_held": 2
-    },
-    {
-      "ticker": "NSC",
-      "company_name": "Norfolk Southern",
-      "date": "2026-05-10",
-      "score": 2.856,
-      "return_pct": 2.63,
-      "status": "target_hit",
-      "days_held": 17
     }
   ]
 }
