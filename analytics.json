@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-17T14:26:41Z",
+  "generated_at": "2026-07-20T15:04:07Z",
   "total_trades": 38,
-  "open_trades": 1,
-  "closed_trades": 37,
-  "win_rate": 0.622,
-  "avg_return_pct": 0.43,
-  "avg_win_pct": 3.46,
+  "open_trades": 0,
+  "closed_trades": 38,
+  "win_rate": 0.632,
+  "avg_return_pct": 0.62,
+  "avg_win_pct": 3.63,
   "avg_loss_pct": -4.56,
-  "expectancy": 0.43,
+  "expectancy": 0.62,
   "best_trade": {
     "ticker": "JBHT",
     "date": "2026-06-19",
@@ -25,9 +25,9 @@
       "avg_return": -0.12
     },
     "6-7": {
-      "count": 3,
+      "count": 4,
       "win_rate": 1.0,
-      "avg_return": 5.65
+      "avg_return": 6.12
     },
     "7-8": {
       "count": 2,
@@ -57,9 +57,9 @@
       "avg_return": 3.07
     },
     "50-55": {
-      "count": 13,
-      "win_rate": 0.538,
-      "avg_return": 1.69
+      "count": 14,
+      "win_rate": 0.571,
+      "avg_return": 2.11
     },
     "55-60": {
       "count": 12,
@@ -79,9 +79,9 @@
       "avg_return": 2.45
     },
     "6-8%": {
-      "count": 14,
-      "win_rate": 0.786,
-      "avg_return": 1.31
+      "count": 15,
+      "win_rate": 0.8,
+      "avg_return": 1.73
     }
   },
   "by_regime": {
@@ -91,9 +91,9 @@
       "avg_return": 3.26
     },
     "unknown": {
-      "count": 25,
-      "win_rate": 0.52,
-      "avg_return": -0.93
+      "count": 26,
+      "win_rate": 0.538,
+      "avg_return": -0.6
     }
   },
   "by_sector": {
@@ -133,16 +133,16 @@
       "avg_return": 4.56
     },
     "Unknown": {
-      "count": 25,
-      "win_rate": 0.52,
-      "avg_return": -0.93
+      "count": 26,
+      "win_rate": 0.538,
+      "avg_return": -0.6
     }
   },
   "stop_ab_test": {
     "swing": {
-      "count": 3,
+      "count": 4,
       "win_rate": 1.0,
-      "avg_return": 5.46
+      "avg_return": 5.98
     },
     "atr": {
       "count": 10,
@@ -151,6 +151,15 @@
     }
   },
   "recent_trades": [
+    {
+      "ticker": "JBHT",
+      "company_name": "J.B. Hunt",
+      "date": "2026-06-22",
+      "score": 6.226,
+      "return_pct": 7.54,
+      "status": "expired",
+      "days_held": 0
+    },
     {
       "ticker": "JBHT",
       "company_name": "J.B. Hunt",
@@ -411,15 +420,6 @@
       "return_pct": -9.83,
       "status": "stop_hit",
       "days_held": 5
-    },
-    {
-      "ticker": "ABNB",
-      "company_name": "Airbnb",
-      "date": "2026-05-10",
-      "score": 3.782,
-      "return_pct": -4.58,
-      "status": "stop_hit",
-      "days_held": 2
     }
   ]
 }

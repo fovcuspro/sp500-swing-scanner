@@ -2017,10 +2017,10 @@
     "outcomes": {
       "1w_price": 283.67,
       "2w_price": 279.94,
-      "4w_price": null,
+      "4w_price": 291.68,
       "1w_return_pct": 4.59,
       "2w_return_pct": 3.22,
-      "4w_return_pct": null,
+      "4w_return_pct": 7.54,
       "max_gain_pct": 1.57,
       "max_drawdown_pct": 0,
       "target_hit": false,
@@ -2030,6 +2030,6 @@
       "last_checked": "2026-06-22",
       "tiers_hit": []
     },
-    "status": "open"
+    "status": "expired"
   }
 ]
