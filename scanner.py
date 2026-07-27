@@ -93,6 +93,7 @@ def fetch_ohlcv(tickers: list[str], period_days: int = LOOKBACK_DAYS) -> dict[st
     )
 
     result: dict[str, pd.DataFrame] = {}
+    today = date.today()
 
     for ticker in tickers:
         try:
@@ -102,11 +103,17 @@ def fetch_ohlcv(tickers: list[str], period_days: int = LOOKBACK_DAYS) -> dict[st
                 df = raw[ticker].copy()
 
             df.dropna(subset=["Close"], inplace=True)
+            df.index = pd.to_datetime(df.index)
+
+            # Drop a same-day row: if the scan runs before/during market
+            # hours, yfinance's "today" bar is still forming and its volume
+            # is a fraction of a full session, which starves the volume
+            # filter. Always score the last fully-closed session instead.
+            df = df[df.index.date < today]
 
             if len(df) < 210:           # need 200-day MA + buffer
                 continue
 
-            df.index = pd.to_datetime(df.index)
             result[ticker] = df
         except Exception:
             continue

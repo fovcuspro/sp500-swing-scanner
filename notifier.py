@@ -43,14 +43,14 @@ def notify(results_path: str = RESULTS_FILE) -> None:
         removed_tickers = sorted(prev_tickers - today_tickers)
 
         if not top:
-            title    = "SP500 Scanner — No setups today"
+            title    = "SP500 Scanner - No setups today"
             message  = f"Scan complete ({today}). No stocks passed all filters. Regime: {regime}."
             priority = "low"
             tags     = "chart_with_downwards_trend"
         else:
             ticker_list = ", ".join(r["ticker"] for r in top[:5])
             top_score   = top[0]["score"]
-            title   = f"SP500 Scanner — {n} setups · {regime.upper()}"
+            title   = f"SP500 Scanner - {n} setups - {regime.upper()}"
             lines   = [
                 f"{today} · {count} candidates screened",
                 f"Top: {ticker_list}",
