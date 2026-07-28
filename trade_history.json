@@ -2031,5 +2031,54 @@
       "tiers_hit": []
     },
     "status": "expired"
+  },
+  {
+    "id": "FFIV_2026-07-28",
+    "ticker": "FFIV",
+    "company_name": "F5, Inc.",
+    "sector": "",
+    "date_generated": "2026-07-28",
+    "setup_type": "Momentum Pullback",
+    "score": 7.004,
+    "score_breakdown": {
+      "trend_strength": 5.55,
+      "pullback_quality": 7.89,
+      "volume_confirm": 8.14
+    },
+    "regime": "",
+    "entry_price": 407.96,
+    "stop_loss": 385.37,
+    "swing_stop": null,
+    "atr_stop": null,
+    "stop_method": "swing",
+    "target": 435.0,
+    "risk_reward": 1.2,
+    "exit_plan": {},
+    "position_sizing": {},
+    "indicators": {
+      "rsi": 51.8,
+      "ma50": 399.19,
+      "ma200": 309.86,
+      "high_20d": 435.0,
+      "pullback_pct": 6.2,
+      "volume_ratio": 2.68
+    },
+    "reasoning": "FFIV is 6.2% below its 20-day high with RSI at 51.8, offering a controlled pullback into an uptrend (price above 50 MA at 399.19). Volume spiked 2.68\u00d7 above average on a bullish candle, confirming institutional interest.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": null,
+      "max_drawdown_pct": null,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": null,
+      "last_return_pct": null,
+      "last_checked": null
+    },
+    "status": "open"
   }
 ]
