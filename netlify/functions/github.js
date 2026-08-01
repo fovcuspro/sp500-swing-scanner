@@ -2,7 +2,10 @@ const crypto = require('crypto');
 
 const REPO = 'fovcuspro/sp500-swing-scanner';
 const BASE = 'https://api.github.com';
-const ALLOWED_ORIGIN = 'https://radiant-bublanina-25b939.netlify.app';
+const ALLOWED_ORIGINS = [
+  'https://radiant-bublanina-25b939.netlify.app',
+  'https://fovcuspro.github.io',
+];
 
 function keyMatches(provided, secret) {
   const a = crypto.createHash('sha256').update(provided).digest();
@@ -11,8 +14,9 @@ function keyMatches(provided, secret) {
 }
 
 exports.handler = async (event) => {
+  const origin = event.headers.origin || event.headers.Origin || '';
   const cors = {
-    'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+    'Access-Control-Allow-Origin': ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0],
     'Access-Control-Allow-Headers': 'Content-Type, X-Dashboard-Key',
     'Content-Type': 'application/json',
   };

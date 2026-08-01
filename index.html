@@ -1071,6 +1071,9 @@ let editTicker    = null;
 let sortMode      = 'signal'; // 'signal' | 'value' | 'pnl'
 
 // ── Netlify API ────────────────────────────────────────────────────────────────
+// Absolute URL: this page is also served from GitHub Pages, where a relative
+// /api/github has no function behind it and 405s. Always hit Netlify directly.
+const API_URL  = 'https://radiant-bublanina-25b939.netlify.app/api/github';
 const KEY_NAME = 'dashboard_key'; // shared with portfolio.html (same origin)
 
 function getDashboardKey() {
@@ -1083,7 +1086,7 @@ function getDashboardKey() {
 }
 
 async function api(action, params = {}) {
-  const r = await fetch('/api/github', {
+  const r = await fetch(API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'X-Dashboard-Key': getDashboardKey() || '' },
     body: JSON.stringify({ action, ...params })

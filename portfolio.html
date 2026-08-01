@@ -953,6 +953,9 @@ async function load() {
 }
 
 // ── Dashboard API (Netlify function proxies GitHub server-side) ──
+// Absolute URL: this page is also served from GitHub Pages, where a relative
+// /api/github has no function behind it and 405s. Always hit Netlify directly.
+const API_URL   = 'https://radiant-bublanina-25b939.netlify.app/api/github';
 const TOKEN_KEY = 'dashboard_key';
 
 function getToken() { return localStorage.getItem(TOKEN_KEY); }
@@ -995,7 +998,7 @@ function saveToken() {
 }
 
 async function fetchPortfolio() {
-  const res = await fetch('/api/github', {
+  const res = await fetch(API_URL, {
     method: 'POST',
     headers: apiHeaders(),
     body: JSON.stringify({ action: 'get_portfolio' })
@@ -1010,7 +1013,7 @@ async function fetchPortfolio() {
 }
 
 async function pushPortfolio(positions, sha, message) {
-  const res = await fetch('/api/github', {
+  const res = await fetch(API_URL, {
     method: 'POST',
     headers: apiHeaders(),
     body: JSON.stringify({ action: 'save_portfolio', positions, sha, message })
@@ -1079,7 +1082,7 @@ async function removePosition(ticker) {
 }
 
 async function triggerWorkflow() {
-  const res = await fetch('/api/github', {
+  const res = await fetch(API_URL, {
     method: 'POST',
     headers: apiHeaders(),
     body: JSON.stringify({ action: 'run' })
