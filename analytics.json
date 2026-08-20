@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-19T13:37:57Z",
+  "generated_at": "2026-08-20T13:39:35Z",
   "total_trades": 41,
-  "open_trades": 3,
-  "closed_trades": 38,
-  "win_rate": 0.632,
-  "avg_return_pct": 0.62,
-  "avg_win_pct": 3.63,
+  "open_trades": 2,
+  "closed_trades": 39,
+  "win_rate": 0.641,
+  "avg_return_pct": 0.65,
+  "avg_win_pct": 3.56,
   "avg_loss_pct": -4.56,
-  "expectancy": 0.62,
+  "expectancy": 0.64,
   "best_trade": {
     "ticker": "JBHT",
     "date": "2026-06-19",
@@ -30,9 +30,9 @@
       "avg_return": 6.12
     },
     "7-8": {
-      "count": 2,
+      "count": 3,
       "win_rate": 1.0,
-      "avg_return": 1.33
+      "avg_return": 1.51
     },
     "8-9": {
       "count": 0,
@@ -57,9 +57,9 @@
       "avg_return": 3.07
     },
     "50-55": {
-      "count": 14,
-      "win_rate": 0.571,
-      "avg_return": 2.11
+      "count": 15,
+      "win_rate": 0.6,
+      "avg_return": 2.09
     },
     "55-60": {
       "count": 12,
@@ -79,9 +79,9 @@
       "avg_return": 2.45
     },
     "6-8%": {
-      "count": 15,
-      "win_rate": 0.8,
-      "avg_return": 1.73
+      "count": 16,
+      "win_rate": 0.812,
+      "avg_return": 1.74
     }
   },
   "by_regime": {
@@ -91,9 +91,9 @@
       "avg_return": 3.26
     },
     "unknown": {
-      "count": 26,
-      "win_rate": 0.538,
-      "avg_return": -0.6
+      "count": 27,
+      "win_rate": 0.556,
+      "avg_return": -0.51
     }
   },
   "by_sector": {
@@ -133,16 +133,16 @@
       "avg_return": 4.56
     },
     "Unknown": {
-      "count": 26,
-      "win_rate": 0.538,
-      "avg_return": -0.6
+      "count": 27,
+      "win_rate": 0.556,
+      "avg_return": -0.51
     }
   },
   "stop_ab_test": {
     "swing": {
-      "count": 4,
+      "count": 5,
       "win_rate": 1.0,
-      "avg_return": 5.98
+      "avg_return": 5.16
     },
     "atr": {
       "count": 10,
@@ -151,6 +151,15 @@
     }
   },
   "recent_trades": [
+    {
+      "ticker": "FFIV",
+      "company_name": "F5, Inc.",
+      "date": "2026-07-28",
+      "score": 7.004,
+      "return_pct": 1.88,
+      "status": "stop_hit",
+      "days_held": 23
+    },
     {
       "ticker": "JBHT",
       "company_name": "J.B. Hunt",
@@ -411,15 +420,6 @@
       "return_pct": -2.51,
       "status": "stop_hit",
       "days_held": 19
-    },
-    {
-      "ticker": "ALB",
-      "company_name": "Albemarle Corporation",
-      "date": "2026-05-10",
-      "score": 4.344,
-      "return_pct": -9.83,
-      "status": "stop_hit",
-      "days_held": 5
     }
   ]
 }
