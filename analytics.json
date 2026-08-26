@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-25T13:42:06Z",
+  "generated_at": "2026-08-26T13:47:12Z",
   "total_trades": 41,
-  "open_trades": 2,
-  "closed_trades": 39,
-  "win_rate": 0.641,
-  "avg_return_pct": 0.65,
-  "avg_win_pct": 3.56,
-  "avg_loss_pct": -4.56,
+  "open_trades": 0,
+  "closed_trades": 41,
+  "win_rate": 0.634,
+  "avg_return_pct": 0.64,
+  "avg_win_pct": 3.6,
+  "avg_loss_pct": -4.5,
   "expectancy": 0.64,
   "best_trade": {
     "ticker": "JBHT",
@@ -25,9 +25,9 @@
       "avg_return": -0.12
     },
     "6-7": {
-      "count": 4,
-      "win_rate": 1.0,
-      "avg_return": 6.12
+      "count": 6,
+      "win_rate": 0.833,
+      "avg_return": 4.22
     },
     "7-8": {
       "count": 3,
@@ -52,9 +52,9 @@
       "avg_return": 1.07
     },
     "45-50": {
-      "count": 8,
-      "win_rate": 0.875,
-      "avg_return": 3.07
+      "count": 10,
+      "win_rate": 0.8,
+      "avg_return": 2.54
     },
     "50-55": {
       "count": 15,
@@ -79,9 +79,9 @@
       "avg_return": 2.45
     },
     "6-8%": {
-      "count": 16,
-      "win_rate": 0.812,
-      "avg_return": 1.74
+      "count": 18,
+      "win_rate": 0.778,
+      "avg_return": 1.59
     }
   },
   "by_regime": {
@@ -91,9 +91,9 @@
       "avg_return": 3.26
     },
     "unknown": {
-      "count": 27,
-      "win_rate": 0.556,
-      "avg_return": -0.51
+      "count": 29,
+      "win_rate": 0.552,
+      "avg_return": -0.45
     }
   },
   "by_sector": {
@@ -133,16 +133,16 @@
       "avg_return": 4.56
     },
     "Unknown": {
-      "count": 27,
-      "win_rate": 0.556,
-      "avg_return": -0.51
+      "count": 29,
+      "win_rate": 0.552,
+      "avg_return": -0.45
     }
   },
   "stop_ab_test": {
     "swing": {
-      "count": 5,
-      "win_rate": 1.0,
-      "avg_return": 5.16
+      "count": 7,
+      "win_rate": 0.857,
+      "avg_return": 3.8
     },
     "atr": {
       "count": 10,
@@ -151,6 +151,24 @@
     }
   },
   "recent_trades": [
+    {
+      "ticker": "FFIV",
+      "company_name": "F5, Inc.",
+      "date": "2026-07-29",
+      "score": 6.528,
+      "return_pct": -3.78,
+      "status": "expired",
+      "days_held": 28
+    },
+    {
+      "ticker": "CNC",
+      "company_name": "Centene Corporation",
+      "date": "2026-07-29",
+      "score": 6.008,
+      "return_pct": 4.6,
+      "status": "expired",
+      "days_held": 28
+    },
     {
       "ticker": "FFIV",
       "company_name": "F5, Inc.",
@@ -402,24 +420,6 @@
       "return_pct": -3.28,
       "status": "stop_hit",
       "days_held": 4
-    },
-    {
-      "ticker": "ETN",
-      "company_name": "Eaton Corporation",
-      "date": "2026-05-11",
-      "score": 3.7,
-      "return_pct": -9.57,
-      "status": "stop_hit",
-      "days_held": 7
-    },
-    {
-      "ticker": "CTVA",
-      "company_name": "Corteva",
-      "date": "2026-05-10",
-      "score": 5.214,
-      "return_pct": -2.51,
-      "status": "stop_hit",
-      "days_held": 19
     }
   ]
 }
