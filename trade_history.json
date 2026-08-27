@@ -2181,5 +2181,54 @@
       "tiers_hit": []
     },
     "status": "expired"
+  },
+  {
+    "id": "WSM_2026-08-27",
+    "ticker": "WSM",
+    "company_name": "Williams-Sonoma, Inc.",
+    "sector": "",
+    "date_generated": "2026-08-27",
+    "setup_type": "Momentum Pullback",
+    "score": 6.696,
+    "score_breakdown": {
+      "trend_strength": 5.52,
+      "pullback_quality": 7.86,
+      "volume_confirm": 6.72
+    },
+    "regime": "",
+    "entry_price": 237.43,
+    "stop_loss": 221.34,
+    "swing_stop": null,
+    "atr_stop": null,
+    "stop_method": "swing",
+    "target": 254.89,
+    "risk_reward": 1.09,
+    "exit_plan": {},
+    "position_sizing": {},
+    "indicators": {
+      "rsi": 50.6,
+      "ma50": 232.61,
+      "ma200": 201.9,
+      "high_20d": 254.89,
+      "pullback_pct": 6.9,
+      "volume_ratio": 2.44
+    },
+    "reasoning": "WSM is 6.9% below its 20-day high with RSI at 50.6, offering a controlled pullback into an uptrend (price above 50 MA at 232.61). Volume spiked 2.44\u00d7 above average on a bullish candle, confirming institutional interest.",
+    "outcomes": {
+      "1w_price": null,
+      "2w_price": null,
+      "4w_price": null,
+      "1w_return_pct": null,
+      "2w_return_pct": null,
+      "4w_return_pct": null,
+      "max_gain_pct": null,
+      "max_drawdown_pct": null,
+      "target_hit": false,
+      "stop_hit": false,
+      "last_price": null,
+      "last_return_pct": null,
+      "last_checked": null
+    },
+    "status": "open"
   }
 ]
