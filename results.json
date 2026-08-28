@@ -1,8 +1,8 @@
 {
-  "scan_date": "2026-08-27",
-  "scan_time_utc": "22:42:59",
+  "scan_date": "2026-08-28",
+  "scan_time_utc": "22:49:41",
   "universe": "S&P 500 (503 tickers)",
-  "candidates_found": 1,
+  "candidates_found": 0,
   "strategy": {
     "name": "Momentum Pullback",
     "timeframe": "Daily",
@@ -21,34 +21,5 @@
       "volume_confirm": "20%"
     }
   },
-  "top_setups": [
-    {
-      "ticker": "WSM",
-      "company_name": "Williams-Sonoma, Inc.",
-      "score": 6.696,
-      "score_breakdown": {
-        "trend_strength": 5.52,
-        "pullback_quality": 7.86,
-        "volume_confirm": 6.72
-      },
-      "setup": "Momentum Pullback",
-      "price": 237.43,
-      "entry_zone": {
-        "low": 236.24,
-        "high": 238.62
-      },
-      "stop_loss": 221.34,
-      "target": 254.89,
-      "risk_reward": 1.09,
-      "indicators": {
-        "rsi": 50.6,
-        "ma50": 232.61,
-        "ma200": 201.9,
-        "high_20d": 254.89,
-        "pullback_pct": 6.9,
-        "volume_ratio": 2.44
-      },
-      "reasoning": "WSM is 6.9% below its 20-day high with RSI at 50.6, offering a controlled pullback into an uptrend (price above 50 MA at 232.61). Volume spiked 2.44\u00d7 above average on a bullish candle, confirming institutional interest."
-    }
-  ]
+  "top_setups": []
 }
