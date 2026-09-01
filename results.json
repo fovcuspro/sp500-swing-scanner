@@ -1,8 +1,8 @@
 {
-  "scan_date": "2026-08-31",
-  "scan_time_utc": "19:19:22",
+  "scan_date": "2026-09-01",
+  "scan_time_utc": "17:04:56",
   "universe": "S&P 500 (503 tickers)",
-  "candidates_found": 0,
+  "candidates_found": 1,
   "strategy": {
     "name": "Momentum Pullback",
     "timeframe": "Daily",
@@ -21,5 +21,34 @@
       "volume_confirm": "20%"
     }
   },
-  "top_setups": []
+  "top_setups": [
+    {
+      "ticker": "SWKS",
+      "company_name": "Skyworks Solutions",
+      "score": 6.24,
+      "score_breakdown": {
+        "trend_strength": 1.73,
+        "pullback_quality": 8.87,
+        "volume_confirm": 10.0
+      },
+      "setup": "Momentum Pullback",
+      "price": 67.01,
+      "entry_zone": {
+        "low": 66.67,
+        "high": 67.35
+      },
+      "stop_loss": 63.06,
+      "target": 70.75,
+      "risk_reward": 0.95,
+      "indicators": {
+        "rsi": 51.7,
+        "ma50": 65.0,
+        "ma200": 63.18,
+        "high_20d": 70.75,
+        "pullback_pct": 5.3,
+        "volume_ratio": 3.75
+      },
+      "reasoning": "SWKS is 5.3% below its 20-day high with RSI at 51.7, offering a controlled pullback into an uptrend (price above 50 MA at 65.0). Volume spiked 3.75\u00d7 above average on a bullish candle, confirming institutional interest."
+    }
+  ]
 }
