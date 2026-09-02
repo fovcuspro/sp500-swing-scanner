@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-01T17:04:57Z",
+  "generated_at": "2026-09-02T16:56:52Z",
   "total_trades": 43,
-  "open_trades": 2,
-  "closed_trades": 41,
-  "win_rate": 0.634,
-  "avg_return_pct": 0.64,
-  "avg_win_pct": 3.6,
+  "open_trades": 1,
+  "closed_trades": 42,
+  "win_rate": 0.643,
+  "avg_return_pct": 0.81,
+  "avg_win_pct": 3.77,
   "avg_loss_pct": -4.5,
-  "expectancy": 0.64,
+  "expectancy": 0.82,
   "best_trade": {
     "ticker": "JBHT",
     "date": "2026-06-19",
@@ -25,9 +25,9 @@
       "avg_return": -0.12
     },
     "6-7": {
-      "count": 6,
-      "win_rate": 0.833,
-      "avg_return": 4.22
+      "count": 7,
+      "win_rate": 0.857,
+      "avg_return": 4.77
     },
     "7-8": {
       "count": 3,
@@ -57,9 +57,9 @@
       "avg_return": 2.54
     },
     "50-55": {
-      "count": 15,
-      "win_rate": 0.6,
-      "avg_return": 2.09
+      "count": 16,
+      "win_rate": 0.625,
+      "avg_return": 2.46
     },
     "55-60": {
       "count": 12,
@@ -74,9 +74,9 @@
       "avg_return": -1.22
     },
     "5-6%": {
-      "count": 7,
-      "win_rate": 0.714,
-      "avg_return": 2.45
+      "count": 8,
+      "win_rate": 0.75,
+      "avg_return": 3.15
     },
     "6-8%": {
       "count": 18,
@@ -91,9 +91,9 @@
       "avg_return": 3.26
     },
     "unknown": {
-      "count": 29,
-      "win_rate": 0.552,
-      "avg_return": -0.45
+      "count": 30,
+      "win_rate": 0.567,
+      "avg_return": -0.16
     }
   },
   "by_sector": {
@@ -133,16 +133,16 @@
       "avg_return": 4.56
     },
     "Unknown": {
-      "count": 29,
-      "win_rate": 0.552,
-      "avg_return": -0.45
+      "count": 30,
+      "win_rate": 0.567,
+      "avg_return": -0.16
     }
   },
   "stop_ab_test": {
     "swing": {
-      "count": 7,
-      "win_rate": 0.857,
-      "avg_return": 3.8
+      "count": 8,
+      "win_rate": 0.875,
+      "avg_return": 4.33
     },
     "atr": {
       "count": 10,
@@ -151,6 +151,15 @@
     }
   },
   "recent_trades": [
+    {
+      "ticker": "SWKS",
+      "company_name": "Skyworks Solutions",
+      "date": "2026-09-01",
+      "score": 6.24,
+      "return_pct": 8.07,
+      "status": "target_hit",
+      "days_held": 1
+    },
     {
       "ticker": "FFIV",
       "company_name": "F5, Inc.",
@@ -411,15 +420,6 @@
       "return_pct": 3.72,
       "status": "target_hit",
       "days_held": 26
-    },
-    {
-      "ticker": "XEL",
-      "company_name": "Xcel Energy",
-      "date": "2026-05-11",
-      "score": 4.216,
-      "return_pct": -3.28,
-      "status": "stop_hit",
-      "days_held": 4
     }
   ]
 }
