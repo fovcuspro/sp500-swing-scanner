@@ -1,7 +1,9 @@
 {
-  "checked_at": "2026-09-02T16:56:13Z",
+  "checked_at": "2026-09-03T16:46:47Z",
   "status": "ok",
-  "issues": [],
-  "last_scan_date": "2026-09-01",
-  "last_setup_count": 1
+  "issues": [
+    "Previous scan returned 0 setups"
+  ],
+  "last_scan_date": "2026-09-02",
+  "last_setup_count": 0
 }
