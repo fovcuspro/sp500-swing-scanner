@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-21T18:24:23Z",
+  "generated_at": "2026-09-22T17:27:31Z",
   "total_trades": 46,
-  "open_trades": 4,
-  "closed_trades": 42,
-  "win_rate": 0.643,
-  "avg_return_pct": 0.81,
+  "open_trades": 3,
+  "closed_trades": 43,
+  "win_rate": 0.628,
+  "avg_return_pct": 0.75,
   "avg_win_pct": 3.77,
-  "avg_loss_pct": -4.5,
-  "expectancy": 0.82,
+  "avg_loss_pct": -4.35,
+  "expectancy": 0.75,
   "best_trade": {
     "ticker": "JBHT",
     "date": "2026-06-19",
@@ -25,9 +25,9 @@
       "avg_return": -0.12
     },
     "6-7": {
-      "count": 7,
-      "win_rate": 0.857,
-      "avg_return": 4.77
+      "count": 8,
+      "win_rate": 0.75,
+      "avg_return": 3.91
     },
     "7-8": {
       "count": 3,
@@ -52,9 +52,9 @@
       "avg_return": 1.07
     },
     "45-50": {
-      "count": 10,
-      "win_rate": 0.8,
-      "avg_return": 2.54
+      "count": 11,
+      "win_rate": 0.727,
+      "avg_return": 2.11
     },
     "50-55": {
       "count": 16,
@@ -79,9 +79,9 @@
       "avg_return": 3.15
     },
     "6-8%": {
-      "count": 18,
-      "win_rate": 0.778,
-      "avg_return": 1.59
+      "count": 19,
+      "win_rate": 0.737,
+      "avg_return": 1.39
     }
   },
   "by_regime": {
@@ -91,9 +91,9 @@
       "avg_return": 3.26
     },
     "unknown": {
-      "count": 30,
-      "win_rate": 0.567,
-      "avg_return": -0.16
+      "count": 31,
+      "win_rate": 0.548,
+      "avg_return": -0.23
     }
   },
   "by_sector": {
@@ -133,16 +133,16 @@
       "avg_return": 4.56
     },
     "Unknown": {
-      "count": 30,
-      "win_rate": 0.567,
-      "avg_return": -0.16
+      "count": 31,
+      "win_rate": 0.548,
+      "avg_return": -0.23
     }
   },
   "stop_ab_test": {
     "swing": {
-      "count": 8,
-      "win_rate": 0.875,
-      "avg_return": 4.33
+      "count": 9,
+      "win_rate": 0.778,
+      "avg_return": 3.62
     },
     "atr": {
       "count": 10,
@@ -151,6 +151,15 @@
     }
   },
   "recent_trades": [
+    {
+      "ticker": "OKE",
+      "company_name": "Oneok",
+      "date": "2026-09-21",
+      "score": 6.312,
+      "return_pct": -2.11,
+      "status": "stop_hit",
+      "days_held": 1
+    },
     {
       "ticker": "SWKS",
       "company_name": "Skyworks Solutions",
@@ -411,15 +420,6 @@
       "return_pct": -2.14,
       "status": "stop_hit",
       "days_held": 2
-    },
-    {
-      "ticker": "RF",
-      "company_name": "Regions Financial Corporation",
-      "date": "2026-05-13",
-      "score": 3.128,
-      "return_pct": 3.72,
-      "status": "target_hit",
-      "days_held": 26
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "scan_date": "2026-09-21",
-  "scan_time_utc": "18:24:22",
+  "scan_date": "2026-09-22",
+  "scan_time_utc": "17:27:30",
   "universe": "S&P 500 (503 tickers)",
-  "candidates_found": 3,
+  "candidates_found": 0,
   "strategy": {
     "name": "Momentum Pullback",
     "timeframe": "Daily",
@@ -21,90 +21,5 @@
       "volume_confirm": "20%"
     }
   },
-  "top_setups": [
-    {
-      "ticker": "BDX",
-      "company_name": "Becton Dickinson",
-      "score": 7.188,
-      "score_breakdown": {
-        "trend_strength": 4.1,
-        "pullback_quality": 8.87,
-        "volume_confirm": 10.0
-      },
-      "setup": "Momentum Pullback",
-      "price": 180.94,
-      "entry_zone": {
-        "low": 180.04,
-        "high": 181.84
-      },
-      "stop_loss": 175.2,
-      "target": 191.94,
-      "risk_reward": 1.92,
-      "indicators": {
-        "rsi": 50.8,
-        "ma50": 173.94,
-        "ma200": 159.16,
-        "high_20d": 191.94,
-        "pullback_pct": 5.7,
-        "volume_ratio": 3.39
-      },
-      "reasoning": "BDX is 5.7% below its 20-day high with RSI at 50.8, offering a controlled pullback into an uptrend (price above 50 MA at 173.94). Volume spiked 3.39\u00d7 above average on a bullish candle, confirming institutional interest."
-    },
-    {
-      "ticker": "SOLV",
-      "company_name": "Solventum",
-      "score": 6.582,
-      "score_breakdown": {
-        "trend_strength": 4.41,
-        "pullback_quality": 8.82,
-        "volume_confirm": 6.45
-      },
-      "setup": "Momentum Pullback",
-      "price": 88.84,
-      "entry_zone": {
-        "low": 88.4,
-        "high": 89.28
-      },
-      "stop_loss": 86.53,
-      "target": 94.16,
-      "risk_reward": 2.3,
-      "indicators": {
-        "rsi": 51.1,
-        "ma50": 86.08,
-        "ma200": 77.68,
-        "high_20d": 94.16,
-        "pullback_pct": 5.6,
-        "volume_ratio": 2.4
-      },
-      "reasoning": "SOLV is 5.6% below its 20-day high with RSI at 51.1, offering a controlled pullback into an uptrend (price above 50 MA at 86.08). Volume spiked 2.4\u00d7 above average on a bullish candle, confirming institutional interest."
-    },
-    {
-      "ticker": "OKE",
-      "company_name": "Oneok",
-      "score": 6.312,
-      "score_breakdown": {
-        "trend_strength": 3.42,
-        "pullback_quality": 7.36,
-        "volume_confirm": 10.0
-      },
-      "setup": "Momentum Pullback",
-      "price": 93.46,
-      "entry_zone": {
-        "low": 92.99,
-        "high": 93.93
-      },
-      "stop_loss": 91.75,
-      "target": 99.85,
-      "risk_reward": 3.74,
-      "indicators": {
-        "rsi": 47.5,
-        "ma50": 92.53,
-        "ma200": 84.5,
-        "high_20d": 99.85,
-        "pullback_pct": 6.4,
-        "volume_ratio": 3.2
-      },
-      "reasoning": "OKE is 6.4% below its 20-day high with RSI at 47.5, offering a controlled pullback into an uptrend (price above 50 MA at 92.53). Volume spiked 3.2\u00d7 above average on a bullish candle, confirming institutional interest."
-    }
-  ]
+  "top_setups": []
 }
