@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-23T17:37:06Z",
+  "generated_at": "2026-09-24T17:39:50Z",
   "total_trades": 46,
-  "open_trades": 3,
-  "closed_trades": 43,
-  "win_rate": 0.628,
-  "avg_return_pct": 0.75,
+  "open_trades": 2,
+  "closed_trades": 44,
+  "win_rate": 0.614,
+  "avg_return_pct": 0.64,
   "avg_win_pct": 3.77,
-  "avg_loss_pct": -4.35,
-  "expectancy": 0.75,
+  "avg_loss_pct": -4.34,
+  "expectancy": 0.64,
   "best_trade": {
     "ticker": "JBHT",
     "date": "2026-06-19",
@@ -25,9 +25,9 @@
       "avg_return": -0.12
     },
     "6-7": {
-      "count": 8,
-      "win_rate": 0.75,
-      "avg_return": 3.91
+      "count": 9,
+      "win_rate": 0.667,
+      "avg_return": 3.02
     },
     "7-8": {
       "count": 3,
@@ -57,9 +57,9 @@
       "avg_return": 2.11
     },
     "50-55": {
-      "count": 16,
-      "win_rate": 0.625,
-      "avg_return": 2.46
+      "count": 17,
+      "win_rate": 0.588,
+      "avg_return": 2.08
     },
     "55-60": {
       "count": 12,
@@ -79,9 +79,9 @@
       "avg_return": 3.15
     },
     "6-8%": {
-      "count": 19,
-      "win_rate": 0.737,
-      "avg_return": 1.39
+      "count": 20,
+      "win_rate": 0.7,
+      "avg_return": 1.12
     }
   },
   "by_regime": {
@@ -91,9 +91,9 @@
       "avg_return": 3.26
     },
     "unknown": {
-      "count": 31,
-      "win_rate": 0.548,
-      "avg_return": -0.23
+      "count": 32,
+      "win_rate": 0.531,
+      "avg_return": -0.35
     }
   },
   "by_sector": {
@@ -133,16 +133,16 @@
       "avg_return": 4.56
     },
     "Unknown": {
-      "count": 31,
-      "win_rate": 0.548,
-      "avg_return": -0.23
+      "count": 32,
+      "win_rate": 0.531,
+      "avg_return": -0.35
     }
   },
   "stop_ab_test": {
     "swing": {
-      "count": 9,
-      "win_rate": 0.778,
-      "avg_return": 3.62
+      "count": 10,
+      "win_rate": 0.7,
+      "avg_return": 2.84
     },
     "atr": {
       "count": 10,
@@ -168,6 +168,15 @@
       "return_pct": 8.07,
       "status": "target_hit",
       "days_held": 1
+    },
+    {
+      "ticker": "WSM",
+      "company_name": "Williams-Sonoma, Inc.",
+      "date": "2026-08-27",
+      "score": 6.696,
+      "return_pct": -4.13,
+      "status": "expired",
+      "days_held": 28
     },
     {
       "ticker": "FFIV",
@@ -411,15 +420,6 @@
       "return_pct": 0.19,
       "status": "target_hit",
       "days_held": 27
-    },
-    {
-      "ticker": "LNT",
-      "company_name": "Alliant Energy",
-      "date": "2026-05-13",
-      "score": 4.052,
-      "return_pct": -2.14,
-      "status": "stop_hit",
-      "days_held": 2
     }
   ]
 }
