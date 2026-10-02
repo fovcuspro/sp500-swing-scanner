@@ -2322,12 +2322,12 @@
       "2w_return_pct": null,
       "4w_return_pct": null,
       "max_gain_pct": 1.71,
-      "max_drawdown_pct": -1.48,
+      "max_drawdown_pct": -2.64,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 178.27,
-      "last_return_pct": -1.48,
-      "last_checked": "2026-10-01",
+      "last_price": 176.16,
+      "last_return_pct": -2.64,
+      "last_checked": "2026-10-02",
       "tiers_hit": []
     },
     "status": "open"
@@ -2375,9 +2375,9 @@
       "max_drawdown_pct": -2.27,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 86.82,
-      "last_return_pct": -2.27,
-      "last_checked": "2026-10-01",
+      "last_price": 88.53,
+      "last_return_pct": -0.35,
+      "last_checked": "2026-10-02",
       "tiers_hit": []
     },
     "status": "open"
