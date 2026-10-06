@@ -2325,9 +2325,9 @@
       "max_drawdown_pct": -2.64,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 180.67,
-      "last_return_pct": -0.15,
-      "last_checked": "2026-10-05",
+      "last_price": 180.77,
+      "last_return_pct": -0.09,
+      "last_checked": "2026-10-06",
       "tiers_hit": []
     },
     "status": "open"
@@ -2375,9 +2375,9 @@
       "max_drawdown_pct": -2.27,
       "target_hit": false,
       "stop_hit": false,
-      "last_price": 88.03,
-      "last_return_pct": -0.91,
-      "last_checked": "2026-10-05",
+      "last_price": 87.03,
+      "last_return_pct": -2.04,
+      "last_checked": "2026-10-06",
       "tiers_hit": []
     },
     "status": "open"
