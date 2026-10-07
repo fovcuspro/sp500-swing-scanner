@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-06T18:43:37Z",
+  "generated_at": "2026-10-07T19:09:30Z",
   "total_trades": 46,
-  "open_trades": 2,
-  "closed_trades": 44,
-  "win_rate": 0.614,
-  "avg_return_pct": 0.64,
+  "open_trades": 1,
+  "closed_trades": 45,
+  "win_rate": 0.6,
+  "avg_return_pct": 0.6,
   "avg_win_pct": 3.77,
-  "avg_loss_pct": -4.34,
-  "expectancy": 0.64,
+  "avg_loss_pct": -4.15,
+  "expectancy": 0.6,
   "best_trade": {
     "ticker": "JBHT",
     "date": "2026-06-19",
@@ -25,9 +25,9 @@
       "avg_return": -0.12
     },
     "6-7": {
-      "count": 9,
-      "win_rate": 0.667,
-      "avg_return": 3.02
+      "count": 10,
+      "win_rate": 0.6,
+      "avg_return": 2.62
     },
     "7-8": {
       "count": 3,
@@ -57,9 +57,9 @@
       "avg_return": 2.11
     },
     "50-55": {
-      "count": 17,
-      "win_rate": 0.588,
-      "avg_return": 2.08
+      "count": 18,
+      "win_rate": 0.556,
+      "avg_return": 1.91
     },
     "55-60": {
       "count": 12,
@@ -74,9 +74,9 @@
       "avg_return": -1.22
     },
     "5-6%": {
-      "count": 8,
-      "win_rate": 0.75,
-      "avg_return": 3.15
+      "count": 9,
+      "win_rate": 0.667,
+      "avg_return": 2.7
     },
     "6-8%": {
       "count": 20,
@@ -91,9 +91,9 @@
       "avg_return": 3.26
     },
     "unknown": {
-      "count": 32,
-      "win_rate": 0.531,
-      "avg_return": -0.35
+      "count": 33,
+      "win_rate": 0.515,
+      "avg_return": -0.37
     }
   },
   "by_sector": {
@@ -133,16 +133,16 @@
       "avg_return": 4.56
     },
     "Unknown": {
-      "count": 32,
-      "win_rate": 0.531,
-      "avg_return": -0.35
+      "count": 33,
+      "win_rate": 0.515,
+      "avg_return": -0.37
     }
   },
   "stop_ab_test": {
     "swing": {
-      "count": 10,
-      "win_rate": 0.7,
-      "avg_return": 2.84
+      "count": 11,
+      "win_rate": 0.636,
+      "avg_return": 2.5
     },
     "atr": {
       "count": 10,
@@ -151,6 +151,15 @@
     }
   },
   "recent_trades": [
+    {
+      "ticker": "SOLV",
+      "company_name": "Solventum",
+      "date": "2026-09-21",
+      "score": 6.582,
+      "return_pct": -0.91,
+      "status": "stop_hit",
+      "days_held": 16
+    },
     {
       "ticker": "OKE",
       "company_name": "Oneok",
@@ -411,15 +420,6 @@
       "return_pct": 0.19,
       "status": "target_hit",
       "days_held": 26
-    },
-    {
-      "ticker": "KEY",
-      "company_name": "KeyCorp",
-      "date": "2026-05-16",
-      "score": 3.74,
-      "return_pct": 0.19,
-      "status": "target_hit",
-      "days_held": 27
     }
   ]
 }
