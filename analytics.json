@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-16T17:06:35Z",
+  "generated_at": "2026-10-19T18:55:26Z",
   "total_trades": 46,
-  "open_trades": 1,
-  "closed_trades": 45,
-  "win_rate": 0.6,
-  "avg_return_pct": 0.6,
-  "avg_win_pct": 3.77,
+  "open_trades": 0,
+  "closed_trades": 46,
+  "win_rate": 0.609,
+  "avg_return_pct": 0.71,
+  "avg_win_pct": 3.84,
   "avg_loss_pct": -4.15,
-  "expectancy": 0.6,
+  "expectancy": 0.72,
   "best_trade": {
     "ticker": "JBHT",
     "date": "2026-06-19",
@@ -30,9 +30,9 @@
       "avg_return": 2.62
     },
     "7-8": {
-      "count": 3,
+      "count": 4,
       "win_rate": 1.0,
-      "avg_return": 1.51
+      "avg_return": 2.57
     },
     "8-9": {
       "count": 0,
@@ -57,9 +57,9 @@
       "avg_return": 2.11
     },
     "50-55": {
-      "count": 18,
-      "win_rate": 0.556,
-      "avg_return": 1.91
+      "count": 19,
+      "win_rate": 0.579,
+      "avg_return": 2.11
     },
     "55-60": {
       "count": 12,
@@ -74,9 +74,9 @@
       "avg_return": -1.22
     },
     "5-6%": {
-      "count": 9,
-      "win_rate": 0.667,
-      "avg_return": 2.7
+      "count": 10,
+      "win_rate": 0.7,
+      "avg_return": 3.0
     },
     "6-8%": {
       "count": 20,
@@ -91,9 +91,9 @@
       "avg_return": 3.26
     },
     "unknown": {
-      "count": 33,
-      "win_rate": 0.515,
-      "avg_return": -0.37
+      "count": 34,
+      "win_rate": 0.529,
+      "avg_return": -0.19
     }
   },
   "by_sector": {
@@ -133,16 +133,16 @@
       "avg_return": 4.56
     },
     "Unknown": {
-      "count": 33,
-      "win_rate": 0.515,
-      "avg_return": -0.37
+      "count": 34,
+      "win_rate": 0.529,
+      "avg_return": -0.19
     }
   },
   "stop_ab_test": {
     "swing": {
-      "count": 11,
-      "win_rate": 0.636,
-      "avg_return": 2.5
+      "count": 12,
+      "win_rate": 0.667,
+      "avg_return": 2.77
     },
     "atr": {
       "count": 10,
@@ -151,6 +151,15 @@
     }
   },
   "recent_trades": [
+    {
+      "ticker": "BDX",
+      "company_name": "Becton Dickinson",
+      "date": "2026-09-21",
+      "score": 7.188,
+      "return_pct": 5.74,
+      "status": "expired",
+      "days_held": 16
+    },
     {
       "ticker": "SOLV",
       "company_name": "Solventum",
@@ -411,15 +420,6 @@
       "return_pct": 0.19,
       "status": "target_hit",
       "days_held": 25
-    },
-    {
-      "ticker": "KEY",
-      "company_name": "KeyCorp",
-      "date": "2026-05-17",
-      "score": 3.74,
-      "return_pct": 0.19,
-      "status": "target_hit",
-      "days_held": 26
     }
   ]
 }

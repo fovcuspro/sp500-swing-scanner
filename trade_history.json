@@ -2317,10 +2317,10 @@
     "outcomes": {
       "1w_price": 184.04,
       "2w_price": 180.67,
-      "4w_price": null,
+      "4w_price": 191.32,
       "1w_return_pct": 1.71,
       "2w_return_pct": -0.15,
-      "4w_return_pct": null,
+      "4w_return_pct": 5.74,
       "max_gain_pct": 1.71,
       "max_drawdown_pct": -2.64,
       "target_hit": false,
@@ -2330,7 +2330,7 @@
       "last_checked": "2026-10-07",
       "tiers_hit": []
     },
-    "status": "open"
+    "status": "expired"
   },
   {
     "id": "SOLV_2026-09-21",
