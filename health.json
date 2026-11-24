@@ -1,9 +1,10 @@
 {
-  "checked_at": "2026-11-20T20:51:45Z",
-  "status": "ok",
+  "checked_at": "2026-11-24T00:29:44Z",
+  "status": "stale",
   "issues": [
+    "Last scan was 4 days ago (2026-11-20)",
     "Previous scan returned 0 setups"
   ],
-  "last_scan_date": "2026-11-19",
+  "last_scan_date": "2026-11-20",
   "last_setup_count": 0
 }
